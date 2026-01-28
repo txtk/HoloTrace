@@ -6,13 +6,11 @@ This repository contains the source code and datasets for the paper “Beyond Cl
 
 To uphold the double-blind review process and data privacy regulations, this repository currently contains the limit content.
 
-The full implementation relies on a  Knowledge Graph constructed from proprietary Cyber Threat Intelligence (CTI) reports. 
-
 We are currently: 1.  **Sanitizing the Dataset:** Removing sensitive indicators (IOCs) and proprietary tags. 2.  **Decoupling APIs:** Abstracting the internal ElasticSearch and LLM connectors for public use.
 
-The complete source code and anonymized toy datasets will be released upon paper acceptance.
+The complete source code and datasets will be released upon paper acceptance.
 
-## Installa Environment
+## Environment
 
 We use **[pixi](https://prefix.dev/)** to ensure strict reproducibility of our experimental environment. You do not need to manually install Python, CUDA, or PyTorch. 
 
