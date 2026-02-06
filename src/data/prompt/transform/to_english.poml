@@ -1,0 +1,17 @@
+<poml>
+    <system-msg>
+        <Task>
+            你的任务是接收一篇威胁情报报告，然后将其翻译为英文
+        </Task>
+
+        <Header>输出要求</Header>
+        <Paragraph>你应该仅仅返回完整的英文威胁情报报告</Paragraph>
+    </system-msg>
+
+    <HumanMessage>
+        <Paragraph>
+            威胁报告:
+        </Paragraph>
+        <Paragraph>{{report}}</Paragraph>
+    </HumanMessage>
+</poml>

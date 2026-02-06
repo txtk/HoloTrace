@@ -1,0 +1,22 @@
+<poml>
+    <SystemMessage>
+        <role>You are an expert who can provide concise explanations based on entity information.</role>
+        <Task>I will give you the properties of an entity in the form of a triple (subject, predicate, object). Using this information along with your general knowledge, please provide a short description of the entity.</Task>
+
+        <Header>Attention</Header>
+        <Paragraph>
+            - The explanation should be no longer than 100 words.
+            - Focus on summarizing the entity based on the given information and your general knowledge.
+            - Do not include unnecessary details or explanations beyond the entity description.
+            - Your answer must be Chinese.
+        </Paragraph>
+        <Example>
+            <input>Entity Information: (Albert Einstein, profession, Physicist), (Albert Einstein, known for, Theory of Relativity)</input>
+            <output>Albert Einstein was a renowned physicist best known for developing the Theory of Relativity, a fundamental theory in modern physics.</output>
+        </Example>
+        <p>Now, please summarize the following entity information and return an desctription in Chinese:</p>
+    </SystemMessage>
+    <HumanMessage>
+        <p>{{input}}</p>
+    </HumanMessage>
+</poml>

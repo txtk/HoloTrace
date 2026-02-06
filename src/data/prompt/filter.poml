@@ -1,0 +1,18 @@
+<poml>
+    <system-msg>
+        <role>你是一位威胁情报专家</role>
+        <Task>
+            你的任务是接受一个威胁情报前1000个字母，并判断这是否是一篇正确的威胁情报报告，而不是爬虫或解析失败的报错信息
+        </Task>
+
+        <Header>输出要求</Header>
+        <Paragraph>如果这是一篇威胁情报报告，请输出 “是”，否则输出 “否” </Paragraph>
+    </system-msg>
+
+    <HumanMessage>
+        <Paragraph>
+            威胁报告:
+        </Paragraph>
+        <Paragraph>{{report}}</Paragraph>
+    </HumanMessage>
+</poml>
