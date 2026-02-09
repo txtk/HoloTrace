@@ -119,8 +119,8 @@ def get_profile(
     ids_dict = {}
     ignore_list = ignore_dict.get(suffix, [])
     if suffix == "aadm":
-        # ids_dict["layer3"] = id_dict.get_value("attack-pattern")
-        # ids_dict["layer4"] = id_dict.get_value("malware")
+        ids_dict["layer3"] = id_dict.get_value("attack-pattern")
+        ids_dict["layer4"] = id_dict.get_value("malware")
         ids_dict["layer5"] = id_dict.get_value("intrusion-set")
     else:
         ids_dict["layer3"] = id_dict.get_value("attack-pattern")

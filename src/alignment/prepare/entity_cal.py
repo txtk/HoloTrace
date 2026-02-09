@@ -69,14 +69,10 @@ def calculate_layer_nums(suffix, entity_id_dict, neo4j_type):
 
 def entity_layer_num(start, end, target_id, neo4j_static_dict, target_layer, neo4j_type):
     neo4j_static_dict = neo4j_static_dict.get_value(neo4j_type)
-    # start_type = list(start.keys())[0]
-    # if start[start_type]["unique_id"] == target_id:
     if start["unique_id"] == target_id:
         related_entity = end
     else:
         related_entity = start
-    # related_entity_type = list(related_entity.keys())[0]
-    # related_entity = related_entity[related_entity_type]
 
     if related_entity.get("semantic") == 0:
         return None, 0
@@ -136,63 +132,6 @@ def count_down_total(layer, neo4j_static_dict, neo4j_type):
         down_total += neo4j_static_dict.get_value(neo4j_type).get(down_layer, 0)
     return down_total
 
-
-def calculate_compression_complexity(text: str) -> float:
-    """
-    计算给定文本的压缩率复杂度。
-
-    复杂度得分是压缩后的大小与原始大小的比率。
-    比率越高（越接近1.0），说明文本的信息密度越高、模式越少，即越复杂。
-    比率越低（越接近0），说明文本越冗余、模式越多，即越简单。
-
-    Args:
-        text: 需要计算复杂度的输入字符串。
-
-    Returns:
-        一个浮点数，表示文本的复杂度得分。如果输入为空或无效，则返回0.0。
-    """
-    # 步骤1: 处理无效输入
-    # 如果文本为空或不是字符串，我们认为其复杂度为0。
-    if not text or not isinstance(text, str):
-        return 0.0
-
-    # 步骤2: 将字符串编码为字节
-    # 压缩算法处理的是字节（bytes），而不是Python中的抽象字符串（str）。
-    # 我们使用UTF-8编码，这是最通用和标准的编码格式。
-    original_bytes = text.encode("utf-8")
-
-    # 步骤3: 压缩字节数据
-    compressed_bytes = zlib.compress(original_bytes)
-
-    # 步骤4: 计算原始大小和压缩后的大小
-    original_size = len(original_bytes)
-    compressed_size = len(compressed_bytes)
-
-    # 再次检查原始大小以避免除以零的错误（尽管在步骤1已处理）
-    if original_size == 0:
-        return 0.0
-
-    # 步骤5: 计算并返回比率
-    complexity_ratio = compressed_size / original_size
-
-    return complexity_ratio
-
-
-def weight_calculate(structural_scores, semantic_scores):
-    structural_scores = np.array(structural_scores)
-    semantic_scores = np.array(semantic_scores)
-
-    # 计算均值
-    mean_struct = np.mean(structural_scores)
-    mean_sem = np.mean(semantic_scores)
-
-    total_mean = mean_struct + mean_sem
-    if total_mean == 0:
-        w1, w2 = 0.5, 0.5
-    else:
-        w1 = mean_sem / total_mean
-        w2 = mean_struct / total_mean
-    return w1, w2
 
 # 如果没有上层节点，则整体为0
 def get_discrimination(up_num: int, up_total: int):

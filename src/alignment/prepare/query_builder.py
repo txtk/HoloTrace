@@ -9,7 +9,6 @@ from utils.vector.query_builders import (
     TermsQueryBuilder,
 )
 
-
 class QueryBuilder:
     # 优先级配置：字段名 -> 权重
     PRIORITY_BOOSTS = {"related_groups": 0.1, "related_malwares": 0.1, "related_attcks": 0.1}

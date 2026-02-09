@@ -1,0 +1,39 @@
+{
+    "layer_list": [
+        "layer1",
+        "layer2",
+        "layer3",
+        "layer4",
+        "layer5"
+    ],
+    "source": {
+        "layer1": 749,
+        "layer2": 136,
+        "layer3": 591,
+        "layer4": 336,
+        "layer5": 114,
+        "Infrastructure": "layer1",
+        "Vulnerability": "layer1",
+        "Identity": "layer1",
+        "Location": "layer1",
+        "Indicator": "layer2",
+        "attack-pattern": "layer3",
+        "malware": "layer4",
+        "intrusion-set": "layer5"
+    },
+    "target": {
+        "layer1": 2540,
+        "layer2": 378,
+        "layer3": 1947,
+        "layer4": 1216,
+        "layer5": 85,
+        "Infrastructure": "layer1",
+        "Vulnerability": "layer1",
+        "Identity": "layer1",
+        "Location": "layer1",
+        "Indicator": "layer2",
+        "attack-pattern": "layer3",
+        "malware": "layer4",
+        "intrusion-set": "layer5"
+    }
+}

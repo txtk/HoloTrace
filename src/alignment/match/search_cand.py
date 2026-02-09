@@ -159,36 +159,6 @@ def search_candidates(
     name_to_id = defaultdict(set)
     for entity_id in results_dict:
         entity = results_dict.get(entity_id)
-
-        # 优化：判断 ground_truth 是否在候选集中
-        # 如果 ground_truth 既不在 profile 搜索的前top_k名，也不在 ioc 搜索结果中
-        # 则该样本不需要进行后续的模型重排序
-        # gt_ids = entity.get("groud_truth", [])
-
-        # # 获取 ioc 搜索结果中的 id 集合
-        # ioc_cands = ioc_cand_dict.get(entity_id, [])
-        # ioc_cand_ids = {str(c["id"]) for c in ioc_cands}
-
-        # valid_sample = False
-        # for gt_id in gt_ids:
-        #     gt_id = str(gt_id)
-        #     # 1. 检查 profile 排名是否在前top_k
-        #     # search_by_profile 中已经计算了 rank，若 <= top_k 意味着出现在 candidates 中
-        #     rank = entity.get("ground_truth_rank", {}).get(gt_id, -1)
-        #     flag_profile = rank != -1 and rank <= top_k
-
-        #     # 2. 检查是否在 ioc 搜索结果中
-        #     flag_ioc = gt_id in ioc_cand_ids
-
-        #     if flag_profile or flag_ioc:
-        #         valid_sample = True
-        #         break
-
-        # if not valid_sample:
-        #     results_dict[entity_id]["ground_truth_rank_new"] = copy.deepcopy(entity.get("ground_truth_rank", {}))
-        #     results_dict[entity_id]["candidates"] = []
-        #     continue
-
         ioc_content = []
         if is_ioc_mode:
             ioc_content = make_content(entity_id, ioc_cand_dict, target_attribute_dict, name_to_id)

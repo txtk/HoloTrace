@@ -1,6 +1,8 @@
 import asyncio
+import time
 from os import path
 
+import numpy as np
 from loguru import logger
 
 from config import match_mode_aadm, match_mode_mine, match_mode_test, profile_mode_aadm, settings
@@ -15,10 +17,11 @@ from utils.vector.vector_manager import ElasticsearchVectorManager
 from .eval.run_eval import run_evaluation
 from .match.match import match
 from .profile.get_profile import profile
+from .prepare.prepare import pre_process
 
 
 def align(suffix, test_mode=False, recreate=False):
-    mine_dir = PathUtils.path_concat(settings.dataset_dir, suffix, "traditional_save")
+    mine_dir = PathUtils.path_concat(settings.dataset_dir, suffix)
     source_triple_path = path.join(mine_dir, "source_tuples.txt")
     target_attribute_path = path.join(mine_dir, "target_attributes.json")
     source_attribute_path = path.join(mine_dir, "source_attributes.json")
@@ -66,7 +69,7 @@ def align(suffix, test_mode=False, recreate=False):
 
 
 async def generate_profile(suffix, rag_malware, rag_attck, rag_group, recreate=False):
-    mine_dir = PathUtils.path_concat(settings.dataset_dir, suffix, "traditional_save")
+    mine_dir = PathUtils.path_concat(settings.dataset_dir, suffix)
     target_triple_path = path.join(mine_dir, "target_tuples.txt")
     source_triple_path = path.join(mine_dir, "source_tuples.txt")
     target_attribute_path = path.join(mine_dir, "target_attributes.json")
@@ -77,8 +80,8 @@ async def generate_profile(suffix, rag_malware, rag_attck, rag_group, recreate=F
     source_vector_path = path.join(mine_dir, "source_vectors.pkl")
     source_target_path = path.join(mine_dir, "target_source_labels.json")
     last_items = JsonUtils(path.join(settings.json_dir, f"layer_{suffix}.json")).get_value("all")
-    # pre_process(suffix, mine_dir, "source", rag_malware, rag_attck, rag_group, force=False)
-    # pre_process(suffix, mine_dir, "target", rag_malware, rag_attck, rag_group, force=False)
+    pre_process(suffix, mine_dir, "source", rag_malware, rag_attck, rag_group, force=False)
+    pre_process(suffix, mine_dir, "target", rag_malware, rag_attck, rag_group, force=False)
     if suffix == "aadm":
         profile_mode = profile_mode_aadm
     else:
@@ -110,15 +113,9 @@ async def generate_profile(suffix, rag_malware, rag_attck, rag_group, recreate=F
             is_hsage=is_hsage,
             profile_name=profile_name,
         )
-    # await tokenizer(suffix, mine_dir)
-    # await test(suffix, mine_dir)
 
 
 async def main():
-    import time
-
-    import numpy as np
-
     rag_malware = ElasticsearchVectorManager(index_name="rag_malware", mappings=malware_mappings)
     rag_attck = ElasticsearchVectorManager(index_name="rag_attck", mappings=attck_mappings)
     rag_group = ElasticsearchVectorManager(index_name="rag_group", mappings=group_mappings)
@@ -127,7 +124,7 @@ async def main():
     all_runs_results = []
     run_times = []
 
-    num_runs = 1
+    num_runs = 5
     for run_idx in range(num_runs):
         logger.info(f"======== 第 {run_idx + 1} / {num_runs} 次整体流程运行开始 ========")
         start_time = time.time()
@@ -144,19 +141,15 @@ async def main():
     if not all_runs_results:
         return
 
-    print(f"\n平均运行耗时: {np.mean(run_times):.2f} 秒")
-
-    # 结构: all_runs_results -> [run1_dict, run2_dict, ...]
-    # run_dict -> { mode_key: { gt_key: { metric: val } } }
-
+    logger.info(f"\n平均运行耗时: {np.mean(run_times):.2f} 秒")
     # 获取所有的模式和 GT 属性键
     sample_res = all_runs_results[0]
     for mode_key, gt_dict in sample_res.items():
-        print("\n==================================================")
-        print(f"模式平均性能 (ioc={mode_key[0]}, hybrid={mode_key[1]}, profile={mode_key[2]}, top_k={mode_key[3]})")
-        print("==================================================")
+        logger.info("\n==================================================")
+        logger.info(f"模式平均性能 (ioc={mode_key[0]}, hybrid={mode_key[1]}, profile={mode_key[2]}, top_k={mode_key[3]})")
+        logger.info("==================================================")
         for gt_key in gt_dict.keys():
-            print(f"Ground Truth Key: {gt_key}")
+            logger.info(f"Ground Truth Key: {gt_key}")
             # 收集 5 次运行中该模式和 GT 键下的所有指标
             aggregated_metrics = {}
             for run_res in all_runs_results:
@@ -169,10 +162,7 @@ async def main():
             # 计算并打印平均值
             for m_name, m_vals in aggregated_metrics.items():
                 avg_val = np.mean(m_vals)
-                print(f"  {m_name}: {avg_val:.4f}")
-    # await generate_profile("mine")
-    # check()
-
+                logger.info(f"  {m_name}: {avg_val:.4f}")
 
 if __name__ == "__main__":
     asyncio.run(main())

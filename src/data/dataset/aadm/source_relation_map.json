@@ -1,0 +1,19 @@
+{
+    "indicates": 0,
+    "uses": 1,
+    "variant_of": 2,
+    "targets": 3,
+    "attributed-to": 4,
+    "exploits": 5,
+    "discloses": 6,
+    "responds-to": 7,
+    "spoofs": 8,
+    "impersonates": 9,
+    "accesses_from": 10,
+    "bypasses": 11,
+    "used_by": 12,
+    "communicates_with": 13,
+    "collaborates-with": 14,
+    "funded-by": 15,
+    "supports": 16
+}

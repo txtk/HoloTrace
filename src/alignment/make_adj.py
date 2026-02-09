@@ -3,25 +3,6 @@ from collections import defaultdict
 from loguru import logger
 
 def find_directed_links(file_path):
-    """
-    从有向三元组文件中读取数据，构建两个邻接表：
-    1. 存储每个实体的出向链接 (outgoing)
-    2. 存储每个实体的入向链接 (incoming)
-    
-    数据结构:
-    - 键: 实体 ID (int)
-    - 值: 一个列表 (list)，包含多个元组 (tuple)
-    - 元组格式: (relationship_id, neighbor_id)
-    
-    参数:
-        file_path (str): 包含三元组的 .txt 文件路径。
-        
-    返回:
-        tuple: (outgoing_links, incoming_links, all_entities)
-        - outgoing_links (dict): 存储出向链接的字典
-        - incoming_links (dict): 存储入向链接的字典
-        - all_entities (set): 包含所有实体ID的集合
-    """
     # 使用 defaultdict(list)，因为一个实体可以有多个（重复的）出向/入向链接
     # 例如 (e1, r1, e2) 和 (e1, r2, e2) 是两条不同的出向链接
     outgoing_links = defaultdict(list)

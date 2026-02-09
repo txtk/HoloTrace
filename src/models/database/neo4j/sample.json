@@ -1,0 +1,102 @@
+[
+    {
+        "source_name": "External analysis",
+        "url": "https://www.microsoft.com/en-us/security/blog/2025/07/31/frozen-in-transit-secret-blizzards-aitm-campaign-against-diplomats/",
+        "external_id": "6555beb0-4c70-4b54-9931-4924c1f08a45"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west",
+        "external_id": "f0d826b2-c8b6-4243-8d54-a13e862476a0"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.mnemonic.io/resources/blog/advisory-check-point-remote-access-vpn-vulnerability-cve-2024-24919/",
+        "external_id": "6d30f9a7-3003-4ae6-b345-95194f84ea0f"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://cert.pl/posts/2024/05/apt28-kampania/",
+        "external_id": "fee1f798-295d-44bd-b84c-49ff4a2f4308"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://unit42.paloaltonetworks.com/threat-brief-sap-netweaver-cve-2025-31324/",
+        "external_id": "a379af01-7463-48fb-9f7d-22797cde3366"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://spur.us/astrill-vpn-and-remote-worker-fraud/",
+        "external_id": "1ac463de-0f64-4b8a-afcf-3b36ebc72940"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://blog.sekoia.io/mamba-2fa-a-new-contender-in-the-aitm-phishing-ecosystem/",
+        "external_id": "f59e905e-25d7-49a7-9540-d3999839627b"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.lookout.com/threat-intelligence/article/gamaredon-russian-android-surveillanceware",
+        "external_id": "1a6dd2cb-93b6-4b31-869e-a3cb97ab0aa2"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.cyderes.com/blog/mitigating-brute-force-attacks-on-netscaler-devices",
+        "external_id": "693f4d2c-369e-402c-bc1f-c644029c9653"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.seqrite.com/blog/operation-cobalt-whisper-targets-industries-hong-kong-pakistan/",
+        "external_id": "1b6e34a2-0ed7-478c-8290-d9b17e3493b9"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.trendmicro.com/en_us/research/24/k/earth-estries.html",
+        "external_id": "12509bbd-6a44-4cc2-8c9e-dcd3eb16d482"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/fortimanager-zero-day-exploitation-cve-2024-47575",
+        "external_id": "c93c0dc0-4fee-43dd-ab23-800a7513c947"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.group-ib.com/blog/dragonforce-ransomware/",
+        "external_id": "464cd9cf-83af-4c02-a93c-5189ba70537d"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://blog.cloudflare.com/unraveling-sloppylemming-operations/",
+        "external_id": "5e4cd5f4-3f35-4cc5-abb6-be0069582d44"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.trendmicro.com/en_us/research/24/i/earth-lusca-ktlvdoor.html",
+        "external_id": "834275a2-e24c-4d3b-8197-755d5f702269"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.welivesecurity.com/en/eset-research/ngate-android-malware-relays-nfc-traffic-to-steal-cash/",
+        "external_id": "404f429d-75fe-45c5-a62f-d025e478fe8b"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://www.cloudsek.com/blog/major-payment-disruption-ransomware-strikes-indian-banking-infrastructure",
+        "external_id": "dda31944-e00b-4734-9d11-9b4e6e1ddbd3"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://otx.alienvault.com/pulse/66c4555e556813d00bc88ab4",
+        "external_id": "340d75a7-70ed-478c-892a-7c4f5569b271"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://blogs.infoblox.com/threat-intelligence/rdgas-the-next-chapter-in-domain-generation-algorithms/",
+        "external_id": "41667fe2-4456-4354-9068-379072c9b7f7"
+    },
+    {
+        "source_name": "External analysis",
+        "url": "https://news.sophos.com/en-us/2024/02/23/connectwise-screenconnect-attacks-deliver-malware/",
+        "external_id": "cd7cc81c-2a76-410d-ba7e-cc1b8fe2a068"
+    }
+]

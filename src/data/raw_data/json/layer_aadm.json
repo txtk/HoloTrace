@@ -1,0 +1,30 @@
+{
+    "layer1": [
+        "Infrastructure",
+        "Vulnerability",
+        "Identity",
+        "Location"
+    ],
+    "layer2": [
+        "Indicator"
+    ],
+    "layer3": [
+        "attack-pattern"
+    ],
+    "layer4": [
+        "malware"
+    ],
+    "layer5": [
+        "intrusion-set"
+    ],
+    "all": [
+        "Location",
+        "Infrastructure",
+        "Vulnerability",
+        "Identity",
+        "Indicator",
+        "attack-pattern",
+        "malware",
+        "intrusion-set"
+    ]
+}

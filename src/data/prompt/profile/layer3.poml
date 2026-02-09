@@ -28,10 +28,6 @@
             2. <b>Wrapper</b>: Enclose the final result in `[profile]` tags.
             3. <b>Content</b>: No fluff. Every sentence must add technical value.
         </Paragraph>
-        <!-- <Example>
-            <input>节点自身信息: {"phase_names":["initial-access"], "name": {"T1566"}, "aliases": {"Phishing"}, "platforms": ["macos", "linux", "windows", "Office Suite", "Identity Provider", "SaaS"]}. 邻居信息:{"vulnerability":["CVE-2022-31199"]}</input>
-            <output>[profile]Phishing, identified by the ATT&amp;CK ID T1566, is a prominent technique leveraged under the Initial Access tactic that poses a significant threat across diverse platforms including macOS, Linux, Windows, Office Suite, Identity Providers, and SaaS environments. This attack pattern operates on the principle of social engineering where adversaries send deceptive communications, often containing malicious attachments or links, to trick victims into executing code or revealing sensitive information, frequently utilizing specific exploits such as CVE-2022-30190 or CVE-2023-38831 to weaponize documents and archives for successful system compromise.[profile]</output>
-        </Example> -->
     </system-msg>
     <HumanMessage>
     <Task>Strictly follow the system instructions to generate the entity profile.</Task>

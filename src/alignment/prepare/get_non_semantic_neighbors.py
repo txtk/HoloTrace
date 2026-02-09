@@ -16,7 +16,6 @@ def judge_semantic(triplets, target_id):
             no_semantics.append(related_entity["name"])
     return no_semantics
 
-
 def get_non_semantic_neighbors(suffix, attribute_dict, outgoing, incoming, entities):
     for id, entity in attribute_dict.get_items():
         start_triplets, end_triplets = find_neighbours(id, outgoing, incoming, entities, attribute_dict)

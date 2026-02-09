@@ -3,8 +3,6 @@
 *.egg-info
 *.zip
 __pycache__
-dataset
-raw_data
 model
 temp
 pyproject.toml
