@@ -28,7 +28,7 @@ def align(suffix, test_mode=False, recreate=False):
     source_target_path = path.join(mine_dir, "target_source_labels.json")
     if test_mode:
         match_mode = match_mode_test
-    elif suffix == "mine":
+    elif suffix == "heaa":
         match_mode = match_mode_mine
     elif suffix == "aadm":
         match_mode = match_mode_aadm
@@ -120,7 +120,7 @@ async def main():
     rag_attck = ElasticsearchVectorManager(index_name="rag_attck", mappings=attck_mappings)
     rag_group = ElasticsearchVectorManager(index_name="rag_group", mappings=group_mappings)
 
-    suffix = "mine"
+    suffix = "heaa"
     all_runs_results = []
     run_times = []
 
