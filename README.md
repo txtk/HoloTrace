@@ -1,10 +1,10 @@
-# Beyond Classification: Zero-Shot Threat Attribution for Open-World APTs via Semantic Graph Alignment
+# Beyond Classification: Threat Attribution for APTs via Entity-Level Semantic Alignment
 
-This repository contains the source code and datasets for the paper **"Beyond Classification: Zero-Shot Threat Attribution for Open-World APTs via Semantic Graph Alignment"**.
+This repository contains the source code and datasets for the paper **"Beyond Classification: Threat Attribution for APTs via Entity-Level Semantic Alignment"**.
 
 ## Introduction
 
-**HoloTrace** is a zero-shot, open-set threat attribution framework designed to overcome the limitations of traditional closed-set classification in Cyber Threat Intelligence (CTI).
+**HoloTrace** is a zero-shot, open-set threat attribution framework designed to overcome the limitations of traditional classification in Cyber Threat Intelligence (CTI).
 
 HoloTrace reformulates the attribution problem as an **entity-level semantic alignment** task. It projects threat graphs into a four-layer pyramid structure and uses a frozen Large Language Model (LLM) to denoise from the bottom up. This approach maps heterogeneous behaviors into a unified semantic space, enabling robust identification of long-tail attackers and unseen threats without the need for predefined labels.
 
