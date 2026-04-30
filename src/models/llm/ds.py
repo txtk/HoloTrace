@@ -17,6 +17,9 @@ class DS:
             #     "type": "enabled",
             # }},
         )
+        import utils.llm_use
+        if hasattr(response, 'usage') and response.usage:
+            utils.llm_use.total_tokens_used += response.usage.total_tokens
         return self.result_handler(response)
 
     def result_handler(self, response):

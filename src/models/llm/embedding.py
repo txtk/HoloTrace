@@ -11,13 +11,13 @@ class Embedding:
 
     def embed_query(self, text: str, dimensions) -> List[float]:
         """
-        为单个查询文本生成向量。
-
-        参数:
-            text (str): 需要向量化的单个查询文本。
-
-        返回:
-            List[float]: 代表该查询文本的向量。
+            Generate an embedding vector for a single query text.
+            
+            Args:
+                text (str): Single query text to vectorize.
+            
+            Returns:
+                List[float]: Vector representation of the query text.
         """
         if not isinstance(text, str):
             print("输入内容不对: ", text)
@@ -26,7 +26,7 @@ class Embedding:
         try:
             response = self.client.embeddings.create(
                 model=settings.embedding,
-                input=[text],  # API需要一个列表作为输入
+                input=[text],  # The API expects a list as input
                 dimensions=dimensions,
             )
             return response.data[0].embedding
@@ -36,13 +36,13 @@ class Embedding:
 
     def embed_documents(self, texts: List[str], dimensions) -> List[List[float]]:
         """
-        为多个文本生成向量，支持批次处理（每批最多100个）。
-
-        参数:
-            texts (List[str]): 需要向量化的文本列表。
-
-        返回:
-            List[List[float]]: 代表这些文本的向量列表。
+            Generate embedding vectors for multiple texts, with batch processing support.
+            
+            Args:
+                texts (List[str]): Text list to vectorize.
+            
+            Returns:
+                List[List[float]]: Vector representations of the input texts.
         """
         if not isinstance(texts, list):
             raise TypeError("输入必须是一个列表。")

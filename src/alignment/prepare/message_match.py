@@ -36,7 +36,7 @@ def match_by_dict(query_builder, match_dict, rag_vector_manager: ElasticsearchVe
                 )
             elif k == "match":
                 query = query_builder.build_match_query(v.get("field"), v.get("value"))
-            # 搜索并返回第一个超过阈值的结果
+            # Search and return the first result above the threshold
             hits, _ = rag_vector_manager.perform_search_detailed(query)
             for hit in hits:
                 if k == "knn":
@@ -51,7 +51,7 @@ def match_by_dict(query_builder, match_dict, rag_vector_manager: ElasticsearchVe
 def message_match(attribute_dict, rag_malware, rag_attck, rag_group, force=False):
     query_builder = QueryBuilder()
 
-    # 1. 收集所有需要 embedding 的名称
+    # 1. Collect all names that need embeddings
     names_to_embed = []
     items_to_process = []
     for _, value in attribute_dict.get_items():
@@ -62,7 +62,7 @@ def message_match(attribute_dict, rag_malware, rag_attck, rag_group, force=False
         if name and value.get("vector") is None:
             names_to_embed.append(name)
 
-    # 2. 批量获取 embedding
+    # 2. Fetch embeddings in batches
     if names_to_embed:
         unique_names = list(set(names_to_embed))
         embeddings = get_embedding_celery(unique_names)
@@ -73,7 +73,7 @@ def message_match(attribute_dict, rag_malware, rag_attck, rag_group, force=False
             if value.get("vector") is None and name in name_to_vector:
                 value["vector"] = name_to_vector[name]
 
-    # 3. 执行匹配逻辑
+    # 3. Run matching logic
     for value in items_to_process:
         if force:
             value.pop("uncertain_related_groups", None)
@@ -116,20 +116,20 @@ def message_match(attribute_dict, rag_malware, rag_attck, rag_group, force=False
 
 def threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group):
     """
-    通过分析数据寻找 KNN 匹配的最佳阈值。
-    1. 使用严格的文本匹配 (Score > 10) 确定 Ground Truth。
-    2. 对这些样本执行 KNN 查询并记录正确结果与干扰结果的分数。
-    3. 输出统计学建议，寻找 0 误报的阈值。
+    Find the best KNN matching threshold by analyzing the data.
+    1. Use strict text matching (Score > 10) to determine Ground Truth.
+    2. Run KNN queries on these samples and record scores for correct and distractor results.
+    3. Output statistical suggestions and look for a zero-false-positive threshold.
     """
 
     query_builder = QueryBuilder()
 
     stats = {"correct_scores": [], "incorrect_scores": []}
 
-    # 遍历所有待匹配属性
+    # Iterate over all attributes to match
     items = list(attribute_dict.get_items())
 
-    # 1. 批量获取所有需要 embedding 的向量
+    # 1. Batch-fetch all vectors that need embeddings
     names_to_embed = []
     for _, value in items:
         name = value.get("name", "").lower()
@@ -151,12 +151,12 @@ def threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group):
         if not name or not entity_type:
             continue
 
-        # 获取向量
+        # Get vectors
         vector = value.get("vector")
         if vector is None:
             continue
 
-        # 选择对应的 RAG 管理器和严格匹配方案
+        # Select the corresponding RAG manager and strict matching strategy
         rag_manager = None
         strict_query = None
 
@@ -173,8 +173,8 @@ def threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group):
         if not rag_manager or not strict_query:
             continue
 
-        # 1. 首先通过设定严格的 score 判定，筛选出一定匹配成功了的数据 (Ground Truth)
-        # 非向量搜索的分数通常较高，这里设为 10 代表极大的文本相关性
+        # 1. First filter definite matches by setting a strict score threshold (Ground Truth)
+        # Non-vector search scores are usually higher; 10 indicates very strong text relevance here
         strict_results, _ = rag_manager.perform_search_detailed(strict_query)
         ground_truth_name = None
         if strict_results and strict_results[0].get("_score", 0) > 5:
@@ -183,23 +183,23 @@ def threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group):
         if not ground_truth_name:
             continue
 
-        # 2. 使用这些成功了的数据进行 KNN 匹配，并统计其中正确的 _score 和 错误的 _score
+        # 2. Use these successful samples for KNN matching and collect correct and incorrect _score values
         knn_query = query_builder.build_knn_query("name_vector", vector, priority=False)
         knn_results, _ = rag_manager.perform_search_detailed(knn_query)
 
         for res in knn_results:
             score = res.get("_score")
-            # 记录正确匹配的分数
+            # Record scores for correct matches
             if res.get("name") == ground_truth_name:
                 stats["correct_scores"].append(score)
             else:
-                # 记录所有非正确匹配的分数（作为背景噪声）
+                # Record scores for all incorrect matches as background noise
                 stats["incorrect_scores"].append(score)
 
-    # 保存计算出的向量以便后续使用
+    # Save computed vectors for later use
     attribute_dict.save_json()
 
-    # 3. 统计与分析显示
+    # 3. Statistics and analysis display
     c_scores = stats["correct_scores"]
     i_scores = stats["incorrect_scores"]
 
@@ -234,7 +234,7 @@ def threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group):
             print(f"--> 建议阈值: {(min_signal + max_noise) / 2:.5f}")
         else:
             print(f"信号与噪声存在重叠区域 (重叠区间: {min_signal:.5f} to {max_noise:.5f})。")
-            # 寻找 0 误报阈值
+            # Find the zero-false-positive threshold
             zero_fp_threshold = max_noise + 0.00001
             tp_above = sum(1 for s in c_scores if s >= zero_fp_threshold)
             recall = tp_above / len(c_scores)

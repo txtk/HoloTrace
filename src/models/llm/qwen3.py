@@ -13,20 +13,26 @@ class Qwen3:
             model=settings.qwen_qa,
             messages=[{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}],
             temperature=settings.temperature,
-            stream=False,  # 如果你的服务支持流式输出，可以设为 True
+            stream=False,  # Set this to True if your service supports streaming output
         )
-
+        import utils.llm_use
+        if hasattr(response, 'usage') and response.usage:
+            utils.llm_use.total_tokens_used += response.usage.total_tokens
         return self.result_handler(response)
 
     def send_request_poml(self, poml_content):
         response = self.client.chat.completions.create(
             **poml_content, model=settings.qwen_qa, temperature=settings.temperature, stream=False
         )
+        import utils.llm_use
+        if hasattr(response, 'usage') and response.usage:
+            utils.llm_use.total_tokens_used += response.usage.total_tokens
         return self.result_handler(response)
 
     def result_handler(self, response):
         result = response.choices[0].message.content
-        result = result.split("</think>")[1].strip()
+        if "</think>" in result:
+            result = result.split("</think>")[1].strip()
         return result
 
 

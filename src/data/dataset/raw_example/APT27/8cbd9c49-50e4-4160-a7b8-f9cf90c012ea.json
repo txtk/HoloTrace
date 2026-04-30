@@ -1,0 +1,1252 @@
+{
+  "type": "bundle",
+  "id": "bundle--da74b3c0-12e8-4809-b5cb-c32fb28c3b4f",
+  "objects": [
+    {
+      "id": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "spec_version": "2.1",
+      "identity_class": "organization",
+      "name": "AlienVault",
+      "created": "2025-08-14T06:57:56.667Z",
+      "modified": "2025-08-14T06:57:56.667Z",
+      "x_opencti_id": "2de10173-ae21-4c9b-b92f-ba39f0b4f88f",
+      "x_opencti_type": "Organization",
+      "type": "identity"
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9",
+      "created": "2017-01-20T00:00:00.000Z",
+      "definition_type": "tlp",
+      "name": "TLP:CLEAR",
+      "definition": {
+        "tlp": "clear"
+      }
+    },
+    {
+      "id": "report--09df5f95-da68-5a16-8719-84606583e014",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2023-09-28T19:23:38.900Z",
+      "modified": "2025-08-14T15:00:00.307Z",
+      "name": "Budworm: APT Group Uses Updated Custom Tool in Attacks on Government and Telecoms Org",
+      "description": "The Budworm advanced persistent threat (APT) group continues to actively develop its toolset. Most recently, the Threat Hunter Team in Symantec, part of Broadcom, discovered Budworm using an updated version of one of its key tools to target a Middle Eastern telecommunications organization and an Asian government.",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2023-09-28T19:23:38.900Z",
+      "x_opencti_workflow_id": "f26c68fe-e1e3-4efd-83ba-69ac97aa2662",
+      "labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "external_references": [
+        {
+          "source_name": "AlienVault",
+          "url": "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/budworm-tool-update-telecoms-govt"
+        },
+        {
+          "source_name": "AlienVault",
+          "url": "https://otx.alienvault.com/pulse/6515d2bb68b97cd0acd7dee7",
+          "external_id": "6515d2bb68b97cd0acd7dee7"
+        }
+      ],
+      "x_opencti_id": "8cbd9c49-50e4-4160-a7b8-f9cf90c012ea",
+      "x_opencti_type": "Report",
+      "type": "report",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "object_refs": [
+        "relationship--29433bb4-4e6f-5b68-a5cc-9bbf8e7aa0b0",
+        "relationship--b8da4ab4-e899-5fec-b067-dd40fb3fb21e",
+        "relationship--b1327eee-79e1-5887-8003-fb4e8561e063",
+        "relationship--fce9bd70-fd14-5cd9-9485-a8dc3b78049e",
+        "relationship--a71e5c5a-d7f0-5ace-a59a-46b35367a8c7",
+        "relationship--5bd5826e-3e00-5572-ac79-95f3ef655edb",
+        "relationship--088c7f32-020f-536d-81d8-6b684a771e76",
+        "relationship--4e9fccd9-28a7-5e05-95c3-96e103d7cadf",
+        "relationship--750f5f7b-a885-58a7-96af-a92e42c23b99",
+        "relationship--74a501dc-a43f-5014-aa5c-9dbfc976175e",
+        "relationship--403c7d08-5f55-5762-8b6f-4b896b85b27f",
+        "relationship--caad9e3d-2aff-52ec-b6af-969624061098",
+        "relationship--e606ae28-95df-5055-97ba-626d424c2990",
+        "relationship--73fd424d-5af5-503c-9879-59aa943e44ef",
+        "relationship--c9bc1080-f155-5e17-b369-e4e0869c52d0",
+        "indicator--d5b2e7fb-f747-5a34-9ac3-54a26969a9df",
+        "indicator--10c233bd-b3ad-57c8-8553-f45bb830cc4d",
+        "indicator--36272714-a7a4-512b-99ee-a6befc178432",
+        "indicator--e0528298-999e-561f-9365-beab150384e8",
+        "indicator--2f514d20-0bae-5e6b-915c-f6e5df2d6b3a",
+        "file--27ba07fd-b247-5a85-aef1-cdffeee481e3",
+        "file--5e4623fb-af28-52ad-a6c5-a015bcb9fcc4",
+        "file--3ccbc960-347d-5a37-84b0-32a79f1497af",
+        "file--89a0ac21-2fff-5e97-9993-86958e0905e9",
+        "file--848d7c22-7ff0-5a31-b4ba-31eb28a6f9f3",
+        "relationship--bac3d7f0-5015-5a74-97fa-3253ca37ee4a",
+        "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+        "relationship--930e446d-d62b-5abf-ba7c-db7d53c6738a",
+        "indicator--3366b4c4-f95f-5f55-b495-cf8f0572c60b",
+        "file--ea3fd675-b61d-5fd3-be51-25150996289b",
+        "attack-pattern--be8b782f-8ecd-5dd6-817b-9a97173465ca",
+        "attack-pattern--f08fb7d2-2923-5026-90d7-23a411d2448b",
+        "attack-pattern--8e5098a8-6e57-5678-9512-577498aafb0e",
+        "attack-pattern--8cec97dd-45a4-5932-9028-a0ed04065fa6",
+        "attack-pattern--033921be-85df-5f05-8bc0-d3d9fc945db9"
+      ]
+    },
+    {
+      "id": "relationship--29433bb4-4e6f-5b68-a5cc-9bbf8e7aa0b0",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.760Z",
+      "modified": "2025-08-14T15:00:00.011Z",
+      "x_opencti_id": "9fbaa8a4-08c8-4c06-ab14-4924ff140775",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--3366b4c4-f95f-5f55-b495-cf8f0572c60b",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--b8da4ab4-e899-5fec-b067-dd40fb3fb21e",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.760Z",
+      "modified": "2025-08-14T14:59:59.917Z",
+      "x_opencti_id": "72752064-cd27-404b-8137-f884fe144096",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--d5b2e7fb-f747-5a34-9ac3-54a26969a9df",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--b1327eee-79e1-5887-8003-fb4e8561e063",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.759Z",
+      "modified": "2025-08-14T14:59:59.870Z",
+      "x_opencti_id": "254c3696-44ea-46c6-979f-2a90e20fca7d",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--10c233bd-b3ad-57c8-8553-f45bb830cc4d",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--fce9bd70-fd14-5cd9-9485-a8dc3b78049e",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.759Z",
+      "modified": "2025-08-14T14:59:59.744Z",
+      "x_opencti_id": "6b577c8d-b6eb-41c8-8f1f-af8bf9195bb2",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--36272714-a7a4-512b-99ee-a6befc178432",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--a71e5c5a-d7f0-5ace-a59a-46b35367a8c7",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.759Z",
+      "modified": "2025-08-14T14:59:59.710Z",
+      "x_opencti_id": "6b3fcb66-f457-4628-88f5-623a6f28e03b",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--e0528298-999e-561f-9365-beab150384e8",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--5bd5826e-3e00-5572-ac79-95f3ef655edb",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.758Z",
+      "modified": "2025-08-14T14:59:59.558Z",
+      "x_opencti_id": "ccd4a13b-a123-445a-85a3-218a31f239d2",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2f514d20-0bae-5e6b-915c-f6e5df2d6b3a",
+      "target_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417"
+    },
+    {
+      "id": "relationship--088c7f32-020f-536d-81d8-6b684a771e76",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.755Z",
+      "modified": "2025-08-14T14:59:59.541Z",
+      "x_opencti_id": "6a7a61c9-80c5-48c2-83c3-06b070b42828",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--d5b2e7fb-f747-5a34-9ac3-54a26969a9df",
+      "target_ref": "file--27ba07fd-b247-5a85-aef1-cdffeee481e3"
+    },
+    {
+      "id": "relationship--4e9fccd9-28a7-5e05-95c3-96e103d7cadf",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.753Z",
+      "modified": "2025-08-14T14:59:59.370Z",
+      "x_opencti_id": "d9cf4fc4-5c4c-4db7-87a0-a554d8d59c5d",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--10c233bd-b3ad-57c8-8553-f45bb830cc4d",
+      "target_ref": "file--5e4623fb-af28-52ad-a6c5-a015bcb9fcc4"
+    },
+    {
+      "id": "relationship--750f5f7b-a885-58a7-96af-a92e42c23b99",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.751Z",
+      "modified": "2025-08-14T14:59:59.345Z",
+      "x_opencti_id": "d27e73d9-fbb1-437d-a25a-cc0ea8e375b1",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--36272714-a7a4-512b-99ee-a6befc178432",
+      "target_ref": "file--89a0ac21-2fff-5e97-9993-86958e0905e9"
+    },
+    {
+      "id": "relationship--74a501dc-a43f-5014-aa5c-9dbfc976175e",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.749Z",
+      "modified": "2025-08-14T14:59:59.324Z",
+      "x_opencti_id": "ad048fbf-c9ba-4b59-816a-cbfe765fc113",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--e0528298-999e-561f-9365-beab150384e8",
+      "target_ref": "file--3ccbc960-347d-5a37-84b0-32a79f1497af"
+    },
+    {
+      "id": "relationship--403c7d08-5f55-5762-8b6f-4b896b85b27f",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.746Z",
+      "modified": "2025-08-14T14:59:59.098Z",
+      "x_opencti_id": "b1945d8e-087a-431c-b9a3-ff586a1e6266",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2f514d20-0bae-5e6b-915c-f6e5df2d6b3a",
+      "target_ref": "file--848d7c22-7ff0-5a31-b4ba-31eb28a6f9f3"
+    },
+    {
+      "id": "relationship--caad9e3d-2aff-52ec-b6af-969624061098",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.743Z",
+      "modified": "2025-08-14T14:59:59.031Z",
+      "x_opencti_id": "312aa2c6-0824-477b-ad5d-bac198e71843",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "target_ref": "attack-pattern--033921be-85df-5f05-8bc0-d3d9fc945db9"
+    },
+    {
+      "id": "relationship--e606ae28-95df-5055-97ba-626d424c2990",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.744Z",
+      "modified": "2025-08-14T14:59:58.841Z",
+      "x_opencti_id": "9c7e6b65-4d7c-4fbe-a521-3b097f8839fd",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "target_ref": "attack-pattern--be8b782f-8ecd-5dd6-817b-9a97173465ca"
+    },
+    {
+      "id": "relationship--73fd424d-5af5-503c-9879-59aa943e44ef",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.743Z",
+      "modified": "2025-08-14T14:59:58.657Z",
+      "x_opencti_id": "59e2686f-9c28-487c-a092-42ff4e90d033",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "target_ref": "attack-pattern--f08fb7d2-2923-5026-90d7-23a411d2448b"
+    },
+    {
+      "id": "relationship--c9bc1080-f155-5e17-b369-e4e0869c52d0",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:25:55.742Z",
+      "modified": "2025-08-14T14:59:58.274Z",
+      "x_opencti_id": "97aaff63-e040-440d-948b-bf3266aecf6b",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "target_ref": "attack-pattern--8cec97dd-45a4-5932-9028-a0ed04065fa6"
+    },
+    {
+      "id": "indicator--d5b2e7fb-f747-5a34-9ac3-54a26969a9df",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:25:55.754Z",
+      "modified": "2025-08-14T14:59:58.174Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = 'df571c233c3c10462f4d88469bababe4c57c21a52cca80f2b1e1af848a2b4d23']",
+      "name": "df571c233c3c10462f4d88469bababe4c57c21a52cca80f2b1e1af848a2b4d23",
+      "valid_from": "2023-09-28T19:23:40.000Z",
+      "valid_until": "2024-12-31T19:23:40.000Z",
+      "x_opencti_score": 85,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "df571c233c3c10462f4d88469bababe4c57c21a52cca80f2b1e1af848a2b4d23"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "x_opencti_id": "847627aa-3925-4d15-8221-0a7cfe884015",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--10c233bd-b3ad-57c8-8553-f45bb830cc4d",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:25:55.752Z",
+      "modified": "2025-08-14T14:59:58.163Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = 'c501203ff3335fbfc258b2729a72e82638719f60f7e6361fc1ca3c8560365a0e']",
+      "name": "c501203ff3335fbfc258b2729a72e82638719f60f7e6361fc1ca3c8560365a0e",
+      "valid_from": "2023-09-28T19:23:40.000Z",
+      "valid_until": "2024-12-31T19:23:40.000Z",
+      "x_opencti_score": 85,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "c501203ff3335fbfc258b2729a72e82638719f60f7e6361fc1ca3c8560365a0e"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "x_opencti_id": "fe724f02-923b-468e-9e4c-a175bf0c70a1",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--36272714-a7a4-512b-99ee-a6befc178432",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:25:55.750Z",
+      "modified": "2025-08-14T14:59:57.999Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = 'c4f7ec0c03bcacaaa8864b715eb617d5a86b5b3ca6ee1e69ac766773c4eb00e6']",
+      "name": "c4f7ec0c03bcacaaa8864b715eb617d5a86b5b3ca6ee1e69ac766773c4eb00e6",
+      "valid_from": "2023-09-28T19:23:40.000Z",
+      "valid_until": "2024-12-31T19:23:40.000Z",
+      "x_opencti_score": 85,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "c4f7ec0c03bcacaaa8864b715eb617d5a86b5b3ca6ee1e69ac766773c4eb00e6"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "x_opencti_id": "211b65bd-d582-437a-9f6c-bb44a1d9064f",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--e0528298-999e-561f-9365-beab150384e8",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:25:55.747Z",
+      "modified": "2025-08-15T14:22:06.576Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = 'c3405d9c9d593d75d773c0615254e69d0362954384058ee970a3ec0944519c37']",
+      "name": "c3405d9c9d593d75d773c0615254e69d0362954384058ee970a3ec0944519c37",
+      "description": "nUFS_html\nSHA256 of 96ec8798bba011d5be952e0e6398795d",
+      "valid_from": "2025-05-19T08:41:21.000Z",
+      "valid_until": "2026-05-15T16:35:06.628Z",
+      "x_opencti_score": 80,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "c3405d9c9d593d75d773c0615254e69d0362954384058ee970a3ec0944519c37"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "asec",
+        "babuk",
+        "blueshell",
+        "cobaltstrike",
+        "cobint",
+        "confluence",
+        "curl",
+        "cve-2020-1472",
+        "cve-2021-26855",
+        "cve-2021-34527",
+        "cve-2023-22527",
+        "cve-2023-38831",
+        "dropper",
+        "elpaco-team",
+        "frpc",
+        "hacktivism",
+        "infrastructure sharing",
+        "inisafewebsso",
+        "kimsuky",
+        "lockbit",
+        "lockbit 3.0",
+        "lsass",
+        "metasploit",
+        "meterpreter",
+        "mimikatz",
+        "passworddumper",
+        "phantomjitter",
+        "ransomware",
+        "sbinrpcd",
+        "secretsdump",
+        "sliver",
+        "socks5",
+        "sparkrat",
+        "tmpkthread",
+        "troy",
+        "virustotal",
+        "webshell"
+      ],
+      "x_opencti_id": "26457e5e-1b7a-4590-8cb1-4e1213abed86",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--2f514d20-0bae-5e6b-915c-f6e5df2d6b3a",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:25:55.745Z",
+      "modified": "2025-08-14T14:59:57.758Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = '551397b680da0573a85423fbb0bd10dac017f061a73f2b8ebc11084c1b364466']",
+      "name": "551397b680da0573a85423fbb0bd10dac017f061a73f2b8ebc11084c1b364466",
+      "valid_from": "2023-09-28T19:23:40.000Z",
+      "valid_until": "2024-12-31T19:23:40.000Z",
+      "x_opencti_score": 85,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "551397b680da0573a85423fbb0bd10dac017f061a73f2b8ebc11084c1b364466"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "x_opencti_id": "d2f280b2-754a-49c7-bb04-2b454272bf9b",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--27ba07fd-b247-5a85-aef1-cdffeee481e3",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "df571c233c3c10462f4d88469bababe4c57c21a52cca80f2b1e1af848a2b4d23"
+      },
+      "x_opencti_id": "cdcc7c26-eee6-43b1-b03b-d631cc625cde",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--5e4623fb-af28-52ad-a6c5-a015bcb9fcc4",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "c501203ff3335fbfc258b2729a72e82638719f60f7e6361fc1ca3c8560365a0e"
+      },
+      "x_opencti_id": "5c210983-b259-48eb-9b70-be87ea5364be",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--3ccbc960-347d-5a37-84b0-32a79f1497af",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "c3405d9c9d593d75d773c0615254e69d0362954384058ee970a3ec0944519c37"
+      },
+      "x_opencti_id": "e0ef3887-f0cc-47c5-838f-ab5e9f2f309d",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "asec",
+        "babuk",
+        "blueshell",
+        "cobaltstrike",
+        "cobint",
+        "confluence",
+        "curl",
+        "cve-2020-1472",
+        "cve-2021-26855",
+        "cve-2021-34527",
+        "cve-2023-22527",
+        "cve-2023-38831",
+        "dropper",
+        "elpaco-team",
+        "frpc",
+        "hacktivism",
+        "infrastructure sharing",
+        "inisafewebsso",
+        "kimsuky",
+        "lockbit",
+        "lockbit 3.0",
+        "lsass",
+        "metasploit",
+        "meterpreter",
+        "mimikatz",
+        "passworddumper",
+        "phantomjitter",
+        "ransomware",
+        "sbinrpcd",
+        "secretsdump",
+        "sliver",
+        "socks5",
+        "sparkrat",
+        "tmpkthread",
+        "troy",
+        "virustotal",
+        "webshell"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--89a0ac21-2fff-5e97-9993-86958e0905e9",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "c4f7ec0c03bcacaaa8864b715eb617d5a86b5b3ca6ee1e69ac766773c4eb00e6"
+      },
+      "x_opencti_id": "5949d0c3-2319-4e0d-9d4f-3f78d597bbbe",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--848d7c22-7ff0-5a31-b4ba-31eb28a6f9f3",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "551397b680da0573a85423fbb0bd10dac017f061a73f2b8ebc11084c1b364466"
+      },
+      "x_opencti_id": "03d80c73-25f0-4d9f-8c17-ebed20462d89",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "curl",
+        "inisafewebsso",
+        "passworddumper",
+        "secretsdump"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--bac3d7f0-5015-5a74-97fa-3253ca37ee4a",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:19:59.990Z",
+      "modified": "2025-08-14T10:13:48.781Z",
+      "x_opencti_id": "2073a654-b277-478b-8c18-7b1d5be7c8ec",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "target_ref": "attack-pattern--8e5098a8-6e57-5678-9512-577498aafb0e"
+    },
+    {
+      "id": "intrusion-set--6272d4a6-8201-5978-ac46-021a202b6417",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:19:59.984Z",
+      "modified": "2025-08-14T10:13:39.114Z",
+      "name": "Budworm",
+      "x_opencti_id": "c778fe2b-d5c3-46a5-8609-ff4786efd92e",
+      "x_opencti_type": "Intrusion-Set",
+      "type": "intrusion-set",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--930e446d-d62b-5abf-ba7c-db7d53c6738a",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:19:47.289Z",
+      "modified": "2025-08-14T10:01:33.945Z",
+      "x_opencti_id": "802aad61-7cbc-4ba3-8b87-7d6876ab129f",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--3366b4c4-f95f-5f55-b495-cf8f0572c60b",
+      "target_ref": "file--ea3fd675-b61d-5fd3-be51-25150996289b"
+    },
+    {
+      "id": "indicator--3366b4c4-f95f-5f55-b495-cf8f0572c60b",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:19:47.288Z",
+      "modified": "2025-08-14T14:59:58.339Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = 'f157090fd3ccd4220298c06ce8734361b724d80459592b10ac632acc624f455e']",
+      "name": "f157090fd3ccd4220298c06ce8734361b724d80459592b10ac632acc624f455e",
+      "description": "TEL:Trojan:Win32/SuspLDAPQuery.A",
+      "valid_from": "2023-09-28T19:23:40.000Z",
+      "valid_until": "2024-12-31T19:23:40.000Z",
+      "x_opencti_score": 85,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "f157090fd3ccd4220298c06ce8734361b724d80459592b10ac632acc624f455e"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "adfind",
+        "anydesk",
+        "blackbyte",
+        "blackbyte 2.0",
+        "cobalt strike",
+        "curl",
+        "exbyte",
+        "exfiltration",
+        "infostealer",
+        "inisafewebsso",
+        "passworddumper",
+        "proxyshell vulnerabilities",
+        "secretsdump"
+      ],
+      "x_opencti_id": "5832d6c1-ff9c-4eb7-916a-438c0e5723d0",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--ea3fd675-b61d-5fd3-be51-25150996289b",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "f157090fd3ccd4220298c06ce8734361b724d80459592b10ac632acc624f455e"
+      },
+      "x_opencti_id": "7e188e3c-a2a9-4b1f-a128-e6f28df7f673",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "adfind",
+        "anydesk",
+        "blackbyte",
+        "blackbyte 2.0",
+        "cobalt strike",
+        "curl",
+        "exbyte",
+        "exfiltration",
+        "infostealer",
+        "inisafewebsso",
+        "passworddumper",
+        "proxyshell vulnerabilities",
+        "secretsdump"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da",
+      "created": "2017-01-20T00:00:00.000Z",
+      "definition_type": "tlp",
+      "name": "TLP:GREEN",
+      "definition": {
+        "tlp": "green"
+      }
+    },
+    {
+      "id": "attack-pattern--be8b782f-8ecd-5dd6-817b-9a97173465ca",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:18:17.848Z",
+      "modified": "2025-08-15T15:14:09.498Z",
+      "name": "T1574.002",
+      "description": "Adversaries may execute their own malicious payloads by side-loading DLLs. Similar to [DLL](https://attack.mitre.org/techniques/T1574/001), side-loading involves hijacking which DLL a program loads. But rather than just planting the DLL within the search order of a program then waiting for the victim application to be invoked, adversaries may directly side-load their payloads by planting then invoking a legitimate application that executes their payload(s).\n\nSide-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other. Adversaries likely use side-loading as a means of masking actions they perform under a legitimate, trusted, and potentially elevated system or software process. Benign executables used to side-load payloads may not be flagged during delivery and/or execution. Adversary payloads may also be encrypted/packed or otherwise obfuscated until loaded into the memory of the trusted process.(Citation: FireEye DLL Side-Loading)",
+      "aliases": [
+        "DLL Side-Loading"
+      ],
+      "x_mitre_id": "T1574.002",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1574/002",
+          "external_id": "T1574.002"
+        }
+      ],
+      "x_opencti_id": "2fb25cf7-c3fb-4e5e-85bb-8fc91b420d6f",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--4cdff7eb-acb8-543f-8573-829eb9fe8b34",
+      "created": "2025-08-14T05:44:22.197Z",
+      "definition_type": "pap",
+      "name": "PAP:CLEAR",
+      "definition": {
+        "pap": "pap:clear"
+      }
+    },
+    {
+      "id": "attack-pattern--f08fb7d2-2923-5026-90d7-23a411d2448b",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:23.628Z",
+      "modified": "2025-10-16T08:57:31.537Z",
+      "name": "File and Directory Discovery",
+      "description": "Adversaries may enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system. Adversaries may use the information from [File and Directory Discovery](https://attack.mitre.org/techniques/T1083) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nMany command shell utilities can be used to obtain this information. Examples include `dir`, `tree`, `ls`, `find`, and `locate`.(Citation: Windows Commands JPCERT) Custom tools may also be used to gather file and directory information and interact with the [Native API](https://attack.mitre.org/techniques/T1106). Adversaries may also leverage a [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) on network devices to gather file and directory information (e.g. `dir`, `show flash`, and/or `nvram`).(Citation: US-CERT-TA18-106A)\n\nSome files and directories may require elevated or specific user permissions to access.",
+      "aliases": [
+        "T1083"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices",
+        "ESXi"
+      ],
+      "x_mitre_detection": "System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as Collection and Exfiltration, based on the information obtained.\n\nMonitor processes and command-line arguments for actions that could be taken to gather system and network information. Remote access tools with built-in features may interact directly with the Windows API to gather information. Information may also be acquired through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and [PowerShell](https://attack.mitre.org/techniques/T1059/001). Further, [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands may also be used to gather file and directory information with built-in features native to the network device platform.  Monitor CLI activity for unexpected or unauthorized use of commands being run by non-standard users from non-standard locations.",
+      "x_mitre_id": "T1083",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "discovery",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "US-CERT-TA18-106A",
+          "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+          "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A"
+        },
+        {
+          "source_name": "Windows Commands JPCERT",
+          "description": "Tomonaga, S. (2016, January 26). Windows Commands Abused by Attackers. Retrieved February 2, 2016.",
+          "url": "https://blogs.jpcert.or.jp/en/2016/01/windows-commands-abused-by-attackers.html"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1083",
+          "external_id": "T1083"
+        }
+      ],
+      "x_opencti_id": "42113993-db95-49b5-a255-2df69dfe0947",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--4cdff7eb-acb8-543f-8573-829eb9fe8b34",
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "id": "attack-pattern--8e5098a8-6e57-5678-9512-577498aafb0e",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:22.814Z",
+      "modified": "2025-10-16T09:02:53.372Z",
+      "name": "Hijack Execution Flow",
+      "description": "Adversaries may execute their own malicious payloads by hijacking the way operating systems run programs. Hijacking execution flow can be for the purposes of persistence, since this hijacked execution may reoccur over time. Adversaries may also use these mechanisms to elevate privileges or evade defenses, such as application control or other restrictions on execution.\n\nThere are many ways an adversary may hijack the flow of execution, including by manipulating how the operating system locates programs to be executed. How the operating system locates libraries to be used by a program can also be intercepted. Locations where the operating system looks for programs/resources, such as file directories and in the case of Windows the Registry, could also be poisoned to include malicious payloads.",
+      "aliases": [
+        "T1574"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows"
+      ],
+      "x_mitre_detection": "Monitor file systems for moving, renaming, replacing, or modifying DLLs. Changes in the set of DLLs that are loaded by a process (compared with past behavior) that do not correlate with known software, patches, etc., are suspicious. Monitor DLLs loaded into a process and detect DLLs that have the same file name but abnormal paths. Modifications to or creation of .manifest and .local redirection files that do not correlate with software updates are suspicious.\n\nLook for changes to binaries and service executables that may normally occur during software updates. If an executable is written, renamed, and/or moved to match an existing service executable, it could be detected and correlated with other suspicious behavior. Hashing of binaries and service executables could be used to detect replacement against historical data.\n\nMonitor for changes to environment variables, as well as the commands to implement these changes.\n\nMonitor processes for unusual activity (e.g., a process that does not use the network begins to do so, abnormal process call trees). Track library metadata, such as a hash, and compare libraries that are loaded at process execution time against previous executions to detect differences that do not correlate with patching or updates.\n\nService changes are reflected in the Registry. Modification to existing services should not occur frequently. If a service binary path or failure parameters are changed to values that are not typical for that service and does not correlate with software updates, then it may be due to malicious activity. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as network connections made for Command and Control, learning details about the environment through Discovery, and Lateral Movement.\n\nTools such as Sysinternals Autoruns may also be used to detect system changes that could be attempts at persistence, including listing current service information. (Citation: Autoruns for Windows) Suspicious program execution through services may show up as outlier processes that have not been seen before when compared against historical data.",
+      "x_mitre_id": "T1574",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "defense-evasion",
+          "x_opencti_order": 0
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence",
+          "x_opencti_order": 0
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Autoruns for Windows",
+          "description": "Mark Russinovich. (2019, June 28). Autoruns for Windows v13.96. Retrieved March 13, 2020.",
+          "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1574",
+          "external_id": "T1574"
+        }
+      ],
+      "x_opencti_id": "0a9bdcd5-68b1-4018-a35f-4fcc4c7d91a4",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--8cec97dd-45a4-5932-9028-a0ed04065fa6",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:22.421Z",
+      "modified": "2025-10-16T09:02:56.591Z",
+      "name": "Obfuscated Files or Information",
+      "description": "Adversaries may attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit. This is common behavior that can be used across different platforms and the network to evade defenses. \n\nPayloads may be compressed, archived, or encrypted in order to avoid detection. These payloads may be used during Initial Access or later to mitigate detection. Sometimes a user's action may be required to open and [Deobfuscate/Decode Files or Information](https://attack.mitre.org/techniques/T1140) for [User Execution](https://attack.mitre.org/techniques/T1204). The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. (Citation: Volexity PowerDuke November 2016) Adversaries may also use compressed or archived scripts, such as JavaScript. \n\nPortions of files can also be encoded to hide the plain-text strings that would otherwise help defenders with discovery. (Citation: Linux/Cdorked.A We Live Security Analysis) Payloads may also be split into separate, seemingly benign files that only reveal malicious functionality when reassembled. (Citation: Carbon Black Obfuscation Sept 2016)\n\nAdversaries may also abuse [Command Obfuscation](https://attack.mitre.org/techniques/T1027/010) to obscure commands executed from payloads or directly via [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059). Environment variables, aliases, characters, and other platform/language specific semantics can be used to evade signature based detections and application control mechanisms. (Citation: FireEye Obfuscation June 2017) (Citation: FireEye Revoke-Obfuscation July 2017)(Citation: PaloAlto EncodedCommand March 2017)",
+      "aliases": [
+        "T1027"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices",
+        "ESXi"
+      ],
+      "x_mitre_detection": "Detection of file obfuscation is difficult unless artifacts are left behind by the obfuscation process that are uniquely detectable with a signature. If detection of the obfuscation itself is not possible, it may be possible to detect the malicious activity that caused the obfuscated file (for example, the method that was used to write, read, or modify the file on the file system). \n\nFlag and analyze commands containing indicators of obfuscation and known suspicious syntax such as uninterpreted escape characters like '''^''' and '''\"'''. Windows' Sysmon and Event ID 4688 displays command-line arguments for processes. Deobfuscation tools can be used to detect these indicators in files/payloads. (Citation: GitHub Revoke-Obfuscation) (Citation: FireEye Revoke-Obfuscation July 2017) (Citation: GitHub Office-Crackros Aug 2016) \n\nObfuscation used in payloads for Initial Access can be detected at the network. Use network intrusion detection systems and email gateway filtering to identify compressed and encrypted attachments and scripts. Some email attachment detonation systems can open compressed and encrypted attachments. Payloads delivered over an encrypted connection from a website require encrypted network traffic inspection. \n\nThe first detection of a malicious tool may trigger an anti-virus or other security tool alert. Similar events may also occur at the boundary through network IDS, email scanning appliance, etc. The initial detection should be treated as an indication of a potentially more invasive intrusion. The alerting system should be thoroughly investigated beyond that initial alert for activity that was not detected. Adversaries may continue with an operation, assuming that individual events like an anti-virus detect will not be investigated or that an analyst will not be able to conclusively link that event to other activity occurring on the network.",
+      "x_mitre_id": "T1027",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "defense-evasion",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "PaloAlto EncodedCommand March 2017",
+          "description": "White, J. (2017, March 10). Pulling Back the Curtains on EncodedCommand PowerShell Attacks. Retrieved February 12, 2018.",
+          "url": "https://researchcenter.paloaltonetworks.com/2017/03/unit42-pulling-back-the-curtains-on-encodedcommand-powershell-attacks/"
+        },
+        {
+          "source_name": "Linux/Cdorked.A We Live Security Analysis",
+          "description": "Pierre-Marc Bureau. (2013, April 26). Linux/Cdorked.A: New Apache backdoor being used in the wild to serve Blackhole. Retrieved September 10, 2017.",
+          "url": "https://www.welivesecurity.com/2013/04/26/linuxcdorked-new-apache-backdoor-in-the-wild-serves-blackhole/"
+        },
+        {
+          "source_name": "GitHub Office-Crackros Aug 2016",
+          "description": "Carr, N. (2016, August 14). OfficeCrackros. Retrieved February 12, 2018.",
+          "url": "https://github.com/itsreallynick/office-crackros"
+        },
+        {
+          "source_name": "FireEye Revoke-Obfuscation July 2017",
+          "description": "Bohannon, D. & Holmes, L. (2017, July 27). Revoke-Obfuscation: PowerShell Obfuscation Detection Using Science. Retrieved November 17, 2024.",
+          "url": "https://www.blackhat.com/docs/us-17/thursday/us-17-Bohannon-Revoke-Obfuscation-PowerShell-Obfuscation-Detection-And%20Evasion-Using-Science-wp.pdf"
+        },
+        {
+          "source_name": "FireEye Obfuscation June 2017",
+          "description": "Bohannon, D. & Carr N. (2017, June 30). Obfuscation in the Wild: Targeted Attackers Lead the Way in Evasion Techniques. Retrieved February 12, 2018.",
+          "url": "https://web.archive.org/web/20170923102302/https://www.fireeye.com/blog/threat-research/2017/06/obfuscation-in-the-wild.html"
+        },
+        {
+          "source_name": "GitHub Revoke-Obfuscation",
+          "description": "Bohannon, D. (2017, July 27). Revoke-Obfuscation. Retrieved February 12, 2018.",
+          "url": "https://github.com/danielbohannon/Revoke-Obfuscation"
+        },
+        {
+          "source_name": "Carbon Black Obfuscation Sept 2016",
+          "description": "Tedesco, B. (2016, September 23). Security Alert Summary. Retrieved February 12, 2018.",
+          "url": "https://www.carbonblack.com/2016/09/23/security-advisory-variants-well-known-adware-families-discovered-include-sophisticated-obfuscation-techniques-previously-associated-nation-state-attacks/"
+        },
+        {
+          "source_name": "Volexity PowerDuke November 2016",
+          "description": "Adair, S.. (2016, November 9). PowerDuke: Widespread Post-Election Spear Phishing Campaigns Targeting Think Tanks and NGOs. Retrieved January 11, 2017.",
+          "url": "https://www.volexity.com/blog/2016/11/09/powerduke-post-election-spear-phishing-campaigns-targeting-think-tanks-and-ngos/"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1027",
+          "external_id": "T1027"
+        }
+      ],
+      "x_opencti_id": "4ac2c5ed-fc9b-47c9-a32d-08e156951dac",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "id": "attack-pattern--033921be-85df-5f05-8bc0-d3d9fc945db9",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:22.419Z",
+      "modified": "2025-10-16T08:49:16.076Z",
+      "name": "OS Credential Dumping",
+      "description": "Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password. Credentials can be obtained from OS caches, memory, or structures.(Citation: Brining MimiKatz to Unix) Credentials can then be used to perform [Lateral Movement](https://attack.mitre.org/tactics/TA0008) and access restricted information.\n\nSeveral of the tools mentioned in associated sub-techniques may be used by both adversaries and professional security testers. Additional custom tools likely exist as well.",
+      "aliases": [
+        "T1003"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows"
+      ],
+      "x_mitre_detection": "### Windows\nMonitor for unexpected processes interacting with lsass.exe.(Citation: Medium Detecting Attempts to Steal Passwords from Memory) Common credential dumpers such as [Mimikatz](https://attack.mitre.org/software/S0002) access the LSA Subsystem Service (LSASS) process by opening the process, locating the LSA secrets key, and decrypting the sections in memory where credential details are stored. Credential dumpers may also use methods for reflective [Process Injection](https://attack.mitre.org/techniques/T1055) to reduce potential indicators of malicious activity.\n\nHash dumpers open the Security Accounts Manager (SAM) on the local file system (%SystemRoot%/system32/config/SAM) or create a dump of the Registry SAM key to access stored account password hashes. Some hash dumpers will open the local file system as a device and parse to the SAM table to avoid file access defenses. Others will make an in-memory copy of the SAM table before reading hashes. Detection of compromised [Valid Accounts](https://attack.mitre.org/techniques/T1078) in-use by adversaries may help as well. \n\nOn Windows 8.1 and Windows Server 2012 R2, monitor Windows Logs for LSASS.exe creation to verify that LSASS started as a protected process.\n\nMonitor processes and command-line arguments for program execution that may be indicative of credential dumping. Remote access tools may contain built-in features or incorporate existing tools like [Mimikatz](https://attack.mitre.org/software/S0002). [PowerShell](https://attack.mitre.org/techniques/T1059/001) scripts also exist that contain credential dumping functionality, such as PowerSploit's Invoke-Mimikatz module, (Citation: Powersploit) which may require additional logging features to be configured in the operating system to collect necessary information for analysis.\n\nMonitor domain controller logs for replication requests and other unscheduled activity possibly associated with DCSync. (Citation: Microsoft DRSR Dec 2017) (Citation: Microsoft GetNCCChanges) (Citation: Samba DRSUAPI) Note: Domain controllers may not log replication requests originating from the default domain controller account. (Citation: Harmj0y DCSync Sept 2015). Also monitor for network protocols  (Citation: Microsoft DRSR Dec 2017) (Citation: Microsoft NRPC Dec 2017) and other replication requests (Citation: Microsoft SAMR) from IPs not associated with known domain controllers. (Citation: AdSecurity DCSync Sept 2015)\n\n### Linux\nTo obtain the passwords and hashes stored in memory, processes must open a maps file in the `/proc` filesystem for the process being analyzed. This file is stored under the path `/proc/<pid>/maps`, where the `<pid>` directory is the unique pid of the program being interrogated for such authentication data. The AuditD monitoring tool, which ships stock in many Linux distributions, can be used to watch for hostile processes opening this file in the proc file system, alerting on the pid, process name, and arguments of such programs.",
+      "x_mitre_id": "T1003",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "credential-access",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Brining MimiKatz to Unix",
+          "description": "Tim Wadhwa-Brown. (2018, November). Where 2 worlds collide Bringing Mimikatz et al to UNIX. Retrieved October 13, 2021.",
+          "url": "https://labs.portcullis.co.uk/download/eu-18-Wadhwa-Brown-Where-2-worlds-collide-Bringing-Mimikatz-et-al-to-UNIX.pdf"
+        },
+        {
+          "source_name": "Harmj0y DCSync Sept 2015",
+          "description": "Schroeder, W. (2015, September 22). Mimikatz and DCSync and ExtraSids, Oh My. Retrieved December 4, 2017.",
+          "url": "http://www.harmj0y.net/blog/redteaming/mimikatz-and-dcsync-and-extrasids-oh-my/"
+        },
+        {
+          "source_name": "Samba DRSUAPI",
+          "description": "SambaWiki. (n.d.). DRSUAPI. Retrieved December 4, 2017.",
+          "url": "https://wiki.samba.org/index.php/DRSUAPI"
+        },
+        {
+          "source_name": "Microsoft SAMR",
+          "description": "Microsoft. (n.d.). MS-SAMR Security Account Manager (SAM) Remote Protocol (Client-to-Server) - Transport. Retrieved December 4, 2017.",
+          "url": "https://msdn.microsoft.com/library/cc245496.aspx"
+        },
+        {
+          "source_name": "Microsoft GetNCCChanges",
+          "description": "Microsoft. (n.d.). IDL_DRSGetNCChanges (Opnum 3). Retrieved December 4, 2017.",
+          "url": "https://msdn.microsoft.com/library/dd207691.aspx"
+        },
+        {
+          "source_name": "Microsoft NRPC Dec 2017",
+          "description": "Microsoft. (2017, December 1). MS-NRPC - Netlogon Remote Protocol. Retrieved December 6, 2017.",
+          "url": "https://msdn.microsoft.com/library/cc237008.aspx"
+        },
+        {
+          "source_name": "Microsoft DRSR Dec 2017",
+          "description": "Microsoft. (2017, December 1). MS-DRSR Directory Replication Service (DRS) Remote Protocol. Retrieved December 4, 2017.",
+          "url": "https://msdn.microsoft.com/library/cc228086.aspx"
+        },
+        {
+          "source_name": "Medium Detecting Attempts to Steal Passwords from Memory",
+          "description": "French, D. (2018, October 2). Detecting Attempts to Steal Passwords from Memory. Retrieved October 11, 2019.",
+          "url": "https://medium.com/threatpunter/detecting-attempts-to-steal-passwords-from-memory-558f16dce4ea"
+        },
+        {
+          "source_name": "AdSecurity DCSync Sept 2015",
+          "description": "Metcalf, S. (2015, September 25). Mimikatz DCSync Usage, Exploitation, and Detection. Retrieved December 4, 2017.",
+          "url": "https://adsecurity.org/?p=1729"
+        },
+        {
+          "source_name": "Powersploit",
+          "description": "PowerSploit. (n.d.). Retrieved December 4, 2014.",
+          "url": "https://github.com/mattifestation/PowerSploit"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1003",
+          "external_id": "T1003"
+        }
+      ],
+      "x_opencti_id": "10e445aa-2a51-4e32-b51a-a0a5ed822e69",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    }
+  ]
+}

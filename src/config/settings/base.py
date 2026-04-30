@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-10 09:26:06
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-10 09:38:50
-FilePath: /task_manage/src/config/settings/base.py
-Description: Base settings for the application. 主要是用来明确应用的运行模式。
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 from enum import Enum
 
 from pydantic_settings import BaseSettings

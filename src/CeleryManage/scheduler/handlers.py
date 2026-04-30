@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-10 12:47:47
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-10 13:02:28
-FilePath: /task_manage/src/CeleryManage/scheduler/handlers.py
-Description: celery任务处理器，包括任务创建和任务结果处理
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 import asyncio
 import datetime
 import time
@@ -50,11 +40,11 @@ def task_creator(work_name: str, end_status: int, *args):
 def task_result_handler(result_data: dict, worker_name: str, record_id: str, status: int):
     @logger.catch
     async def _result_handler(result_data: dict, worker_name: str, record_id: str, status: int):
-        # todo 判断重试，需要再加
+        # todo: add retry checks later
         if not result_data:
             result_data = {}
 
-        if status == 10:  # 任务链结束，则调用结果处理函数，否则只更新状态
+        if status == 10:  # If the task chain has ended, call the result handler; otherwise only update the status
             result_handler = WORKER_MAP.get(worker_name, {}).get("result_handler")
             logger.info("[Result Handler]Status is 10, run result_handler and save result...")
             if not result_handler:

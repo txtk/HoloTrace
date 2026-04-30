@@ -73,7 +73,7 @@ def retriver_standard(neighbours_mes_dict, entity, rag_malware, rag_attck, rag_g
     query = rrf.get_query()
     results, _ = rag_manager.perform_search_detailed(query, top_k=10)
 
-    # 保留名称不同的至多5个条目
+    # Keep at most 5 entries with different names
     unique_results = []
     seen_names = set()
     for res in results:
@@ -112,19 +112,19 @@ def retriver_name(entity, vectors, rag_malware, rag_attck, rag_group):
 
     # if entity_type == "intrusion-set":
     #     if entity_name:
-    #         # 对于intrusion-set，使用term模式，和aliases字段匹配
+    #         # For intrusion-set, use term mode and match the aliases field
     #         retrievers.append(RRF_Keyword_Retriever(item_name="aliases", keywords=[entity_name]))
     # elif entity_type == "attack-pattern":
     #     if entity_name:
-    #         # 对于attack-pattern使用match模式，和name字段匹配
+    #         # For attack-pattern, use match mode and match the name field
     #         retrievers.append(RRF_Match_Retriever(item_name="name", content=entity_name))
     #     entity_id = entity.get("id")
     #     if entity_id:
-    #         # 对于attack-pattern使用match模式，和id字段匹配
+    #         # For attack-pattern, use match mode and match the id field
     #         retrievers.append(RRF_Match_Retriever(item_name="id", content=entity_id))
     # else:
     #     if entity_name:
-    #         # 对于malware使用match模式，和name字段匹配
+    #         # For malware, use match mode and match the name field
     #         retrievers.append(RRF_Match_Retriever(item_name="name", content=entity_name))
 
     if not retrievers:

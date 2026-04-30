@@ -9,18 +9,19 @@ from utils.vector.query_builders import (
     TermsQueryBuilder,
 )
 
+
 class QueryBuilder:
-    # 优先级配置：字段名 -> 权重
+    # Priority configuration: field name -> weight
     PRIORITY_BOOSTS = {"related_groups": 0.1, "related_malwares": 0.1, "related_attcks": 0.1}
 
     def _apply_priority_boosts(self, bool_builder: BoolQueryBuilder):
-        """为查询应用预设的优先级权重"""
+        """Apply preset priority weights to the query"""
         for field, boost in self.PRIORITY_BOOSTS.items():
             bool_builder.add_should(ExistsQueryBuilder(field, boost=boost))
         return bool_builder
 
     def build_match_query(self, field_name: str, content: str, priority: bool = True):
-        """构建全文匹配查询"""
+        """Build a full-text match query"""
         bool_builder = BoolQueryBuilder()
         bool_builder.add_must(MatchQueryBuilder(field=field_name, query=content))
 
@@ -30,7 +31,7 @@ class QueryBuilder:
         return bool_builder.get_query()
 
     def build_term_query(self, field_name: str, value: Any, priority: bool = True):
-        """构建精确匹配查询 (单个值)"""
+        """Build an exact-match query (single value)"""
         bool_builder = BoolQueryBuilder()
         bool_builder.add_must(TermQueryBuilder(field=field_name, value=value))
 
@@ -40,7 +41,7 @@ class QueryBuilder:
         return bool_builder.get_query()
 
     def build_terms_query(self, field_name: str, values: List[Any], priority: bool = True):
-        """构建精确匹配查询 (多个值)"""
+        """Build an exact-match query (multiple values)"""
         bool_builder = BoolQueryBuilder()
         bool_builder.add_must(TermsQueryBuilder(field=field_name, values=values))
 
@@ -50,7 +51,7 @@ class QueryBuilder:
         return bool_builder.get_query()
 
     def build_knn_query(self, vector_field: str, query_vector: List[float], k: int = 10, num_candidates: int = 100, priority: bool = True):
-        """构建向量查询"""
+        """Build a vector query"""
         bool_builder = BoolQueryBuilder()
         bool_builder.add_must(KNNQueryBuilder(vector_field, query_vector, k, num_candidates))
         if priority:

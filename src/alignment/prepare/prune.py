@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-09-22 21:34:19
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-09-23 15:25:46
-FilePath: /entity_alignment/src/entity_alignment/profile_tfidf/prune.py
-Description: 对构造的知识图谱进行剪枝，去除冗余关系
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 from os import path
 
 from config import settings

@@ -5,11 +5,11 @@
 # from entity_alignment import WORKER_MAP as entity_alignment_map
 # from data_process import WORKER_MAP as data_process_worker_map
 from utils import WORKER_MAP as utils_worker_map
-from data_process import WORKER_MAP as data_process_worker_map
+# from data_process import WORKER_MAP as data_process_worker_map
 from alignment import WORKER_MAP as alignment_worker_map
 
 WORKER_MAP = dict()
-WORKER_MAP.update(data_process_worker_map)
+# WORKER_MAP.update(data_process_worker_map)
 WORKER_MAP.update(utils_worker_map)
 WORKER_MAP.update(alignment_worker_map)
 # WORKER_MAP.update(opencti_neo4j_map)
@@ -28,7 +28,7 @@ NAME_MAP = dict()
 #     {
 #         "insert_test_data": {
 #             "name": "task.db.insert_test_data",
-#             "end_status": 10,  # 任务链结束状态
+#             "end_status": 10,  # task chain end status
 #         },
 #     }
 # )

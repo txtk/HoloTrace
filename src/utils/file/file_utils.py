@@ -1,6 +1,8 @@
 import json
+import os
 import pickle
 import shutil
+import tempfile
 from pathlib import Path
 from typing import List, Union
 
@@ -9,28 +11,30 @@ import yaml
 
 
 class FileUtils:
-    """文件操作工具类"""
+    """File operation utility class"""
 
     @staticmethod
     def ensure_dir(directory: Union[str, Path]) -> None:
         """
-        确保目录存在，如果不存在则创建
+        Ensure the directory exists; create it if it does not
 
         Args:
-            directory: 目录路径
+            directory: directory path
         """
         directory = Path(directory)
         directory.mkdir(parents=True, exist_ok=True)
 
     @staticmethod
-    def save_file(data: Union[dict, list, pd.DataFrame, str], file_path: Union[str, Path], file_type: str = None) -> None:
+    def save_file(
+        data: Union[dict, list, pd.DataFrame, str], file_path: Union[str, Path], file_type: str = None
+    ) -> None:
         """
-        保存文件到指定路径
+        Save a file to the specified path
 
         Args:
-            data: 要保存的数据
-            file_path: 文件保存路径
-            file_type: 文件类型（如果不指定则从文件路径推断）
+            data: data to save
+            file_path: file save path
+            file_type: file type, inferred from the file path if not specified
         """
         file_path = Path(file_path)
         FileUtils.ensure_dir(file_path.parent)
@@ -39,8 +43,21 @@ class FileUtils:
             file_type = file_path.suffix.lower()
 
         if file_type == ".json":
-            with open(file_path, "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            # Atomic write: write to temp file in same directory, then replace target.
+            temp_path = None
+            try:
+                with tempfile.NamedTemporaryFile(
+                    mode="w", encoding="utf-8", dir=file_path.parent, delete=False, suffix=".tmp"
+                ) as tmp:
+                    json.dump(data, tmp, ensure_ascii=False, indent=4)
+                    tmp.flush()
+                    os.fsync(tmp.fileno())
+                    temp_path = Path(tmp.name)
+
+                os.replace(temp_path, file_path)
+            finally:
+                if temp_path and temp_path.exists():
+                    temp_path.unlink(missing_ok=True)
 
         elif file_type == ".yaml" or file_type == ".yml":
             with open(file_path, "w", encoding="utf-8") as f:
@@ -65,27 +82,29 @@ class FileUtils:
 
         else:
             raise ValueError(f"不支持的文件类型: {file_type}")
-        
+
     @staticmethod
-    def read_file(file_path: Union[str, Path], file_type: str = ".txt", encoding: str = "utf-8", list_mode: bool = False) -> Union[dict, list, pd.DataFrame, str]:
+    def read_file(
+        file_path: Union[str, Path], file_type: str = ".txt", encoding: str = "utf-8", list_mode: bool = False
+    ) -> Union[dict, list, pd.DataFrame, str]:
         """
-        读取文件并返回内容。根据文件类型返回不同对象：
-          - .json/.yaml/.yml 返回 dict 或 list
-          - .csv 返回 pandas.DataFrame
-          - .txt 返回 str
+        Read a file and return its content. Different object types are returned by file type:
+          - .json/.yaml/.yml returns dict or list
+          - .csv returns pandas.DataFrame
+          - .txt returns str
 
         Args:
-            file_path: 文件路径
-            file_type: 可选的文件类型（例如 ".json"），不指定则从路径后缀推断
-            encoding: 文本文件编码，默认 "utf-8"
+            file_path: file path
+            file_type: optional file type, such as ".json"; inferred from the path suffix if omitted
+            encoding: text file encoding, default "utf-8"
 
         Returns:
-            读取后的内容，类型依文件而定
+            content read from the file; type depends on the file
 
         Raises:
-            FileNotFoundError: 文件不存在
-            ValueError: 不支持的文件类型
-            Exception: 读取过程中其他错误会向上抛出
+            FileNotFoundError: file does not exist
+            ValueError: unsupported file type
+            Exception: other read errors are propagated
         """
         file_path = Path(file_path)
         if not file_path.exists():
@@ -122,13 +141,13 @@ class FileUtils:
     @staticmethod
     def delete_file(file_path: Union[str, Path]) -> bool:
         """
-        删除文件
+        Delete a file
 
         Args:
-            file_path: 文件路径
+            file_path: file path
 
         Returns:
-            bool: 是否成功删除
+            bool: whether deletion succeeded
         """
         try:
             file_path = Path(file_path)
@@ -142,13 +161,13 @@ class FileUtils:
     @staticmethod
     def delete_directory(directory: Union[str, Path]) -> bool:
         """
-        删除目录及其所有内容
+        Delete a directory and all of its contents
 
         Args:
-            directory: 目录路径
+            directory: directory path
 
         Returns:
-            bool: 是否成功删除
+            bool: whether deletion succeeded
         """
         try:
             directory = Path(directory)
@@ -162,33 +181,33 @@ class FileUtils:
     @staticmethod
     def list_files(directory: Union[str, Path], pattern: str = "*", recursive: bool = False) -> List[Path]:
         """
-        列出目录中的文件
+        List files in a directory
 
         Args:
-            directory: 目录路径
-            pattern: 文件匹配模式
-            recursive: 是否递归搜索子目录
+            directory: directory path
+            pattern: file matching pattern
+            recursive: whether to search subdirectories recursively
 
         Returns:
-            List[Path]: 文件路径列表
+            List[Path]: list of file paths
         """
         directory = Path(directory)
         if recursive:
             return list(directory.rglob(pattern))
         return list(directory.glob(pattern))
-    
+
     @staticmethod
     def list_dir(directory: Union[str, Path], pattern: str = "*", recursive: bool = False) -> List[Path]:
         """
-        列出目录中的子目录
+        List subdirectories in a directory
 
         Args:
-            directory: 目录路径
-            pattern: 子目录匹配模式
-            recursive: 是否递归搜索子目录
+            directory: directory path
+            pattern: subdirectory matching pattern
+            recursive: whether to search subdirectories recursively
 
         Returns:
-            List[Path]: 子目录路径列表
+            List[Path]: list of subdirectory paths
         """
         directory = Path(directory)
         if recursive:
@@ -198,38 +217,38 @@ class FileUtils:
     @staticmethod
     def get_file_size(file_path: Union[str, Path]) -> int:
         """
-        获取文件大小（字节）
+        Get file size in bytes
 
         Args:
-            file_path: 文件路径
+            file_path: file path
 
         Returns:
-            int: 文件大小（字节）
+            int: file size in bytes
         """
         return Path(file_path).stat().st_size
 
     @staticmethod
     def get_file_extension(file_path: Union[str, Path]) -> str:
         """
-        获取文件扩展名
+        Get the file extension
 
         Args:
-            file_path: 文件路径
+            file_path: file path
 
         Returns:
-            str: 文件扩展名（包含点号）
+            str: file extension including the dot
         """
         return Path(file_path).suffix.lower()
 
     @staticmethod
     def exist_file(file_path: Union[str, Path]) -> bool:
         """
-        判断文件是否存在
+        Check whether a file exists
 
         Args:
-            file_path: 文件路径
+            file_path: file path
 
         Returns:
-            bool: 文件是否存在
+            bool: whether the file exists
         """
         return Path(file_path).exists()

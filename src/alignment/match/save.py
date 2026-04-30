@@ -83,7 +83,7 @@ def save_source_vector(source_vector_path, result_dict: dict, attribute_dict: Js
 
 def save_result(ids, results, results_dict, name_to_id, results_path):
     for idx, res in zip(ids, results):
-        # 使用 json_repair 库健壮地解析可能包含 markdown 标记或格式错误的 JSON 字符串
+        # Use json_repair to robustly parse JSON strings that may contain markdown markers or malformed JSON
         results_dict[idx]["ground_truth_rank_new"] = copy.deepcopy(results_dict[idx].get("ground_truth_rank"))
         results_dict[idx]["candidates"] = []
         try:

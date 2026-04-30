@@ -16,7 +16,7 @@ def get_driver(neo4j_type):
 
 async def excute_query(query, parameters=None, neo4j_type="source"):
     driver = get_driver(neo4j_type)
-    # 2. 执行查询
+    # 2. Execute query
 
     records, summary, keys = await driver.execute_query(
         query,
@@ -28,22 +28,22 @@ async def excute_query(query, parameters=None, neo4j_type="source"):
 
 async def insert_pydantic_node(tx: AsyncTransaction, node_object: dict):
     """
-    一个通用的异步事务函数，用于在 Neo4j 中创建或更新一个 Pydantic 节点对象。
+    A generic async transaction function for creating or updating a Pydantic node object in Neo4j.
 
     Args:
-        tx: Neo4j 异步事务对象。
-        node_object: 一个继承自 NodeBase 的 Pydantic 对象。
+        tx: Neo4j async transaction object.
+        node_object: a Pydantic object that inherits from NodeBase.
     """
     node_object.pop("node_type")
     label = node_object.get("entity_type")
     unique_id = node_object.get("unique_id")
-    # 准备要插入的属性字典
-    # 使用 model_dump 排除应用层逻辑字段，如 node_type
+    # Prepare the property dictionary to insert
+    # Use model_dump to exclude application-layer logic fields such as node_type
     properties = node_object
-    # 使用 MERGE 来避免创建重复节点，unique_id 是唯一键
+    # Use MERGE to avoid creating duplicate nodes; unique_id is the unique key
     query = (
         f"MERGE (n:`{label}` {{unique_id: $unique_id}}) "
-        "SET n = $props "  # 使用 SET n = $props 来完全同步对象的属性
+        "SET n = $props "  # Use SET n = $props to fully synchronize object properties
         "RETURN n.unique_id AS node_id, n.name AS node_name"
     )
 
@@ -55,25 +55,25 @@ async def insert_pydantic_node(tx: AsyncTransaction, node_object: dict):
 
 async def create_or_update_relationship(tx: AsyncTransaction, head_node: dict, tail_node: dict, relationship: dict):
     """
-    事务函数：在两个现有节点之间创建或更新关系。
+    Transaction function: create or update a relationship between two existing nodes.
 
     Args:
-        tx: Neo4j 异步事务对象。
-        head_node: 关系起始节点的Pydantic对象。
-        tail_node: 关系结束节点的Pydantic对象。
-        relationship: 关系属性的Pydantic对象。
+        tx: Neo4j async transaction object.
+        head_node: Pydantic object for the relationship start node.
+        tail_node: Pydantic object for the relationship end node.
+        relationship: Pydantic object for relationship properties.
     """
     head_label = head_node.pop("entity_type")
     tail_label = tail_node.pop("entity_type")
     rel_type = relationship.pop("relation_type")
 
-    # 从Pydantic模型准备关系属性
+    # Prepare relationship properties from the Pydantic model
     rel_props = relationship
 
-    # Cypher查询：
-    # 1. MATCH 找到头尾节点
-    # 2. MERGE 确保关系唯一性
-    # 3. SET 更新关系属性
+    # Cypher query:
+    # 1. MATCH finds the head and tail nodes
+    # 2. MERGE ensures relationship uniqueness
+    # 3. SET updates relationship properties
     query = (
         f"MATCH (head:`{head_label}` {{unique_id: $head_id}}) "
         f"MATCH (tail:`{tail_label}` {{unique_id: $tail_id}}) "
@@ -82,7 +82,7 @@ async def create_or_update_relationship(tx: AsyncTransaction, head_node: dict, t
         "RETURN r.unique_id AS relation_id"
     )
 
-    # logger.info(f"使用参数: head_id={head_node['unique_id']}, tail_id={tail_node['unique_id']}, props={rel_props}")
+    # logger.info(f"Use parameters: head_id={head_node['unique_id']}, tail_id={tail_node['unique_id']}, props={rel_props}")
 
     result = await tx.run(query, head_id=head_node["unique_id"], tail_id=tail_node["unique_id"], props=rel_props)
     record = await result.single()
@@ -91,10 +91,10 @@ async def create_or_update_relationship(tx: AsyncTransaction, head_node: dict, t
 
 
 async def get_all_entities_of_type(entity_type, neo4j_type="source"):
-    # 1. 修改 Cypher 查询语句
-    #    - 使用 size((n)--()) 计算每个节点的总度数（包括出度和入度）
-    #    - 使用 AS degree 为度数命名
-    #    - 使用 ORDER BY degree DESC 按度数降序排序, ASC 升序
+    # 1. Modify the Cypher query
+    #    - Use size((n)--()) to calculate each node's total degree, including outgoing and incoming degree
+    #    - Use AS degree to name the degree value
+    #    - Use ORDER BY degree DESC for descending degree order, ASC for ascending order
     query = f"""
     MATCH (n:`{entity_type}`)
     RETURN n, COUNT {{ (n)--() }} AS degree
@@ -105,10 +105,10 @@ async def get_all_entities_of_type(entity_type, neo4j_type="source"):
 
 
 async def get_all_entities(neo4j_type="source"):
-    # 1. 修改 Cypher 查询语句
-    #    - 使用 size((n)--()) 计算每个节点的总度数（包括出度和入度）
-    #    - 使用 AS degree 为度数命名
-    #    - 使用 ORDER BY degree DESC 按度数降序排序, ASC 升序
+    # 1. Modify the Cypher query
+    #    - Use size((n)--()) to calculate each node's total degree, including outgoing and incoming degree
+    #    - Use AS degree to name the degree value
+    #    - Use ORDER BY degree DESC for descending degree order, ASC for ascending order
     query = """
     MATCH (n)
     RETURN n, COUNT { (n)--() } AS degree
@@ -119,10 +119,10 @@ async def get_all_entities(neo4j_type="source"):
 
 
 async def delete_all(neo4j_type="source"):
-    # 1. 修改 Cypher 查询语句
-    #    - 使用 size((n)--()) 计算每个节点的总度数（包括出度和入度）
-    #    - 使用 AS degree 为度数命名
-    #    - 使用 ORDER BY degree DESC 按度数降序排序, ASC 升序
+    # 1. Modify the Cypher query
+    #    - Use size((n)--()) to calculate each node's total degree, including outgoing and incoming degree
+    #    - Use AS degree to name the degree value
+    #    - Use ORDER BY degree DESC for descending degree order, ASC for ascending order
     query = """
     MATCH (n)
     DETACH DELETE n
@@ -238,8 +238,8 @@ async def insert_properties(query, properties, neo4j_type="source"):
 
 async def find_duplicate_ids(neo4j_type):
     """
-    找出所有存在重复的 unique_id 值。
-    假设你的节点属性名为 'unique_id'。如果不是，请修改查询语句中的 'n.unique_id'。
+    Find all duplicate unique_id values.
+    Assume the node property is named 'unique_id'. If not, update 'n.unique_id' in the query.
     """
     query = """
     MATCH (n)
@@ -252,18 +252,18 @@ async def find_duplicate_ids(neo4j_type):
     async with driver.session() as session:
         result = await session.run(query)
 
-        # 将结果转换为列表
+        # Convert results to a list
         duplicate_ids = [record["unique_id"] async for record in result]
         return duplicate_ids
 
 
 async def merge_nodes_for_id(unique_id, neo4j_type="source"):
     """
-    使用 APOC 合并具有相同 unique_id 的所有节点。
+    Use APOC to merge all nodes with the same unique_id.
     """
-    # 这个查询会找到所有具有给定 unique_id 的节点，
-    # 然后调用 apoc.refactor.mergeNodes 将它们合并。
-    # 关系会自动转移到合并后的单个节点上。
+    # This query finds all nodes with the given unique_id,
+    # then calls apoc.refactor.mergeNodes to merge them.
+    # Relationships are automatically moved to the merged single node.
     query = """
     MATCH (n {unique_id: $unique_id})
     WITH collect(n) AS nodes
@@ -277,7 +277,7 @@ async def merge_nodes_for_id(unique_id, neo4j_type="source"):
     """
     driver = get_driver(neo4j_type)
     async with driver.session() as session:
-        # 使用 execute_write 来确保事务性
+        # Use execute_write to ensure transactionality
         result = await session.run(query, unique_id=unique_id)
         try:
             record = await result.single()
@@ -295,7 +295,7 @@ async def get_intrusion_by_name(name, neo4j_type="source"):
     async with driver.session() as session:
         result = await session.run(query, name=name)
         try:
-            # 将结果转换为列表
+            # Convert results to a list
             entitys = [record["n"] async for record in result]
             return entitys[0]
         except Exception:
@@ -305,23 +305,23 @@ async def get_intrusion_by_name(name, neo4j_type="source"):
 
 async def clean_name_property(neo4j_type="source", label="intrusion-set"):
     """
-    对指定标签的节点的name属性进行清洗。
-    如果name是列表，则更新为列表的第一个元素。
+    Clean the name property for nodes with the specified label.
+    If name is a list, update it to the first element of the list.
     """
     driver = get_driver(neo4j_type)
 
     updated_nodes_count = 0
     skipped_empty_list_count = 0
 
-    # 使用数据库会话执行操作
+    # Use the database session to execute operations
     async with driver.session() as session:
-        # 第一步：获取所有目标节点的 elementId 和 name 属性
-        # 使用 elementId() 来获得节点的内部唯一ID，确保更新操作的准确性
+        # Step 1: get elementId and name properties for all target nodes
+        # Use elementId() to get the node's internal unique ID and ensure accurate updates
         get_nodes_query = f"MATCH (n:`{label}`) RETURN elementId(n) AS id, n.name AS name"
 
         try:
             results = await session.run(get_nodes_query)
-            # 将结果物化为列表，以避免在迭代时操作同一个会话中的资源导致问题
+            # Materialize results as a list to avoid issues from operating on the same session resources while iterating
             node_data = [record async for record in results]
         except Exception as e:
             logger.error(f"查询节点时出错: {e}")
@@ -329,19 +329,19 @@ async def clean_name_property(neo4j_type="source", label="intrusion-set"):
 
         print(f"找到 {len(node_data)} 个 '{label}' 标签的节点，开始处理...")
 
-        # 第二步：在Python中遍历结果并执行条件更新
+        # Step 2: iterate through results in Python and conditionally update them
         for record in node_data:
             node_id = record["id"]
             name_property = record["name"]
 
-            # 判断name属性是否为列表
+            # Check whether the name property is a list
             if isinstance(name_property, list):
-                # 如果列表不为空，则取第一个元素
+                # If the list is not empty, take its first element
                 if name_property:
                     new_name = name_property[0]
 
-                    # 构建更新查询，使用 elementId 精准定位节点
-                    # 使用参数化查询 ($id, $new_name) 来防止Cypher注入，这是最佳安全实践
+                    # Build the update query and use elementId to precisely locate the node
+                    # Use parameterized queries ($id, $new_name) to prevent Cypher injection, which is a security best practice
                     update_query = """
                     MATCH (n)
                     WHERE elementId(n) = $id
@@ -354,11 +354,11 @@ async def clean_name_property(neo4j_type="source", label="intrusion-set"):
                         logger.error(f"更新节点 (ID: {node_id}) 时出错: {e}")
 
                 else:
-                    # 如果列表为空，则跳过并打印信息
+                    # If the list is empty, skip it and print a message
                     print(f"  [跳过] 节点 (ID: {node_id}) 的 name 是一个空列表。")
                     skipped_empty_list_count += 1
 
-            # 如果name是字符串或其他类型，则自动跳过，无需任何操作
+            # If name is a string or another type, skip it without any action
 
     print("\n--- 处理完成 ---")
     print(f"总共更新了 {updated_nodes_count} 个节点。")

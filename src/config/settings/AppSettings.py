@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-10 09:29:25
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-10 09:39:10
-FilePath: /task_manage/src/config/settings/AppSettings.py
-Description: Application settings for the task management system.
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 import logging
 import sys
 from typing import Tuple
@@ -85,6 +75,7 @@ class AppSettings(BaseSettings):
     embedding: str
     embedding_dimension_rag: int
     embedding_dimension_att: int
+    rerank: str
     max_tokens: int
     temperature: float
     zhipu_api_key: str
@@ -103,7 +94,7 @@ class AppSettings(BaseSettings):
 
     test_mode_vector_match: str
 
-    # 外部资源
+    # External resources
     malpedia_url: str
 
     loggers: Tuple[str, str] = ["uvicorn.asgi", "uvicorn.access"]

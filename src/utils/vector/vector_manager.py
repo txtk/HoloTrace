@@ -14,35 +14,35 @@ from .RRF import RRF
 class ElasticsearchVectorManager:
     def __init__(self, index_name: str, mappings: dict, vector_dimensions: int = 1024, num_results: int = 10):
         """
-        初始化 ElasticsearchVectorManager。
+        Initialize ElasticsearchVectorManager.
 
-        :param index_name: 要操作的 Elasticsearch 索引名称。
-        :param openai_embedding_model: 用于生成向量的 OpenAI 模型名称。
-        :param vector_dimensions: 向量的维度，必须与所选模型匹配。
+        :param index_name: Name of the Elasticsearch index to operate on.
+        :param openai_embedding_model: OpenAI model name used to generate vectors.
+        :param vector_dimensions: Vector dimensions; must match the selected model.
         """
         self.index_name = index_name
         self.vector_dimensions = vector_dimensions
         self.num_results = num_results
 
-        self.es_client = elastic  # 使用全局的 Elasticsearch 客户端实例
+        self.es_client = elastic  # Use the global Elasticsearch client instance
         self.mappings = mappings
-        # 检查连接
+        # Check the connection
         if not self.es_client.ping():
             raise ConnectionError("无法连接到 Elasticsearch！请检查配置。")
 
     def get_insert_action(self, docs: list):
         actions = []
         for doc in docs:
-            # 优先使用文档中显式指定的 _id
+            # Prefer the _id explicitly specified in the document
             doc_id = doc.get("_id")
 
             if not doc_id:
-                # 使用 name (小写化) 和 raw_content 作为唯一标识生成 ID，提高大小写鲁棒性
+                # Use lowercased name and raw_content as the unique identifier for ID generation to improve case robustness
                 name_for_id = str(doc.get("name", "")).lower()
                 identifier = f"{name_for_id}_{doc.get('raw_content', '')}"
                 doc_id = str(uuid5(NAMESPACE_DNS, identifier))
 
-            # 准备 source 数据，如果文档中有 _id，我们不把它存入 _source 内部
+            # Prepare source data; if the document has _id, do not store it inside _source
             source = doc.copy()
             if "_id" in source:
                 del source["_id"]
@@ -51,7 +51,7 @@ class ElasticsearchVectorManager:
                 {
                     "_id": doc_id,
                     "_index": self.index_name,
-                    "_op_type": "index",  # 使用 index，如果 ID 重复则覆盖更新
+                    "_op_type": "index",  # Use index; if the ID is duplicated, overwrite and update
                     "_source": source,
                 }
             )
@@ -60,7 +60,7 @@ class ElasticsearchVectorManager:
     def index_document(self, docs: list) -> Dict[str, Any]:
         actions = self.get_insert_action(docs)
         try:
-            # 执行 bulk 插入
+            # Execute bulk insert
             success, failed = helpers.bulk(self.es_client, actions)
             logger.info(f"Successfully indexed {success} documents.")
             if failed:
@@ -68,14 +68,14 @@ class ElasticsearchVectorManager:
         except BulkIndexError as e:
             for i, error_info in enumerate(e.errors[:5]):
                 logger.info(f"\n--- 错误 {i + 1} ---")
-                # 错误信息通常在 'index', 'create', 或 'update' 键下
+                # Error details are usually under the 'index', 'create', or 'update' key
                 action, result = next(iter(error_info.items()))
                 logger.info(f"操作类型: {action}")
                 logger.info(f"文档ID (_id): {result.get('_id')}")
                 logger.info(f"索引 (_index): {result.get('_index')}")
                 logger.info(f"失败原因 (reason): {result.get('error', {}).get('reason')}")
                 logger.info(f"失败类型 (type): {result.get('error', {}).get('type')}")
-                # 有时更深层的原因在这里
+                # Sometimes the deeper cause is here
                 if "caused_by" in result.get("error", {}):
                     logger.info(f"根本原因 (caused_by): {result['error']['caused_by']}")
 
@@ -98,13 +98,13 @@ class ElasticsearchVectorManager:
         response = self.es_client.search(
             index=self.index_name,
             body=query,
-            size=top_k,  # 获取足够多的结果以供后续重排
+            size=top_k,  # Fetch enough results for subsequent reranking
         )
         return response["hits"]["hits"]
 
     def perform_search_detailed(self, query, top_k=None):
         """
-        执行查询并返回包含详细信息（如相似度分数、命中总数）的结果。
+        Execute a query and return results with details such as similarity score and total hits.
         :return: (results, total_hits)
         """
         if top_k is None:
@@ -121,7 +121,7 @@ class ElasticsearchVectorManager:
         for hit in hits:
             source = hit["_source"]
             source["_id"] = hit["_id"]
-            # _score 在基于向量的查询中即代表相似度
+            # _score represents similarity in vector-based queries
             source["_score"] = hit["_score"]
             results.append(source)
 
@@ -129,19 +129,19 @@ class ElasticsearchVectorManager:
 
     def get_index_mapping(self):
         """
-        获取指定索引的 Mapping 信息。
+        Get mapping information for the specified index.
         """
-        # 使用 indices.get_mapping 方法
+        # Use the indices.get_mapping method
         mapping = self.es_client.indices.get_mapping(index=self.index_name)
         mapping = mapping.get(self.index_name)
         return mapping["mappings"]
 
     def index_exists(self, index_name: Optional[str] = None) -> bool:
         """
-        检查指定索引是否存在。
+        Check whether the specified index exists.
 
-        :param index_name: 要检查的索引名，若为 None 则使用实例的 `self.index_name`。
-        :return: 存在返回 True，否则 False（包括发生异常时返回 False 并记录日志）。
+        :param index_name: Index name to check; if None, use the instance `self.index_name`.
+        :return: Return True if it exists, otherwise False, including exceptions which are logged.
         """
         idx = index_name or self.index_name
         try:
@@ -152,28 +152,28 @@ class ElasticsearchVectorManager:
 
     def delete_index(self):
         """
-        删除指定的索引。
+        Delete the specified index.
         """
-        # 使用 indices.delete 方法
-        # ignore_unavailable=True 表示如果索引不存在，也不会报错
+        # Use the indices.delete method
+        # ignore_unavailable=True means no error is raised if the index does not exist
         response = self.es_client.indices.delete(index=self.index_name, ignore_unavailable=True)
         if response.get("acknowledged"):
             return True
         else:
-            # 这种情况在 ignore_unavailable=True 时通常不会发生，除非权限问题等
+            # This usually does not happen when ignore_unavailable=True, except for permission issues and similar cases
             return False
 
     def create_index(self, settings: dict = None):
         """
-        创建一个新的索引，并可以指定 Mappings 和 Settings。
+        Create a new index and optionally specify mappings and settings.
         """
-        # 首先检查索引是否已存在
+        # First check whether the index already exists
         if self.es_client.indices.exists(index=self.index_name):
             logger.info(f"索引 '{self.index_name}' 已经存在，无需创建。")
             return False
 
-        # 使用 indices.create 方法创建索引
-        # Mappings 和 Settings 作为参数传入
+        # Use the indices.create method to create the index
+        # Mappings and settings are passed as parameters
         response = self.es_client.indices.create(index=self.index_name, mappings=self.mappings, settings=settings)
 
         if response.get("acknowledged"):
@@ -185,16 +185,16 @@ class ElasticsearchVectorManager:
 
     def recreate_index(self, settings: dict = None):
         """
-        重新创建索引：如果索引已存在则删除，然后创建一个新的索引。
+        Recreate the index: delete it if it exists, then create a new one.
         """
-        # 删除已存在的索引
+        # Delete the existing index
         self.delete_index()
-        # 创建新的索引
+        # Create a new index
         return self.create_index(settings)
 
     def count_documents(self) -> int:
         """
-        统计索引中的文档数量。
+        Count documents in the index.
         """
         try:
             response = self.es_client.count(index=self.index_name)

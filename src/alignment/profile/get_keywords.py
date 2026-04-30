@@ -10,43 +10,43 @@ def json_init(input_dict, key, inital_value):
 
 def insert_property_dict(entity, entity_type, profile_dict, last_items, property_name="profile"):
     """
-    将实体的 profile 和 nf_ipf 值作为一个字典添加到列表中。
+    Add an entity's profile and nf_ipf values to the list as a dictionary.
     """
-    # 如果 semantic 不为 1，则直接返回
+    # Return directly if semantic is not 1
     if entity.get(entity_type, {}).get("semantic") != 1:
         return profile_dict
 
     if entity_type in last_items:
-        # 确保 entity_type 对应的键存在且为列表
+        # Ensure the key for entity_type exists and is a list
         profile_dict = json_init(profile_dict, entity_type, [])
 
-        # 创建包含 profile 和 nf_ipf 的字典
+        # Create a dictionary containing profile and nf_ipf
         profile_data = {
             property_name: entity[entity_type].get(property_name),
-            "nf_ipf": entity[entity_type].get("nfipf", 0) # 使用 .get 避免因缺少 nf_ipf 字段而报错，默认值为0
+            "nf_ipf": entity[entity_type].get("nfipf", 0) # Use .get to avoid errors when nf_ipf is missing; default to 0
         }
         
-        # 将新创建的字典追加到列表中
+        # Append the newly created dictionary to the list
         profile_dict[entity_type].append(profile_data)
 
     return profile_dict
 
 def insert_semantic_dict(entity, entity_type, keyword_dict, last_items):
-    # 如果 semantic 不为 1，则直接返回
+    # Return directly if semantic is not 1
     if entity.get("semantic") != 1:
         return keyword_dict
 
     if entity_type in last_items:
-        # 确保 entity_type 对应的键存在且为列表
+        # Ensure the key for entity_type exists and is a list
         keyword_dict = json_init(keyword_dict, entity_type, [])
 
-        # 创建包含 profile 和 nf_ipf 的字典
+        # Create a dictionary containing profile and nf_ipf
         keyword_data = {
             "keywords": get_name(entity),
-            "nf_ipf": entity.get("nf_ipf", 0) # 使用 .get 避免因缺少 nf_ipf 字段而报错，默认值为0
+            "nf_ipf": entity.get("nf_ipf", 0) # Use .get to avoid errors when nf_ipf is missing; default to 0
         }
         
-        # 将新创建的字典追加到列表中
+        # Append the newly created dictionary to the list
         keyword_dict[entity_type].append(keyword_data)
 
     return keyword_dict
@@ -69,27 +69,27 @@ def generate_keyword_dict(keyword_dict, triples, mode, last_items):
 
 def finalize_and_sort_profiles(input_dict, key_name, top_n=5):
     """
-    对 profile_dict 中的每个实体类型的列表进行处理：
-    1. 根据 nf_ipf 的值降序排序。
-    2. 只保留前 top_n 个元素。
-    3. 提取 "profile" 字段，使列表最终只包含字符串。
+    Process each entity-type list in profile_dict:
+    1. Sort descending by nf_ipf.
+    2. Keep only the first top_n elements.
+    3. Extract the "profile" field so the final list contains only strings.
     """
     final_dict = {}
     for entity_type, profiles_with_scores in input_dict.items():
-        # 1. 使用 lambda 函数根据 nf_ipf 的值进行降序排序
+        # 1. Use a lambda to sort descending by nf_ipf
         sorted_profiles = sorted(
             profiles_with_scores, 
             key=lambda x: x['nf_ipf'], 
             reverse=True
         )
         
-        # 2. 保留排序后的前 top_n 个元素
+        # 2. Keep the first top_n sorted elements
         top_profiles = sorted_profiles[:top_n]
         
-        # 3. 使用列表推导式提取 "profile" 字符串
+        # 3. Use a list comprehension to extract "profile" strings
         final_profiles_list = [item[key_name] for item in top_profiles]
         
-        # 将处理好的列表存入新的字典
+        # Store the processed list in the new dictionary
         final_dict[entity_type] = final_profiles_list
         
     return final_dict

@@ -1,0 +1,1026 @@
+{
+  "type": "bundle",
+  "id": "bundle--df9846e2-aaa4-4f24-8081-adb6c60160c5",
+  "objects": [
+    {
+      "id": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "spec_version": "2.1",
+      "identity_class": "organization",
+      "name": "AlienVault",
+      "created": "2025-08-14T06:57:56.667Z",
+      "modified": "2025-08-14T06:57:56.667Z",
+      "x_opencti_id": "2de10173-ae21-4c9b-b92f-ba39f0b4f88f",
+      "x_opencti_type": "Organization",
+      "type": "identity"
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9",
+      "created": "2017-01-20T00:00:00.000Z",
+      "definition_type": "tlp",
+      "name": "TLP:CLEAR",
+      "definition": {
+        "tlp": "clear"
+      }
+    },
+    {
+      "id": "report--6fa90ae6-6131-5729-b886-76dd1a5a8c35",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-11T15:44:11.197Z",
+      "modified": "2025-08-15T16:37:36.666Z",
+      "name": "Echoes in the Shell: Legacy Tooling Behind Ongoing SharePoint 'ToolShell' Exploitation",
+      "description": "Chinese nation-state actors are exploiting vulnerabilities in Microsoft SharePoint on-premises infrastructure. The attacks chain together multiple recently disclosed vulnerabilities, collectively known as 'ToolShell', to perform unauthenticated code execution, extract cryptographic keys, and deploy web shells. The threat actors demonstrate high proficiency in abusing SharePoint's internal mechanisms, using techniques such as authentication bypass, deployment of malicious ASP.NET pages, and exploitation of deserialization flaws. Post-exploitation activities include reconnaissance, credential harvesting, and establishment of command and control channels. The attackers employ tools like China Chopper and AntSword web shells, and abuse legitimate services like RequestRepo for data exfiltration. While definitive attribution remains inconclusive, there are overlaps with previously observed Chinese APT group activities.",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2025-08-11T15:44:11.197Z",
+      "x_opencti_workflow_id": "f26c68fe-e1e3-4efd-83ba-69ac97aa2662",
+      "labels": [
+        "antsword",
+        "china chopper",
+        "cve-2025-49704",
+        "cve-2025-49706",
+        "cve-2025-53770",
+        "cve-2025-53771",
+        "requestrepo",
+        "sharepoint",
+        "toolshell",
+        "valleyrat"
+      ],
+      "external_references": [
+        {
+          "source_name": "AlienVault",
+          "url": "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/echoes-in-the-shell-legacy-tooling-behind-ongoing-sharepoint-toolshell-exploitation/"
+        },
+        {
+          "source_name": "AlienVault",
+          "url": "https://otx.alienvault.com/pulse/689a0fcbc1584c8053aacdcc",
+          "external_id": "689a0fcbc1584c8053aacdcc"
+        }
+      ],
+      "x_opencti_id": "70e0250b-4dd7-47ab-840f-9e153de00530",
+      "x_opencti_type": "Report",
+      "type": "report",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "object_refs": [
+        "relationship--bafb1632-c53f-5bee-803c-f9cdcd59b0d9",
+        "relationship--2d72d484-4746-5482-affd-e60dc9150311",
+        "relationship--b2ceb505-7bc7-59b3-a7e5-285a558e169a",
+        "relationship--7b4d2a90-9525-59b3-9bef-0321d9b384fb",
+        "relationship--e3a2b619-8bfb-5dda-84cc-c1e24941e24d",
+        "relationship--868407c8-056a-512f-aa0d-b2ea9365b4a5",
+        "relationship--4573ee3b-200e-5416-9e51-cd97eafda3fa",
+        "relationship--ae372bab-565d-57eb-b16a-b19aafbf74da",
+        "relationship--3a754e5f-eba7-5f41-af09-b1d365af3d19",
+        "relationship--7050e6c1-d057-5048-b00d-862bb2fdae84",
+        "relationship--07995082-88aa-582d-81b9-5b9ab4fd16dd",
+        "relationship--2827ad7d-abb6-5e9f-a8dd-d10e4c351adf",
+        "relationship--1b69e4c9-a609-5ba2-acf9-04d7aee2f1f5",
+        "relationship--caea3264-6fd0-5c5a-8561-d0da8b491b70",
+        "relationship--a96d2a75-8bf3-555e-a854-54f5b6cb50cb",
+        "relationship--7d6ca4ec-8506-52e7-8459-87b90b0a2fee",
+        "relationship--9e54c06c-1077-5502-8f9c-fa767f2a8904",
+        "relationship--4dafd17a-9b54-570e-96e3-6027b30ad8c5",
+        "relationship--9a2b92ef-8755-534e-ac49-3929a34fd66b",
+        "relationship--34088b27-1655-5562-820f-71a580da16a2",
+        "relationship--77dd0f4a-163e-536a-8fba-3a613855d23f",
+        "relationship--20534575-34bc-503c-94be-27d250f37660",
+        "relationship--58cf1a64-6437-5e48-93ca-cf42a1944070",
+        "relationship--f1248748-ceb1-526f-8923-2ff4d204f672",
+        "relationship--a912e09b-05c0-5cb2-b3f6-b41192571d37",
+        "relationship--098a5527-dfb8-5368-831b-628943dfe2ff",
+        "relationship--137a65a8-5791-5cb5-8cce-ca2be173dae1",
+        "relationship--21e3e5c4-089d-5e0b-88c6-9d9b61517c3b",
+        "relationship--8e21baf3-f077-5ed7-a0ec-20749e654845",
+        "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+        "relationship--a82e3243-b060-580d-8c80-db79370d183c",
+        "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+        "file--189ba659-2d5f-5b47-9c06-2ed07629f125",
+        "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748",
+        "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf",
+        "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95",
+        "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd",
+        "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+        "relationship--8ef1a170-6c30-5843-a064-46a18a2843ca",
+        "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+        "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54",
+        "relationship--91932324-4eb9-52d9-a55e-06883862858e",
+        "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+        "location--f5a9dd9f-5d18-5343-8562-ee913912526d"
+      ]
+    },
+    {
+      "id": "relationship--bafb1632-c53f-5bee-803c-f9cdcd59b0d9",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.642Z",
+      "modified": "2025-08-15T16:37:34.114Z",
+      "x_opencti_id": "6cc97ff2-3d9f-4cc7-88d2-db610fe3904b",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "target_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7"
+    },
+    {
+      "id": "relationship--2d72d484-4746-5482-affd-e60dc9150311",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.642Z",
+      "modified": "2025-08-15T16:37:33.832Z",
+      "x_opencti_id": "34f08bed-5094-4ef2-b6ca-1bda3f5b84f1",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "target_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e"
+    },
+    {
+      "id": "relationship--b2ceb505-7bc7-59b3-a7e5-285a558e169a",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.641Z",
+      "modified": "2025-08-15T16:37:33.689Z",
+      "x_opencti_id": "c1e90090-655a-4175-bbc6-f4db8e89af65",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "target_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b"
+    },
+    {
+      "id": "relationship--7b4d2a90-9525-59b3-9bef-0321d9b384fb",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.638Z",
+      "modified": "2025-08-15T16:37:33.531Z",
+      "x_opencti_id": "72889348-f390-44e5-b856-8a059e4f125f",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95"
+    },
+    {
+      "id": "relationship--e3a2b619-8bfb-5dda-84cc-c1e24941e24d",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.641Z",
+      "modified": "2025-08-15T16:37:33.483Z",
+      "x_opencti_id": "f08dca80-c82a-4432-b9ed-7fcc730e53b5",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "target_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e"
+    },
+    {
+      "id": "relationship--868407c8-056a-512f-aa0d-b2ea9365b4a5",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.636Z",
+      "modified": "2025-08-15T16:37:33.162Z",
+      "x_opencti_id": "0fd6d121-5065-4104-9fb3-9198d2523466",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf"
+    },
+    {
+      "id": "relationship--4573ee3b-200e-5416-9e51-cd97eafda3fa",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.637Z",
+      "modified": "2025-08-15T16:37:33.080Z",
+      "x_opencti_id": "4eff2149-c1bf-45fc-9909-2ec66597734d",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd"
+    },
+    {
+      "id": "relationship--ae372bab-565d-57eb-b16a-b19aafbf74da",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.637Z",
+      "modified": "2025-08-15T16:37:32.990Z",
+      "x_opencti_id": "fdbed541-098a-49ff-800f-2409e618d0e2",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748"
+    },
+    {
+      "id": "relationship--3a754e5f-eba7-5f41-af09-b1d365af3d19",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.636Z",
+      "modified": "2025-08-15T16:37:32.885Z",
+      "x_opencti_id": "e9a4b779-28e9-43a3-b3bb-c2b0eb75ee56",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54"
+    },
+    {
+      "id": "relationship--7050e6c1-d057-5048-b00d-862bb2fdae84",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.636Z",
+      "modified": "2025-08-15T16:37:32.794Z",
+      "x_opencti_id": "5964bdce-0964-49f8-83ea-2dd89975c739",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95"
+    },
+    {
+      "id": "relationship--07995082-88aa-582d-81b9-5b9ab4fd16dd",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.633Z",
+      "modified": "2025-08-15T16:37:32.739Z",
+      "x_opencti_id": "a00d162b-5fd7-450a-a413-c0122975f229",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748"
+    },
+    {
+      "id": "relationship--2827ad7d-abb6-5e9f-a8dd-d10e4c351adf",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.635Z",
+      "modified": "2025-08-15T16:37:32.663Z",
+      "x_opencti_id": "18dad51d-0b8c-41ec-9d9a-01fc91ccae3e",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd"
+    },
+    {
+      "id": "relationship--1b69e4c9-a609-5ba2-acf9-04d7aee2f1f5",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.635Z",
+      "modified": "2025-08-15T16:37:32.563Z",
+      "x_opencti_id": "1c52f500-a464-437b-8cd9-44f7098c6c07",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748"
+    },
+    {
+      "id": "relationship--caea3264-6fd0-5c5a-8561-d0da8b491b70",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.634Z",
+      "modified": "2025-08-15T16:37:32.449Z",
+      "x_opencti_id": "9cfb5d46-ed7f-41ae-8a51-9c3751c20e2b",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf"
+    },
+    {
+      "id": "relationship--a96d2a75-8bf3-555e-a854-54f5b6cb50cb",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.634Z",
+      "modified": "2025-08-15T16:37:32.322Z",
+      "x_opencti_id": "4afa7ad0-10f8-43ba-9128-99bd68ac8c46",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54"
+    },
+    {
+      "id": "relationship--7d6ca4ec-8506-52e7-8459-87b90b0a2fee",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.634Z",
+      "modified": "2025-08-15T16:37:32.214Z",
+      "x_opencti_id": "0d3cdd29-de3f-47ab-b1bd-384c688b05a4",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95"
+    },
+    {
+      "id": "relationship--9e54c06c-1077-5502-8f9c-fa767f2a8904",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.633Z",
+      "modified": "2025-08-15T16:37:32.001Z",
+      "x_opencti_id": "be8d9e86-1ee9-4551-85e0-b7f77943ce3c",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd"
+    },
+    {
+      "id": "relationship--4dafd17a-9b54-570e-96e3-6027b30ad8c5",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.632Z",
+      "modified": "2025-08-15T16:37:31.831Z",
+      "x_opencti_id": "8b4e5bda-ace8-4056-9ce8-c01a6f698ecd",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf"
+    },
+    {
+      "id": "relationship--9a2b92ef-8755-534e-ac49-3929a34fd66b",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.631Z",
+      "modified": "2025-08-15T16:37:31.574Z",
+      "x_opencti_id": "17d05bbf-9747-4b5c-a0eb-410234b0331a",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd"
+    },
+    {
+      "id": "relationship--34088b27-1655-5562-820f-71a580da16a2",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.632Z",
+      "modified": "2025-08-15T16:37:31.497Z",
+      "x_opencti_id": "9b6d6e90-667a-4da3-bb12-5d0908a93a6d",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54"
+    },
+    {
+      "id": "relationship--77dd0f4a-163e-536a-8fba-3a613855d23f",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.632Z",
+      "modified": "2025-08-15T16:37:31.279Z",
+      "x_opencti_id": "16f9bc35-4923-4ee0-8c51-b1d5035084b7",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95"
+    },
+    {
+      "id": "relationship--20534575-34bc-503c-94be-27d250f37660",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.624Z",
+      "modified": "2025-08-15T16:37:31.083Z",
+      "x_opencti_id": "9771e9c2-3984-4835-bd75-a7367df66d04",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e"
+    },
+    {
+      "id": "relationship--58cf1a64-6437-5e48-93ca-cf42a1944070",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.630Z",
+      "modified": "2025-08-15T16:37:30.883Z",
+      "x_opencti_id": "a9aa0f7b-4906-4c94-8f8a-49dd65ee9078",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748"
+    },
+    {
+      "id": "relationship--f1248748-ceb1-526f-8923-2ff4d204f672",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.630Z",
+      "modified": "2025-08-15T16:37:30.675Z",
+      "x_opencti_id": "5d86e18e-65a7-4249-94db-911549cf6e7a",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf"
+    },
+    {
+      "id": "relationship--a912e09b-05c0-5cb2-b3f6-b41192571d37",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.629Z",
+      "modified": "2025-08-15T16:37:30.456Z",
+      "x_opencti_id": "855caf72-f63a-48fe-bc55-d4032b7f3979",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54"
+    },
+    {
+      "id": "relationship--098a5527-dfb8-5368-831b-628943dfe2ff",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.623Z",
+      "modified": "2025-08-15T16:37:29.970Z",
+      "x_opencti_id": "c52888a1-b847-442a-a6e2-561cfd80ba7b",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b"
+    },
+    {
+      "id": "relationship--137a65a8-5791-5cb5-8cce-ca2be173dae1",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.623Z",
+      "modified": "2025-08-15T16:37:29.481Z",
+      "x_opencti_id": "f833a2a5-3c23-4e7e-b7e5-ecb227ace288",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7"
+    },
+    {
+      "id": "relationship--21e3e5c4-089d-5e0b-88c6-9d9b61517c3b",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.625Z",
+      "modified": "2025-08-15T16:37:29.117Z",
+      "x_opencti_id": "2837c7de-7479-418e-b51b-16641e521e40",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "target_ref": "location--f5a9dd9f-5d18-5343-8562-ee913912526d"
+    },
+    {
+      "id": "relationship--8e21baf3-f077-5ed7-a0ec-20749e654845",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:53:24.625Z",
+      "modified": "2025-08-15T16:37:28.884Z",
+      "x_opencti_id": "75c56ac6-6387-4849-aa47-8e39d62e1f98",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "target_ref": "location--f5a9dd9f-5d18-5343-8562-ee913912526d"
+    },
+    {
+      "id": "intrusion-set--a574f6e2-73c0-508b-b5d9-7e0d171f5a0e",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:53:24.621Z",
+      "modified": "2025-08-15T16:37:27.997Z",
+      "name": "Linen Typhoon",
+      "x_opencti_id": "7ac69c22-e71a-41b2-9097-7ef5341f8fdd",
+      "x_opencti_type": "Intrusion-Set",
+      "type": "intrusion-set",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--a82e3243-b060-580d-8c80-db79370d183c",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:51:52.363Z",
+      "modified": "2025-08-15T15:58:14.200Z",
+      "x_opencti_id": "68ef4209-e9cf-4063-9afa-c797485a1c20",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "target_ref": "file--189ba659-2d5f-5b47-9c06-2ed07629f125"
+    },
+    {
+      "id": "indicator--2bc14bf8-7bc9-5e38-8a85-6200dce2d130",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:51:52.362Z",
+      "modified": "2025-08-30T18:56:51.687Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = '10e01ce96889c7b4366cfa1e7d99759e4e2b6e5dfe378087d9e836b7278abfb6']",
+      "name": "10e01ce96889c7b4366cfa1e7d99759e4e2b6e5dfe378087d9e836b7278abfb6",
+      "valid_from": "2025-07-25T20:49:42.000Z",
+      "valid_until": "2026-07-22T04:43:27.628Z",
+      "x_opencti_score": 80,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "10e01ce96889c7b4366cfa1e7d99759e4e2b6e5dfe378087d9e836b7278abfb6"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "antsword",
+        "china chopper",
+        "cve-2025-49704",
+        "cve-2025-49706",
+        "cve-2025-53770",
+        "cve-2025-53771",
+        "exploit chain",
+        "fileless",
+        "ghostwebshell",
+        "keysiphon",
+        "remote code execution",
+        "requestrepo",
+        "sharepoint",
+        "toolshell",
+        "valleyrat",
+        "zero-day"
+      ],
+      "x_opencti_id": "8213bdaa-38e4-462b-a63a-07c1297444d0",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--189ba659-2d5f-5b47-9c06-2ed07629f125",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "10e01ce96889c7b4366cfa1e7d99759e4e2b6e5dfe378087d9e836b7278abfb6"
+      },
+      "x_opencti_id": "6bd3b034-13c2-4b39-916d-ecba1020cde3",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "antsword",
+        "china chopper",
+        "cve-2025-49704",
+        "cve-2025-49706",
+        "cve-2025-53770",
+        "cve-2025-53771",
+        "exploit chain",
+        "fileless",
+        "ghostwebshell",
+        "keysiphon",
+        "remote code execution",
+        "requestrepo",
+        "sharepoint",
+        "toolshell",
+        "valleyrat",
+        "zero-day"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "vulnerability--303364dc-51c9-5fdb-bec8-328d8f571748",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:51:39.394Z",
+      "modified": "2025-08-15T15:51:50.401Z",
+      "name": "CVE-2025-49706",
+      "x_opencti_cisa_kev": false,
+      "external_references": [
+        {
+          "source_name": "NIST NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49706",
+          "external_id": "CVE-2025-49706"
+        }
+      ],
+      "x_opencti_id": "037bb979-c63f-4906-9380-af553bbc2be8",
+      "x_opencti_type": "Vulnerability",
+      "type": "vulnerability",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "vulnerability--bc9e1ac7-3679-5067-8f57-d0586e65ecaf",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:51:39.096Z",
+      "modified": "2025-08-15T15:51:39.566Z",
+      "name": "CVE-2025-49704",
+      "x_opencti_cisa_kev": false,
+      "external_references": [
+        {
+          "source_name": "NIST NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49704",
+          "external_id": "CVE-2025-49704"
+        }
+      ],
+      "x_opencti_id": "6d645f9b-f5bd-455f-9ea0-1329f1d492c8",
+      "x_opencti_type": "Vulnerability",
+      "type": "vulnerability",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "vulnerability--bbb87aff-6b61-58c9-8439-1e844da73a95",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:51:37.798Z",
+      "modified": "2025-08-15T15:51:14.416Z",
+      "name": "CVE-2025-53771",
+      "x_opencti_cisa_kev": false,
+      "external_references": [
+        {
+          "source_name": "NIST NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53771",
+          "external_id": "CVE-2025-53771"
+        }
+      ],
+      "x_opencti_id": "705ae44f-ccde-4576-9d62-4d85e65be064",
+      "x_opencti_type": "Vulnerability",
+      "type": "vulnerability",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "vulnerability--6e631e19-e567-5cbb-8dd6-e8e8a817b3fd",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:51:37.798Z",
+      "modified": "2025-08-15T15:51:14.367Z",
+      "name": "CVE-2025-53770",
+      "x_opencti_cisa_kev": false,
+      "external_references": [
+        {
+          "source_name": "NIST NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53770",
+          "external_id": "CVE-2025-53770"
+        }
+      ],
+      "x_opencti_id": "407b617c-0e88-4ae3-af95-99766f514dce",
+      "x_opencti_type": "Vulnerability",
+      "type": "vulnerability",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "malware--5558d513-1b4e-5ee6-802e-453e6eb671e7",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:49:55.150Z",
+      "modified": "2025-08-15T15:00:31.635Z",
+      "name": "AntSword",
+      "is_family": false,
+      "x_opencti_id": "9607ff29-8fda-4b64-9f8f-11b8f331b239",
+      "x_opencti_type": "Malware",
+      "type": "malware",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--8ef1a170-6c30-5843-a064-46a18a2843ca",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:36:00.208Z",
+      "modified": "2025-08-14T22:13:26.268Z",
+      "x_opencti_id": "079ade1f-f761-4121-b162-3282ec1908b9",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "target_ref": "location--f5a9dd9f-5d18-5343-8562-ee913912526d"
+    },
+    {
+      "id": "malware--4bae9058-9efa-5898-aff4-79126914ec5e",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:16.881Z",
+      "modified": "2025-08-15T05:04:49.790Z",
+      "name": "ValleyRAT",
+      "is_family": false,
+      "x_opencti_id": "31b0950e-332a-4200-a3f4-225118b4c6f3",
+      "x_opencti_type": "Malware",
+      "type": "malware",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "vulnerability--9f776a91-868f-5a2a-bbf7-5a3256f8cb54",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:19:17.083Z",
+      "modified": "2025-08-14T09:41:11.841Z",
+      "name": "CVE-2019-0604",
+      "x_opencti_cisa_kev": false,
+      "external_references": [
+        {
+          "source_name": "NIST NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-0604",
+          "external_id": "CVE-2019-0604"
+        }
+      ],
+      "x_opencti_id": "92b2fc2a-707c-4467-b4d3-b1949c429cb9",
+      "x_opencti_type": "Vulnerability",
+      "type": "vulnerability",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--91932324-4eb9-52d9-a55e-06883862858e",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:15:45.259Z",
+      "modified": "2025-08-14T07:24:13.208Z",
+      "x_opencti_id": "96b86c4f-33b4-4fcf-817b-4805afc650f0",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "target_ref": "location--f5a9dd9f-5d18-5343-8562-ee913912526d"
+    },
+    {
+      "id": "malware--7efd2f28-866e-532f-8fba-39aeb087cc9b",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:45.134Z",
+      "modified": "2025-08-14T07:24:01.033Z",
+      "name": "China Chopper - S0020",
+      "is_family": false,
+      "x_opencti_id": "5a1b8a4a-f852-481a-b6da-b9c15da40111",
+      "x_opencti_type": "Malware",
+      "type": "malware",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "location--f5a9dd9f-5d18-5343-8562-ee913912526d",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:29.974Z",
+      "modified": "2025-08-14T10:32:26.526Z",
+      "name": "China",
+      "description": "Imported from MISP tag",
+      "latitude": 35.86166,
+      "longitude": 104.195397,
+      "x_opencti_aliases": [
+        "CHN",
+        "CN"
+      ],
+      "x_opencti_location_type": "Country",
+      "country": "China",
+      "x_opencti_id": "ebda4445-8c5f-480e-bbc1-13910feac249",
+      "x_opencti_type": "Country",
+      "type": "location",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    }
+  ]
+}

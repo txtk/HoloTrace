@@ -90,10 +90,10 @@ def eval_hit_and_mrr(data: Dict[str, Any], rank_key: str = "ground_truth_rank_ne
         aar = calculate_aar(ranks)
 
         # hit1 only if AAR == 1 (or close enough for float)
-        # "只有当平均真实排名为1，hit1才算命中"
+        # "hit1 is counted only when the average ground-truth rank is 1"
         aar_h1 = 1 if aar <= 1.000001 else 0
 
-        # hit5, 10: "只要平均真实排名小于 5 或 10"
+        # hit5, 10: "count as long as the average ground-truth rank is below 5 or 10"
         aar_h5 = 1 if aar < 5.0 else 0
         aar_h10 = 1 if aar < 10.0 else 0
 

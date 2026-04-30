@@ -58,7 +58,7 @@ type_dict = {
     "cryptocurrency-wallet": {
         "class": IoC,
         "parse": ioc_parse,
-    },  # cryptocurrency-wallet的实体属性和Url相同，所以直接使用url代替
+    },  # The cryptocurrency-wallet entity attribute is the same as Url, so use url directly instead
     "text": {"class": IoC, "parse": ioc_parse},
     "email-addr": {"class": IoC, "parse": ioc_parse},
     "ipv4-addr": {"class": IoC, "parse": ioc_parse},

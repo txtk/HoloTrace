@@ -18,6 +18,8 @@ def importance(suffix, attribute_dict, entity_id_dict, neo4j_type, outgoing, inc
         down_total = count_down_total(layer, neo4j_static_dict, neo4j_type)
         for record in records:
             entity = attribute_dict.get_value(str(record))
+            if entity is None:
+                continue
             if entity["semantic"] == 0:
                 entity["hsage"] = 0
             else:

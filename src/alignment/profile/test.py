@@ -18,38 +18,38 @@ from datetime import date
 
 def check_string_similarity(str1, str2, threshold=0.9):
     """
-    计算两个字符串的相似度（去除符号后），并判断是否超过阈值。
+    Calculate the similarity of two strings after removing symbols, and check whether it exceeds the threshold.
     
     Args:
-        str1 (str): 第一个字符串
-        str2 (str): 第二个字符串
-        threshold (float): 判定阈值，默认为 0.9 (90%)
+        str1 (str): first string
+        str2 (str): second string
+        threshold (float): decision threshold, default 0.9 (90%)
         
     Returns:
-        dict: 包含是否匹配(bool)、相似度数值(float)和清洗后的字符串
+        dict: contains whether it matches (bool), similarity score (float), and cleaned strings
     """
     
-    # 1. 清洗数据函数：去除所有非字母和数字，并转为小写
+    # 1. Cleaning function: remove all non-letter and non-digit characters and lowercase the result
     def clean_string(text):
-        # 正则表达式：[^a-zA-Z0-9] 表示匹配除了字母和数字以外的所有字符
-        # 将这些字符替换为空字符串
+        # Regex [^a-zA-Z0-9] matches all characters except letters and digits
+        # Replace those characters with an empty string
         return re.sub(r'[^a-zA-Z0-9]', '', text).lower()
 
-    # 2. 获取清洗后的字符串
+    # 2. Get the cleaned strings
     s1_clean = clean_string(str1)
     s2_clean = clean_string(str2)
     
-    # 边界情况处理：如果清洗后为空
+    # Edge-case handling: if the cleaned result is empty
     if not s1_clean and not s2_clean:
         return False
     if not s1_clean or not s2_clean:
         return False
 
-    # 3. 计算相似度
-    # SequenceMatcher.ratio() 返回一个 [0, 1] 的浮点数
+    # 3. Calculate similarity
+    # SequenceMatcher.ratio() returns a float in [0, 1]
     similarity = SequenceMatcher(None, s1_clean, s2_clean).ratio()
     
-    # 4. 判定结果
+    # 4. Determine the result
     is_match = similarity > threshold
 
     return is_match

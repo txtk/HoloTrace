@@ -1,16 +1,17 @@
 import os
 
+from loguru import logger
+
 from alignment.make_adj import find_directed_links
-from utils.celery_task import get_completion_result_batch
-from config import settings
+from config import ignore_dict, settings
+from utils.celery_task import get_completion_result_batch_with_usage
 from utils.file.json_utils import JsonUtils
 from utils.vector.get_vector import load_vector_pkl
 
 from .get_neighbours_mes import get_neighbours_mes_dict
-from config import ignore_dict
+from .retriver import retriver_name, retriver_standard
 from .self_info import filter_self_info
-from .retriver import retriver_standard, retriver_name
-from loguru import logger
+
 
 def find_neighbours(entity, outgoing, incoming, entities, attribute_dict: JsonUtils):
     start_triplets = []
@@ -20,6 +21,8 @@ def find_neighbours(entity, outgoing, incoming, entities, attribute_dict: JsonUt
         out_links = outgoing.get(entity, [])
         for i in out_links:
             start_triplet = {
+                "start_id": entity,
+                "end_id": i[1],
                 "start": attribute_dict.get_value(str(entity)),
                 "relation": i[0],
                 "end": attribute_dict.get_value(str(i[1])),
@@ -28,6 +31,8 @@ def find_neighbours(entity, outgoing, incoming, entities, attribute_dict: JsonUt
         in_links = incoming.get(entity, [])
         for i in in_links:
             end_triplet = {
+                "start_id": i[1],
+                "end_id": entity,
                 "start": attribute_dict.get_value(str(i[1])),
                 "relation": i[0],
                 "end": attribute_dict.get_value(str(entity)),
@@ -45,8 +50,8 @@ def prepare_data(
     attribute_dict,
     vectors,
     last_items,
-    rag_malware, 
-    rag_attck, 
+    rag_malware,
+    rag_attck,
     rag_group,
     top_n,
     is_profile: bool,
@@ -57,24 +62,30 @@ def prepare_data(
 ):
     start_triplets, end_triplets = find_neighbours(entity, outgoing, incoming, entities, attribute_dict)
     entity = attribute_dict.get_value(str(entity))
-    last_items_sub = last_items[ : last_items.index(entity.get("entity_type")) + 1]
-    # 获取周边邻居信息
+    last_items_sub = last_items[: last_items.index(entity.get("entity_type")) + 1]
+    # Get surrounding neighbor information
     neighbours_mes_dict, has_sub = get_neighbours_mes_dict(
-        start_triplets, end_triplets, last_items_sub, top_n, is_profile=is_profile, is_hsage=is_hsage, profile_name=profile_name
+        start_triplets,
+        end_triplets,
+        last_items_sub,
+        top_n,
+        is_profile=is_profile,
+        is_hsage=is_hsage,
+        profile_name=profile_name,
     )
     neighbours_mes_list = []
     for k, v in neighbours_mes_dict.items():
         neighbours_mes_list.append(f"{k}: {str(v)}")
 
-    # 筛选实体自身信息
+    # Filter the entity's own information
     entity_mes_dict = filter_self_info(entity, is_enhance_mes, ignore_list)
     retriver_list = []
-    # 检索得到信息
+    # Retrieve information
     if is_retriver:
         similar_entities = retriver_standard(neighbours_mes_dict, entity, rag_malware, rag_attck, rag_group)
         related_texts = retriver_name(entity, vectors, rag_malware, rag_attck, rag_group)
         retriver_list = similar_entities + related_texts
-    
+
     if len(retriver_list) == 0:
         is_retriver = False
 
@@ -84,7 +95,6 @@ def prepare_data(
         "neighbours": neighbours_mes_list,
         "has_retriver": is_retriver,
         "retrive_info": retriver_list,
-
     }
     return content, entity
 
@@ -93,6 +103,7 @@ def check_profile(entity, attribute_dict, profile_name):
     entity = attribute_dict.get_value(str(entity))
     if profile_name in entity:
         return True
+    
     return False
 
 
@@ -105,8 +116,8 @@ def get_profile(
     entities,
     vectors,
     last_items,
-    rag_malware, 
-    rag_attck, 
+    rag_malware,
+    rag_attck,
     rag_group,
     top_n,
     recreate,
@@ -133,10 +144,16 @@ def get_profile(
         entity_gids = []
         profile_prompt_path = os.path.join(settings.prompt_dir, "profile", f"{layer}.poml")
         for entity_id in ids:
-            if check_profile(entity_id, attribute_dict, profile_name) and not recreate:
+            entity = attribute_dict.get_value(str(entity_id))
+            if entity is None or not isinstance(entity, dict):
+                logger.warning(f"[{suffix}] skip missing entity in attributes: {entity_id}")
                 continue
+
+            if profile_name in entity and not recreate:
+                continue
+            
             entity_gids.append(entity_id)
-            # 生成摘要
+            # Generate a summary
             content, entity = prepare_data(
                 ignore_list,
                 entity_id,
@@ -146,8 +163,8 @@ def get_profile(
                 attribute_dict,
                 vectors,
                 last_items,
-                rag_malware, 
-                rag_attck, 
+                rag_malware,
+                rag_attck,
                 rag_group,
                 top_n,
                 is_profile,
@@ -159,7 +176,10 @@ def get_profile(
             entity_list.append(entity)
             contents.append(content)
 
-        results = get_completion_result_batch(contents, str(profile_prompt_path))
+        if not contents:
+            continue
+
+        results = get_completion_result_batch_with_usage(contents, str(profile_prompt_path))
         for i in range(len(entity_list)):
             profile = results[i]
             entity = entity_list[i]
@@ -180,8 +200,8 @@ def profile(
     target_vector_path,
     source_vector_path,
     last_items,
-    rag_malware, 
-    rag_attck, 
+    rag_malware,
+    rag_attck,
     rag_group,
     top_n,
     recreate=False,
@@ -209,8 +229,8 @@ def profile(
         source_entities,
         source_vector,
         last_items,
-        rag_malware, 
-        rag_attck, 
+        rag_malware,
+        rag_attck,
         rag_group,
         top_n,
         recreate,
@@ -232,8 +252,8 @@ def profile(
         target_entities,
         target_vector,
         last_items,
-        rag_malware, 
-        rag_attck, 
+        rag_malware,
+        rag_attck,
         rag_group,
         top_n,
         recreate,
@@ -246,4 +266,3 @@ def profile(
     logger.info(f"完成目标图谱 {suffix} 的 profile 生成")
 
     target_attribute_dict.save_json(file_path=target_attribute_path)
-    

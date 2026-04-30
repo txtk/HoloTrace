@@ -2,7 +2,7 @@ import copy
 from collections import defaultdict
 from typing import Any, Dict, List
 
-from utils.celery_task import get_completion_result_batch
+from utils.celery_task import get_completion_result_batch_with_usage
 from utils.vector.query_builders import (
     BoolQueryBuilder,
     TermsQueryBuilder,
@@ -13,7 +13,7 @@ from .save import save_result
 
 
 def parse_results(results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """解析 ES 搜索结果"""
+    """Parse ES search results"""
     return [
         {
             "id": hit.get("_id"),
@@ -78,31 +78,31 @@ def search_by_profile(
 
         results = es_manager.perform_search(query.copy(), top_k=top_k)
 
-        # 计算 ground_truth 排位
-        # 如果排位在前top_k，说明 profile 被用于后续生成
+        # Calculate the ground_truth rank
+        # If the rank is within top_k, the profile is used for subsequent generation
         gt_ids = results_dict[entity_id].get("groud_truth", "")
         rank = -1
         results_dict[entity_id]["ground_truth_rank"] = {}
         for gt_id in gt_ids:
             if gt_id:
-                # 检查是否在前top_k名中
+                # Check whether it is in the top_k
                 for idx, hit in enumerate(results):
                     if hit["_id"] == str(gt_id):
                         rank = idx + 1
                         break
 
-                # 如果未在前10名中找到，扩大搜索范围查找排位
+                # If it is not found in the top 10, expand the search range to find its rank
                 if rank == -1:
                     deep_query = query.copy()
                     if "size" in deep_query:
                         del deep_query["size"]
-                    deep_query["_source"] = False  # 不需要内容，只需ID计算排位
+                    deep_query["_source"] = False  # No content is needed; only IDs are needed for rank calculation
 
-                    # RRF 要求 rank_window_size >= size
+                    # RRF requires rank_window_size >= size
                     if "retriever" in deep_query and "rrf" in deep_query["retriever"]:
                         deep_query["retriever"]["rrf"]["rank_window_size"] = 10000
 
-                    # 假设库的大小不会超过 10000，或者只需要关心前 10000 的排名
+                    # Assume the library size does not exceed 10000, or only the top 10000 ranks matter
                     deep_results = es_manager.perform_search(deep_query, top_k=10000)
                     for idx, hit in enumerate(deep_results):
                         if hit["_id"] == str(gt_id):
@@ -120,7 +120,7 @@ def make_content(idx, cand_dict, attribute_dict, name_to_id) -> List[Dict[str, s
     content = []
     for cand in candidates:
         cand_id = cand["id"]
-        # 获取候选实体的名称作为 key
+        # Use candidate entity names as keys
         name = attribute_dict.get_value(str(cand_id)).get("name", "")
         content.append({name: cand["profile"]})
         name_to_id[name].add(cand_id)
@@ -159,6 +159,36 @@ def search_candidates(
     name_to_id = defaultdict(set)
     for entity_id in results_dict:
         entity = results_dict.get(entity_id)
+
+        # Optimization: check whether ground_truth is in the candidate set
+        # If ground_truth is neither in the top_k profile search results nor in the IOC search results
+        # then this sample does not need subsequent model reranking
+        # gt_ids = entity.get("groud_truth", [])
+
+        # # Get the ID set from IOC search results
+        # ioc_cands = ioc_cand_dict.get(entity_id, [])
+        # ioc_cand_ids = {str(c["id"]) for c in ioc_cands}
+
+        # valid_sample = False
+        # for gt_id in gt_ids:
+        #     gt_id = str(gt_id)
+        #     # 1. Check whether the profile rank is in the top_k
+        #     # search_by_profile has already calculated rank; rank <= top_k means it appears in candidates
+        #     rank = entity.get("ground_truth_rank", {}).get(gt_id, -1)
+        #     flag_profile = rank != -1 and rank <= top_k
+
+        #     # 2. Check whether it is in the IOC search results
+        #     flag_ioc = gt_id in ioc_cand_ids
+
+        #     if flag_profile or flag_ioc:
+        #         valid_sample = True
+        #         break
+
+        # if not valid_sample:
+        #     results_dict[entity_id]["ground_truth_rank_new"] = copy.deepcopy(entity.get("ground_truth_rank", {}))
+        #     results_dict[entity_id]["candidates"] = []
+        #     continue
+
         ioc_content = []
         if is_ioc_mode:
             ioc_content = make_content(entity_id, ioc_cand_dict, target_attribute_dict, name_to_id)
@@ -178,6 +208,6 @@ def search_candidates(
         ids.append(entity_id)
         contents.append(content)
 
-    results = get_completion_result_batch(contents, str(direct_prompt_path))
+    results = get_completion_result_batch_with_usage(contents, str(direct_prompt_path))
 
     save_result(ids, results, results_dict, name_to_id, results_path)

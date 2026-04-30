@@ -15,7 +15,12 @@ def get_source_target_labels(
 ):
     for k, v in source_target_dict.get_items():
         entity = source_attribute_dict.get_value(str(k))
+        if not entity:
+            logger.warning(f"源实体 {k} 在属性文件中缺失，无法获取标签信息")
+            continue
         entity_type = entity.get("entity_type", "")
+        if entity_type.find("attc") != -1:
+            print(1)
         if intrusio_set_mode:
             if entity_type != "intrusion-set":
                 continue

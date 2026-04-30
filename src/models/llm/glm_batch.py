@@ -52,7 +52,7 @@
 #             endpoint="/v4/chat/completions",
 #             auto_delete_input_file=True,
 #             metadata={
-#                 "description": "商品评价情感分析",
+#                 "description": "Product review sentiment analysis",
 #                 "project": "sentiment_analysis"
 #             }
 #         )
@@ -62,7 +62,7 @@
 #     def check_batch_status(self):
 #         while True:
 #             batch_status = self.client.batches.retrieve(self.batch.id)
-#             print(f"任务状态: {batch_status.status}")
+#             print(f"Task status: {batch_status.status}")
             
 #             if batch_status.status == "completed":
 #                 result_content = self.client.files.content(batch_status.output_file_id)
@@ -70,9 +70,9 @@
 #                 return True
             
 #             elif batch_status.status in ["failed", "expired", "cancelled"]:
-#                 print(f"任务失败，状态: {batch_status.status}")
+#                 print(f"Task failed, status: {batch_status.status}")
 #                 return False
-#             time.sleep(30)  # 等待30秒后再次检查
+#             time.sleep(30)  # Wait 30 seconds before checking again
 
 
 #     def parse_results(self):
@@ -85,6 +85,6 @@
 #                 result_content = result_content.split("</think>")[1].strip()
 #                 results.append(result_content)
 #             else:
-#                 raise("请求失败")
+#                 raise("Request failed")
 #         return results
     

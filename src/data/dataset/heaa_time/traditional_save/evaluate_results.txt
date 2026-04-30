@@ -1,0 +1,34 @@
+
+平均运行耗时: 27806.35 秒
+平均消耗 Token 数量: 8778195.00
+
+==================================================
+模式平均性能 (ioc=True, hybrid=True, profile=profile_without_enhance_5, top_k=10)
+==================================================
+Ground Truth Key: ground_truth_rank_new
+  hit1: 0.4500
+  hit5: 0.5200
+  hit10: 0.5400
+  mrr: 0.4930
+  aar_hit1: 0.4500
+  aar_hit5: 0.5100
+  aar_hit10: 0.5400
+  aar_mrr: 0.4930
+  macro_precision: 0.3095
+  macro_recall: 0.4500
+  macro_f1: 0.3502
+  weighted_f1: 0.3502
+  group_hit1_both_strong_weak: 0.7368
+  group_mrr_both_strong_weak: 0.7831
+  group_hit1_only_weak: 0.2881
+  group_mrr_only_weak: 0.3295
+  group_hit1_only_none: 0.0000
+  group_mrr_only_none: 0.0349
+  group_hit1_source_target_1: 0.2647
+  group_mrr_source_target_1: 0.2937
+  group_hit1_source_target_1_2: 0.3226
+  group_mrr_source_target_1_2: 0.3755
+  group_hit1_source_target_3_5: 0.6667
+  group_mrr_source_target_3_5: 0.6760
+  group_hit1_source_target_gt_5: 0.9167
+  group_mrr_source_target_gt_5: 0.9583

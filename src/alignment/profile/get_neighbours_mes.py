@@ -8,12 +8,12 @@ def json_init(input_dict, key, inital_value):
 
 
 def insert_semantic_dict(entity, entity_type, neighbours_mes_dict, last_items, is_profile, profile_name):
-    # 如果 semantic 不为 1，则直接返回
+    # Return directly if semantic is not 1
     if entity.get("semantic") != 1:
         return neighbours_mes_dict
 
     if entity_type in last_items:
-        # 确保 entity_type 对应的键存在且为列表
+        # Ensure the key for entity_type exists and is a list
         neighbours_mes_dict = json_init(neighbours_mes_dict, entity_type, [])
 
         if is_profile:
@@ -21,16 +21,15 @@ def insert_semantic_dict(entity, entity_type, neighbours_mes_dict, last_items, i
                 "name": entity.get("name"),
                 "hsage": entity.get("hsage", 0),
                 "profile": entity.get(profile_name, "none"),
-                # "profile": entity.get("profile_without_enhance", "none"),
             }
         else:
-            # 创建包含 name 和 hsage 的字典
+            # Create a dictionary containing name and hsage
             neighbour_data = {
                 "name": entity.get("name"),
                 "hsage": entity.get("hsage", 0),
             }
 
-        # 将新创建的字典追加到列表中
+        # Append the newly created dictionary to the list
         neighbours_mes_dict[entity_type].append(neighbour_data)
 
     return neighbours_mes_dict
@@ -57,25 +56,25 @@ def generate_neighbours_mes_dict(neighbours_mes_dict, triples, mode, last_items,
 
 def finalize_and_sort_profiles(input_dict, is_hsage, top_n=5):
     """
-    对 profile_dict 中的每个实体类型的列表进行处理：
-    1. 根据 hsage 的值降序排序。
-    2. 只保留前 top_n 个元素。
-    3. 提取 "profile" 字段，使列表最终只包含字符串。
+    Process each entity-type list in profile_dict:
+    1. Sort descending by hsage.
+    2. Keep only the first top_n elements.
+    3. Extract the "profile" field so the final list contains only strings.
     """
     final_dict = {}
     for entity_type, profiles_with_scores in input_dict.items():
         random.shuffle(profiles_with_scores)
         if is_hsage:
-            # 1. 使用 lambda 函数根据 hsage 的值进行降序排序
+            # 1. Use a lambda to sort descending by hsage
             sorted_profiles = sorted(profiles_with_scores, key=lambda x: x["hsage"], reverse=True)
         else:
             sorted_profiles = profiles_with_scores
 
-        # 2. 保留排序后的前 top_n 个元素
+        # 2. Keep the first top_n sorted elements
         top_profiles = sorted_profiles[:top_n]
         for d in top_profiles:
             d.pop("hsage", None)
-        # 将处理好的列表存入新的字典
+        # Store the processed list in the new dictionary
         if len(top_profiles) > 0:
             final_dict[entity_type] = top_profiles
 

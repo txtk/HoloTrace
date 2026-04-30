@@ -10,6 +10,21 @@ HoloTrace reformulates the attribution problem as an **entity-level semantic ali
 
 This work also proposes the **HEAA Benchmark** to evaluate alignment robustness, quantifying the distribution characteristics and distinguishability of IoCs, TTPs, and malware entities in attribution scenarios.
 
+## Data Availability
+
+This repository provides the processed graph files used in the experiments, which are sufficient for running the semantic alignment and evaluation pipeline described in the paper.
+
+The original raw CTI files are not redistributed due to copyright and redistribution restrictions, potential security sensitivity, and raw corpus size constraints. As a result, the full raw-to-graph reconstruction process cannot be reproduced from the complete original corpus in this public release.
+
+To support transparency, this repository includes format and construction examples for HEAA-style data in `src/data/dataset/raw_example/`. Knowledge base data examples are provided in `src/data/raw_data/json/knowledge_base_example/`. These examples illustrate the expected data structure and construction process, but they are not the complete raw corpus.
+
+The main released data artifacts are organized as follows:
+
+*   **Processed graph files**: `src/data/dataset/heaa_random/` and `src/data/dataset/heaa_time/`.
+*   **HEAA construction examples**: `src/data/dataset/raw_example/`.
+*   **Knowledge base examples**: `src/data/raw_data/json/knowledge_base_example/`.
+*   **Evaluation outputs**: available under the corresponding `traditional_save/` directories.
+
 ## Project Architecture
 
 The project source code located in `src/` is organized into several key modules:

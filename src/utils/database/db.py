@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-10 11:22:36
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-10 11:23:12
-FilePath: /task_manage/src/utils/db.py
-Description: Database connection utility for the task management system.
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 from peewee_async import PooledPostgresqlDatabase
 from playhouse.shortcuts import ReconnectMixin
 

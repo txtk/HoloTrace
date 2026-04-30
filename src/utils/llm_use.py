@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-26 21:55:27
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-27 09:34:23
-FilePath: /entity_alignment/src/utils/llm_use.py
-Description: 大模型相关工具类
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 # from models.llm import qwen
 import os
 import random
@@ -25,6 +15,24 @@ from models.llm.embedding import embedding
 from models.llm.qwen3 import qwen
 
 # zhipu = ZhipuBatch()
+
+
+total_tokens_used = 0
+
+
+def get_total_tokens():
+    global total_tokens_used
+    return total_tokens_used
+
+
+def reset_total_tokens():
+    global total_tokens_used
+    total_tokens_used = 0
+
+
+def add_total_tokens(tokens: int):
+    global total_tokens_used
+    total_tokens_used += tokens
 
 
 def get_prompt(task):
@@ -63,7 +71,7 @@ def get_response_poml(poml_content):
         try:
             models = chat_mappinng.get(settings.llm_platform)
             if isinstance(models, list):
-                # 随机选取一个模型使用
+                # Randomly select one model to use
                 model = random.choice(models)
             else:
                 model = models

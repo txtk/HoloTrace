@@ -26,7 +26,7 @@ async def _insert_test_data(record_id: str):
 
 @celery_app.task(name="task.db.insert_test_data", ignore_result=True)
 def insert_test_data(record_id: str):
-    # 获取列表
+    # Get the list
     loop = asyncio.get_event_loop()
     if loop.is_closed():
         loop = asyncio.new_event_loop()

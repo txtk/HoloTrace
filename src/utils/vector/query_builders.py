@@ -40,7 +40,7 @@ class ExistsQueryBuilder:
         self.query = {"exists": {"field": field, "boost": boost}}
 
     def get_query(self):
-        # 这里返回的是查询片段，方便放入 bool 查询中
+        # Return the query fragment here so it can be placed inside a bool query
         return self.query
 
 
@@ -49,9 +49,9 @@ class BoolQueryBuilder:
         self.query = {"query": {"bool": {"must": [], "should": [], "filter": []}}}
 
     def add_must(self, sub_query: Any):
-        # 如果传入的是 Builder 对象，调用 get_query()
+        # If a Builder object is passed, call get_query()
         q = sub_query.get_query() if hasattr(sub_query, "get_query") else sub_query
-        # 去掉外层 "query" 包装，方便嵌套
+        # Remove the outer "query" wrapper for easier nesting
         if "query" in q:
             q = q["query"]
         self.query["query"]["bool"]["must"].append(q)

@@ -59,12 +59,6 @@ def get_name(entity: dict):
     return name
 
 
-"""
-description: 判断是否为语义节点
-param {str} name
-return {*}
-"""
-
 
 def semantic_judge(name: str):
     try:

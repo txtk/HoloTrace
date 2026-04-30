@@ -1,0 +1,1835 @@
+{
+  "type": "bundle",
+  "id": "bundle--51f4dfb1-b6ca-4d31-bac8-73899cafac1c",
+  "objects": [
+    {
+      "id": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "spec_version": "2.1",
+      "identity_class": "organization",
+      "name": "AlienVault",
+      "created": "2025-08-14T06:57:56.667Z",
+      "modified": "2025-08-14T06:57:56.667Z",
+      "x_opencti_id": "2de10173-ae21-4c9b-b92f-ba39f0b4f88f",
+      "x_opencti_type": "Organization",
+      "type": "identity"
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9",
+      "created": "2017-01-20T00:00:00.000Z",
+      "definition_type": "tlp",
+      "name": "TLP:CLEAR",
+      "definition": {
+        "tlp": "clear"
+      }
+    },
+    {
+      "id": "report--ffe06903-ecdd-51e7-aee2-23b35be898f7",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2023-10-16T15:49:48.984Z",
+      "modified": "2025-08-14T15:25:47.280Z",
+      "name": "Sticky Werewolf spies attack government organizations in Russia and Belarus",
+      "description": "BI.ZONE cyber intelligence specialists have discovered a new group that uses legitimate software to interfere with the work of government organizations. A characteristic feature of this criminal community, called Sticky Werewolf, is the use of fairly popular, commercially available tools that are easy to detect and block. This has not stopped Sticky Werewolf from achieving success: the group has been active since at least April 2023 and has carried out at least 30 attacks to date.",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2023-10-16T15:49:48.984Z",
+      "x_opencti_workflow_id": "f26c68fe-e1e3-4efd-83ba-69ac97aa2662",
+      "labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "external_references": [
+        {
+          "source_name": "AlienVault",
+          "url": "https://bi.zone/expertise/blog/shpiony-sticky-werewolf-atakuyut-gosudarstvennye-organizatsii-rossii-i-belarusi/"
+        },
+        {
+          "source_name": "AlienVault",
+          "url": "https://otx.alienvault.com/pulse/652d5b9da7b9aa36c8faefb4",
+          "external_id": "652d5b9da7b9aa36c8faefb4"
+        }
+      ],
+      "x_opencti_id": "3f8cd2aa-e743-4933-9aa9-d05ae50cb6fd",
+      "x_opencti_type": "Report",
+      "type": "report",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "object_refs": [
+        "relationship--7fd846c0-2c00-5bc9-b0d7-d0a86428fd0e",
+        "relationship--41707782-6281-5633-88b4-0572fb8089f8",
+        "relationship--3b4bf68e-8774-5c5a-b34c-ced4c53d8aac",
+        "relationship--6bb305eb-767d-5a80-abaf-fa0004922011",
+        "relationship--b4dab6f5-8e23-5e95-807a-5e3afccf6584",
+        "relationship--b62c65ca-ade0-5afb-acc8-dc22f52aad10",
+        "relationship--b1e741e2-f370-5c1a-968b-eebf32a8972e",
+        "relationship--b16d0ae4-bab9-5d2c-8573-440d6d283664",
+        "relationship--79e33cfb-4bb1-50d3-bbb0-7be49a765264",
+        "relationship--f40e3f84-c917-52d0-91c7-761dbf8bbcdf",
+        "relationship--6c321839-b013-58a7-9306-c9c04ee91a7d",
+        "relationship--d60204be-9f29-5fd0-8d3a-4b8b2fad126b",
+        "relationship--fdc9eb85-ed27-5e16-8df9-15ff6e56cb3c",
+        "relationship--7e18a635-da77-5ad0-8f6b-5e3bb33494e7",
+        "relationship--452158e9-de94-5e19-a224-e7bd520cfbdc",
+        "relationship--29c17c31-e519-5317-9895-64f6ad7c90b1",
+        "relationship--5c9cb051-c106-5a1c-b3d9-b2b8205bb638",
+        "relationship--ee99b01d-2868-5fc3-8c7d-6a1d8ebd97cf",
+        "relationship--6aabb172-b4cc-549d-af30-26e6cae5c498",
+        "relationship--3f102a48-b0d1-50de-8e0c-5072caee22f5",
+        "relationship--6c46da8d-dd19-5d89-9c6d-ca2a26925a90",
+        "relationship--f8eef900-0d53-592b-9bc9-420926bb29ad",
+        "relationship--a96bfedd-d2ef-57c3-adb6-e36c01dbd698",
+        "relationship--ec4344d6-3329-541e-bb13-17e3698e7af5",
+        "relationship--60316128-0c52-536b-9cc1-f05d29eeda12",
+        "relationship--0a432034-8838-52f6-8861-fce3f836bec7",
+        "relationship--6202bb75-a0c7-552c-8485-af9c73123079",
+        "relationship--e4124b25-a91a-5612-86b8-6fe3f8a2e94a",
+        "relationship--d243a9ab-bf1d-579e-bf69-bc0f831240fe",
+        "relationship--03e2aa6a-4fcb-5d10-87bf-ee90b8728496",
+        "relationship--60cd6ecb-7c01-5123-9c82-6cc569f5ba84",
+        "relationship--51c0879a-1f64-5870-82d5-06de1355ac29",
+        "relationship--6fd88963-4bad-585e-9c85-e793a09ae5f1",
+        "indicator--7cce1162-9ff3-56e3-bca8-dc9ae087328f",
+        "relationship--8f604211-6d57-5180-9fb1-c942e944d717",
+        "indicator--0c27d65e-a491-5f3e-ac5b-f8f3f0370fa6",
+        "indicator--a23f1a13-9739-5e61-a1be-fa841e3afe12",
+        "indicator--d281ca71-3536-50c8-8fb4-da39e81114a2",
+        "indicator--0fc214c4-4877-57f7-9f7c-04cb1b732002",
+        "domain-name--704737d5-fe53-5cee-8656-2b910d661c84",
+        "domain-name--1f00dd90-d9f2-553a-aeca-ff218b0c4d83",
+        "url--fd259e0b-9057-5997-8e02-db97e9edb61d",
+        "file--19fd8a97-c2fd-549a-8a46-53b6e9152257",
+        "file--26f8895f-90ea-5b08-ac66-f70528cb58ee",
+        "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+        "relationship--a68a89a9-0e47-51d6-9452-c9386f894f97",
+        "relationship--57f1a884-9eb4-543d-ae85-05d645375ef5",
+        "relationship--4c363e57-1934-5b95-bca6-799c0586266e",
+        "attack-pattern--07ce46e7-82c4-5665-919e-05bd4a2a49cf",
+        "attack-pattern--5b057a2c-67f1-551b-9e20-9468f394d558",
+        "relationship--06781364-a078-5b31-81d9-a82297a05cf2",
+        "relationship--a0da1201-26b1-5e9c-a0d7-9e850440f76c",
+        "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+        "attack-pattern--543b29b5-7170-5c2f-b3f0-e422cf127ee2",
+        "location--bbf51f0d-4ff3-533f-a040-7540a21385d6",
+        "attack-pattern--ac16fadd-c0cd-5cca-a81d-e877cd43c4e9",
+        "attack-pattern--2231c569-b57d-551c-9048-11a1b67f0a81",
+        "location--efa1b9b0-dc59-5bad-baa2-4fc495e55fcc",
+        "attack-pattern--4daaeb43-d795-5e83-97ec-3c83164a50c3",
+        "identity--9d697b63-6ae0-5ddb-ae26-e3d6e03302e1",
+        "attack-pattern--18e69eba-cb53-57e5-bf82-3d53e5fed39a",
+        "attack-pattern--bab942ff-7c9c-5062-9e92-3392bfb2fd74",
+        "attack-pattern--fc3e024a-8a0c-599c-90dc-2ac36b766041"
+      ]
+    },
+    {
+      "id": "relationship--7fd846c0-2c00-5bc9-b0d7-d0a86428fd0e",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.021Z",
+      "modified": "2025-08-14T15:25:41.925Z",
+      "x_opencti_id": "b64f9587-fea6-465f-8fe9-eb049c086888",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--7cce1162-9ff3-56e3-bca8-dc9ae087328f",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--41707782-6281-5633-88b4-0572fb8089f8",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.021Z",
+      "modified": "2025-08-14T15:25:41.338Z",
+      "x_opencti_id": "37a3cb9a-3918-4b82-a97b-6d7a136ba786",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--7cce1162-9ff3-56e3-bca8-dc9ae087328f",
+      "target_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb"
+    },
+    {
+      "id": "relationship--3b4bf68e-8774-5c5a-b34c-ced4c53d8aac",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.020Z",
+      "modified": "2025-08-14T15:25:41.297Z",
+      "x_opencti_id": "648d8357-b29d-48eb-b07c-82b8e1f1c32a",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0c27d65e-a491-5f3e-ac5b-f8f3f0370fa6",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--6bb305eb-767d-5a80-abaf-fa0004922011",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.019Z",
+      "modified": "2025-08-14T15:25:41.023Z",
+      "x_opencti_id": "05ca7214-3b76-4879-a5c1-726281d672ad",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--a23f1a13-9739-5e61-a1be-fa841e3afe12",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--b4dab6f5-8e23-5e95-807a-5e3afccf6584",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.019Z",
+      "modified": "2025-08-14T15:25:40.975Z",
+      "x_opencti_id": "b89dab23-3d05-4f86-94ec-d7ea7967c962",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--d281ca71-3536-50c8-8fb4-da39e81114a2",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--b62c65ca-ade0-5afb-acc8-dc22f52aad10",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.020Z",
+      "modified": "2025-08-14T15:25:40.974Z",
+      "x_opencti_id": "c884347e-a7cb-4c8c-8a99-478c5577022a",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0c27d65e-a491-5f3e-ac5b-f8f3f0370fa6",
+      "target_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb"
+    },
+    {
+      "id": "relationship--b1e741e2-f370-5c1a-968b-eebf32a8972e",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.019Z",
+      "modified": "2025-08-14T15:25:40.682Z",
+      "x_opencti_id": "b26f4d0d-39eb-4b13-a971-ff5a8af064d1",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--a23f1a13-9739-5e61-a1be-fa841e3afe12",
+      "target_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb"
+    },
+    {
+      "id": "relationship--b16d0ae4-bab9-5d2c-8573-440d6d283664",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.018Z",
+      "modified": "2025-08-14T15:25:40.636Z",
+      "x_opencti_id": "59c3e4ee-020a-4eda-9d25-a9d02cddc695",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0fc214c4-4877-57f7-9f7c-04cb1b732002",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--79e33cfb-4bb1-50d3-bbb0-7be49a765264",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.018Z",
+      "modified": "2025-08-14T15:25:40.316Z",
+      "x_opencti_id": "be199e41-3ba1-496d-a64b-7da3b3e6e0fb",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--d281ca71-3536-50c8-8fb4-da39e81114a2",
+      "target_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb"
+    },
+    {
+      "id": "relationship--f40e3f84-c917-52d0-91c7-761dbf8bbcdf",
+      "spec_version": "2.1",
+      "relationship_type": "indicates",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.017Z",
+      "modified": "2025-08-14T15:25:39.896Z",
+      "x_opencti_id": "93626e14-4d71-4cf1-b38f-e6dfe20dd41c",
+      "x_opencti_type": "indicates",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0fc214c4-4877-57f7-9f7c-04cb1b732002",
+      "target_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb"
+    },
+    {
+      "id": "relationship--6c321839-b013-58a7-9306-c9c04ee91a7d",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.017Z",
+      "modified": "2025-08-14T15:25:39.895Z",
+      "x_opencti_id": "32c68aa5-d384-4552-ad64-03975b426887",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--7cce1162-9ff3-56e3-bca8-dc9ae087328f",
+      "target_ref": "domain-name--704737d5-fe53-5cee-8656-2b910d661c84"
+    },
+    {
+      "id": "relationship--d60204be-9f29-5fd0-8d3a-4b8b2fad126b",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.014Z",
+      "modified": "2025-08-14T15:25:39.671Z",
+      "x_opencti_id": "e607c75b-6a67-44de-8cdb-085c013b5199",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0c27d65e-a491-5f3e-ac5b-f8f3f0370fa6",
+      "target_ref": "domain-name--1f00dd90-d9f2-553a-aeca-ff218b0c4d83"
+    },
+    {
+      "id": "relationship--fdc9eb85-ed27-5e16-8df9-15ff6e56cb3c",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.012Z",
+      "modified": "2025-08-14T15:25:39.398Z",
+      "x_opencti_id": "12d4763b-c1b0-4baa-94e2-a27414de0838",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--a23f1a13-9739-5e61-a1be-fa841e3afe12",
+      "target_ref": "url--fd259e0b-9057-5997-8e02-db97e9edb61d"
+    },
+    {
+      "id": "relationship--7e18a635-da77-5ad0-8f6b-5e3bb33494e7",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.010Z",
+      "modified": "2025-08-14T15:25:39.278Z",
+      "x_opencti_id": "e952e27b-0903-4c9c-8e72-85bddf958fb8",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--d281ca71-3536-50c8-8fb4-da39e81114a2",
+      "target_ref": "file--19fd8a97-c2fd-549a-8a46-53b6e9152257"
+    },
+    {
+      "id": "relationship--452158e9-de94-5e19-a224-e7bd520cfbdc",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.001Z",
+      "modified": "2025-08-14T15:25:39.192Z",
+      "x_opencti_id": "d70b520f-6508-4119-9da5-9fb323d1f86d",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--543b29b5-7170-5c2f-b3f0-e422cf127ee2"
+    },
+    {
+      "id": "relationship--29c17c31-e519-5317-9895-64f6ad7c90b1",
+      "spec_version": "2.1",
+      "relationship_type": "based-on",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.008Z",
+      "modified": "2025-08-14T15:25:38.985Z",
+      "x_opencti_id": "71ccf6ed-2542-471e-ac97-5439b0310eef",
+      "x_opencti_type": "based-on",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "indicator--0fc214c4-4877-57f7-9f7c-04cb1b732002",
+      "target_ref": "file--26f8895f-90ea-5b08-ac66-f70528cb58ee"
+    },
+    {
+      "id": "relationship--5c9cb051-c106-5a1c-b3d9-b2b8205bb638",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.000Z",
+      "modified": "2025-08-14T15:25:38.588Z",
+      "x_opencti_id": "ad4c5468-ee64-4540-81b5-d548ac9d5cec",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--ac16fadd-c0cd-5cca-a81d-e877cd43c4e9"
+    },
+    {
+      "id": "relationship--ee99b01d-2868-5fc3-8c7d-6a1d8ebd97cf",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.988Z",
+      "modified": "2025-08-14T15:25:38.023Z",
+      "x_opencti_id": "e80ffe58-2eae-4df4-bcae-bc4c3669d241",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e"
+    },
+    {
+      "id": "relationship--6aabb172-b4cc-549d-af30-26e6cae5c498",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.999Z",
+      "modified": "2025-08-14T15:25:37.545Z",
+      "x_opencti_id": "8e7c0c87-4e82-4969-8934-42589f029b38",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--5b057a2c-67f1-551b-9e20-9468f394d558"
+    },
+    {
+      "id": "relationship--3f102a48-b0d1-50de-8e0c-5072caee22f5",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.997Z",
+      "modified": "2025-08-14T15:25:37.443Z",
+      "x_opencti_id": "541d8f65-d319-47d0-8776-ff29ac8304cf",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--543b29b5-7170-5c2f-b3f0-e422cf127ee2"
+    },
+    {
+      "id": "relationship--6c46da8d-dd19-5d89-9c6d-ca2a26925a90",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.998Z",
+      "modified": "2025-08-14T15:25:37.175Z",
+      "x_opencti_id": "ad6ecc03-37a8-41aa-a0e4-f96faf939e96",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--07ce46e7-82c4-5665-919e-05bd4a2a49cf"
+    },
+    {
+      "id": "relationship--f8eef900-0d53-592b-9bc9-420926bb29ad",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.997Z",
+      "modified": "2025-08-14T15:25:36.778Z",
+      "x_opencti_id": "7dc7a0d6-1d23-409c-bbdb-20ce3e38bb9b",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--18e69eba-cb53-57e5-bf82-3d53e5fed39a"
+    },
+    {
+      "id": "relationship--a96bfedd-d2ef-57c3-adb6-e36c01dbd698",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.995Z",
+      "modified": "2025-08-14T15:25:36.482Z",
+      "x_opencti_id": "fa4a30ac-7baa-4de1-9b15-ec29d221ff01",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--4daaeb43-d795-5e83-97ec-3c83164a50c3"
+    },
+    {
+      "id": "relationship--ec4344d6-3329-541e-bb13-17e3698e7af5",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.997Z",
+      "modified": "2025-08-14T15:25:36.195Z",
+      "x_opencti_id": "be2d7bcf-6916-4cd5-8ee5-cb76f39e3872",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--ac16fadd-c0cd-5cca-a81d-e877cd43c4e9"
+    },
+    {
+      "id": "relationship--60316128-0c52-536b-9cc1-f05d29eeda12",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.996Z",
+      "modified": "2025-08-14T15:25:35.860Z",
+      "x_opencti_id": "9cde9a14-4d6d-46cb-af35-fef32161805d",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--fc3e024a-8a0c-599c-90dc-2ac36b766041"
+    },
+    {
+      "id": "relationship--0a432034-8838-52f6-8861-fce3f836bec7",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.996Z",
+      "modified": "2025-08-14T15:25:35.337Z",
+      "x_opencti_id": "72d78a9a-7a3b-47e7-8f29-18b2c128f31a",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--bab942ff-7c9c-5062-9e92-3392bfb2fd74"
+    },
+    {
+      "id": "relationship--6202bb75-a0c7-552c-8485-af9c73123079",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.995Z",
+      "modified": "2025-08-14T15:25:35.098Z",
+      "x_opencti_id": "69cbc998-a1b6-4b3b-a68f-c6f6dfbeac57",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--5b057a2c-67f1-551b-9e20-9468f394d558"
+    },
+    {
+      "id": "relationship--e4124b25-a91a-5612-86b8-6fe3f8a2e94a",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.994Z",
+      "modified": "2025-08-14T15:25:34.824Z",
+      "x_opencti_id": "0ebdcb6e-2b55-410f-830f-11d8779d6719",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--2231c569-b57d-551c-9048-11a1b67f0a81"
+    },
+    {
+      "id": "relationship--d243a9ab-bf1d-579e-bf69-bc0f831240fe",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.006Z",
+      "modified": "2025-08-14T15:25:34.613Z",
+      "x_opencti_id": "13051cf7-acdd-451f-8089-eb4e01bf636f",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "location--bbf51f0d-4ff3-533f-a040-7540a21385d6"
+    },
+    {
+      "id": "relationship--03e2aa6a-4fcb-5d10-87bf-ee90b8728496",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:36.994Z",
+      "modified": "2025-08-14T15:25:34.574Z",
+      "x_opencti_id": "677a63a8-df90-4ad8-bb7b-1947fec35e00",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "attack-pattern--07ce46e7-82c4-5665-919e-05bd4a2a49cf"
+    },
+    {
+      "id": "relationship--60cd6ecb-7c01-5123-9c82-6cc569f5ba84",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.005Z",
+      "modified": "2025-08-14T15:25:34.199Z",
+      "x_opencti_id": "073afbe4-a75e-4d8f-b742-b85dc319e538",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "location--bbf51f0d-4ff3-533f-a040-7540a21385d6"
+    },
+    {
+      "id": "relationship--51c0879a-1f64-5870-82d5-06de1355ac29",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.005Z",
+      "modified": "2025-08-14T15:25:34.059Z",
+      "x_opencti_id": "78cb18a7-ebe5-48ba-873e-78e2004d44ec",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "location--efa1b9b0-dc59-5bad-baa2-4fc495e55fcc"
+    },
+    {
+      "id": "relationship--6fd88963-4bad-585e-9c85-e793a09ae5f1",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.004Z",
+      "modified": "2025-08-14T15:25:33.801Z",
+      "x_opencti_id": "f8562811-6607-4ca4-b2f9-a9d42225b9e5",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "location--efa1b9b0-dc59-5bad-baa2-4fc495e55fcc"
+    },
+    {
+      "id": "indicator--7cce1162-9ff3-56e3-bca8-dc9ae087328f",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:37.015Z",
+      "modified": "2025-08-14T15:25:33.594Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[domain-name:value = 'yandeksdisk.org']",
+      "name": "yandeksdisk.org",
+      "valid_from": "2023-10-16T15:49:50.000Z",
+      "valid_until": "2024-08-11T15:49:50.000Z",
+      "x_opencti_score": 70,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "Domain-Name",
+      "x_opencti_observable_values": [
+        {
+          "type": "Domain-Name",
+          "value": "yandeksdisk.org",
+          "hashes": null
+        }
+      ],
+      "labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "x_opencti_id": "d337cbef-1d16-4c52-878f-6143c24b99ec",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--8f604211-6d57-5180-9fb1-c942e944d717",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:26:37.003Z",
+      "modified": "2025-08-14T15:25:33.574Z",
+      "x_opencti_id": "e9d75825-2baf-47c4-b67f-80695a356935",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "target_ref": "identity--9d697b63-6ae0-5ddb-ae26-e3d6e03302e1"
+    },
+    {
+      "id": "indicator--0c27d65e-a491-5f3e-ac5b-f8f3f0370fa6",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:37.013Z",
+      "modified": "2025-08-14T15:25:33.392Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[domain-name:value = 'diskonline.net']",
+      "name": "diskonline.net",
+      "valid_from": "2023-10-16T15:49:50.000Z",
+      "valid_until": "2024-08-11T15:49:50.000Z",
+      "x_opencti_score": 70,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "Domain-Name",
+      "x_opencti_observable_values": [
+        {
+          "type": "Domain-Name",
+          "value": "diskonline.net",
+          "hashes": null
+        }
+      ],
+      "labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "x_opencti_id": "52515fe0-6c3a-4b04-9b59-2297057f7c8c",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--a23f1a13-9739-5e61-a1be-fa841e3afe12",
+      "spec_version": "2.1",
+      "revoked": true,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:37.011Z",
+      "modified": "2025-08-14T15:25:33.240Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[url:value = 'http://diskonline.net/poryadok-deystviy-i-opoveshcheniya-grazhdanskoy-oborony.pdf']",
+      "name": "http://diskonline.net/poryadok-deystviy-i-opoveshcheniya-grazhdanskoy-oborony.pdf",
+      "valid_from": "2023-10-16T15:49:50.000Z",
+      "valid_until": "2023-12-02T15:49:50.000Z",
+      "x_opencti_score": 80,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "Url",
+      "x_opencti_observable_values": [
+        {
+          "type": "Url",
+          "value": "http://diskonline.net/poryadok-deystviy-i-opoveshcheniya-grazhdanskoy-oborony.pdf",
+          "hashes": null
+        }
+      ],
+      "labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "x_opencti_id": "e8ebb4c4-75a3-4dd5-82fa-4c8cbe3b2256",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--d281ca71-3536-50c8-8fb4-da39e81114a2",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:37.009Z",
+      "modified": "2025-08-15T00:03:29.701Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = '078859c7dee046b193786027d5267be7724758810bdbc2ac5dd6da0ebb4e26bb']",
+      "name": "078859c7dee046b193786027d5267be7724758810bdbc2ac5dd6da0ebb4e26bb",
+      "valid_from": "2025-02-24T09:02:12.000Z",
+      "valid_until": "2026-02-20T16:55:57.628Z",
+      "x_opencti_score": 80,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "078859c7dee046b193786027d5267be7724758810bdbc2ac5dd6da0ebb4e26bb"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "apt",
+        "autoit",
+        "lumma trojan",
+        "netwire",
+        "russia",
+        "stealer",
+        "sticky werewolf",
+        "targeted attacks"
+      ],
+      "x_opencti_id": "d9c12bb2-3ade-46c7-bfc8-b67efb7eefd7",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "indicator--0fc214c4-4877-57f7-9f7c-04cb1b732002",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:37.007Z",
+      "modified": "2025-08-15T00:03:27.075Z",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "pattern": "[file:hashes.'SHA-256' = '9162ccb4816d889787a7e25ba680684afca1d7f3679c856ceedaf6bf8991e486']",
+      "name": "9162ccb4816d889787a7e25ba680684afca1d7f3679c856ceedaf6bf8991e486",
+      "description": "Netwire",
+      "valid_from": "2025-02-24T09:02:12.000Z",
+      "valid_until": "2026-02-20T16:55:57.628Z",
+      "x_opencti_score": 80,
+      "x_opencti_detection": false,
+      "x_opencti_main_observable_type": "StixFile",
+      "x_opencti_observable_values": [
+        {
+          "type": "StixFile",
+          "value": null,
+          "hashes": [
+            {
+              "algorithm": "SHA-256",
+              "hash": "9162ccb4816d889787a7e25ba680684afca1d7f3679c856ceedaf6bf8991e486"
+            }
+          ]
+        }
+      ],
+      "labels": [
+        "apt",
+        "autoit",
+        "lumma trojan",
+        "netwire",
+        "russia",
+        "stealer",
+        "sticky werewolf",
+        "targeted attacks"
+      ],
+      "x_opencti_id": "b937ba70-9060-44d8-94d7-bc0daebf6af5",
+      "x_opencti_type": "Indicator",
+      "type": "indicator",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "domain-name--704737d5-fe53-5cee-8656-2b910d661c84",
+      "spec_version": "2.1",
+      "x_opencti_score": 70,
+      "value": "yandeksdisk.org",
+      "x_opencti_id": "526a7410-49e2-4ec8-aadc-edb6e03a1349",
+      "x_opencti_type": "Domain-Name",
+      "type": "domain-name",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "domain-name--1f00dd90-d9f2-553a-aeca-ff218b0c4d83",
+      "spec_version": "2.1",
+      "x_opencti_score": 70,
+      "value": "diskonline.net",
+      "x_opencti_id": "08fa637a-7aa8-415d-a82d-0a82bc7586ce",
+      "x_opencti_type": "Domain-Name",
+      "type": "domain-name",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "url--fd259e0b-9057-5997-8e02-db97e9edb61d",
+      "spec_version": "2.1",
+      "x_opencti_score": 80,
+      "value": "http://diskonline.net/poryadok-deystviy-i-opoveshcheniya-grazhdanskoy-oborony.pdf",
+      "x_opencti_id": "0d3aae04-da3f-4e11-91a9-d70a5b701921",
+      "x_opencti_type": "Url",
+      "type": "url",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "apt",
+        "netwire",
+        "sticky werewolf"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--19fd8a97-c2fd-549a-8a46-53b6e9152257",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "078859c7dee046b193786027d5267be7724758810bdbc2ac5dd6da0ebb4e26bb"
+      },
+      "x_opencti_id": "cd0ca19e-2437-42a4-b415-2ccd31111b08",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "apt",
+        "autoit",
+        "lumma trojan",
+        "netwire",
+        "russia",
+        "stealer",
+        "sticky werewolf",
+        "targeted attacks"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "file--26f8895f-90ea-5b08-ac66-f70528cb58ee",
+      "spec_version": "2.1",
+      "x_opencti_score": 85,
+      "hashes": {
+        "SHA-256": "9162ccb4816d889787a7e25ba680684afca1d7f3679c856ceedaf6bf8991e486"
+      },
+      "x_opencti_id": "ffdb0d07-640e-4a4d-ad9e-ed1dcd64be10",
+      "x_opencti_type": "StixFile",
+      "type": "file",
+      "x_opencti_created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "x_opencti_labels": [
+        "apt",
+        "autoit",
+        "lumma trojan",
+        "netwire",
+        "russia",
+        "stealer",
+        "sticky werewolf",
+        "targeted attacks"
+      ],
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "intrusion-set--e4f69ffa-645f-5553-95ec-9d0fedcb5ccb",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:26:36.987Z",
+      "modified": "2025-08-14T15:25:31.962Z",
+      "name": "Sticky Werewolf",
+      "x_opencti_id": "bd44580f-d3c9-4269-b2dd-248e6b9e4bbe",
+      "x_opencti_type": "Intrusion-Set",
+      "type": "intrusion-set",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--a68a89a9-0e47-51d6-9452-c9386f894f97",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:21:21.015Z",
+      "modified": "2025-08-14T11:12:23.352Z",
+      "x_opencti_id": "efd12c55-01a2-402e-a82d-142caeb0aa9b",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--18e69eba-cb53-57e5-bf82-3d53e5fed39a"
+    },
+    {
+      "id": "relationship--57f1a884-9eb4-543d-ae85-05d645375ef5",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:21:21.014Z",
+      "modified": "2025-08-14T11:12:22.728Z",
+      "x_opencti_id": "6be089b5-2199-434e-b09d-54af4c160566",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--4daaeb43-d795-5e83-97ec-3c83164a50c3"
+    },
+    {
+      "id": "relationship--4c363e57-1934-5b95-bca6-799c0586266e",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:21:21.013Z",
+      "modified": "2025-08-14T11:12:22.386Z",
+      "x_opencti_id": "da0462d0-e1fc-4040-9dbf-dd6a4a318692",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--bab942ff-7c9c-5062-9e92-3392bfb2fd74"
+    },
+    {
+      "id": "identity--f11b0831-e7e6-5214-9431-ccf054e53e94",
+      "spec_version": "2.1",
+      "identity_class": "organization",
+      "name": "The MITRE Corporation",
+      "created": "2017-06-01T00:00:00.000Z",
+      "modified": "2025-08-14T09:36:02.951Z",
+      "x_opencti_id": "4ddfec87-eb0e-406e-bc29-21b0d8e91c3c",
+      "x_opencti_type": "Organization",
+      "type": "identity"
+    },
+    {
+      "id": "attack-pattern--07ce46e7-82c4-5665-919e-05bd4a2a49cf",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2017-10-25T14:48:19.996Z",
+      "modified": "2025-08-21T12:07:42.033Z",
+      "name": "Clipboard Data",
+      "description": "Adversaries may abuse clipboard manager APIs to obtain sensitive information copied to the device clipboard. For example, passwords being copied and pasted from a password manager application could be captured by a malicious application installed on the device.(Citation: Fahl-Clipboard) \n\n \n\nOn Android, applications can use the `ClipboardManager.OnPrimaryClipChangedListener()` API to register as a listener and monitor the clipboard for changes. However, starting in Android 10, this can only be used if the application is in the foreground, or is set as the device’s default input method editor (IME).(Citation: Github Capture Clipboard 2019)(Citation: Android 10 Privacy Changes) \n\n \n\nOn iOS, this can be accomplished by accessing the `UIPasteboard.general.string` field. However, starting in iOS 14, upon accessing the clipboard, the user will be shown a system notification if the accessed text originated in a different application. For example, if the user copies the text of an iMessage from the Messages application, the notification will read “application_name has pasted from Messages” when the text was pasted in a different application.(Citation: UIPPasteboard)",
+      "aliases": [
+        "T1414"
+      ],
+      "x_mitre_platforms": [
+        "android",
+        "iOS"
+      ],
+      "x_mitre_detection": "Application vetting services could detect usage of standard clipboard APIs.",
+      "x_mitre_id": "T1414",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-mobile-attack",
+          "phase_name": "collection",
+          "x_opencti_order": 0
+        },
+        {
+          "kill_chain_name": "mitre-mobile-attack",
+          "phase_name": "credential-access",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "NIST Mobile Threat Catalogue",
+          "url": "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-35.html",
+          "external_id": "APP-35"
+        },
+        {
+          "source_name": "Github Capture Clipboard 2019",
+          "description": "Pearce, G. (, January). Retrieved August 8, 2019.",
+          "url": "https://github.com/grepx/android-clipboard-security"
+        },
+        {
+          "source_name": "Fahl-Clipboard",
+          "description": "Fahl, S, et al.. (2013). Hey, You, Get Off of My Clipboard. Retrieved September 12, 2024.",
+          "url": "https://saschafahl.de/static/paper/pwmanagers2013.pdf"
+        },
+        {
+          "source_name": "UIPPasteboard",
+          "description": "Apple Developer. (n.d.). UIPasteboard. Retrieved April 1, 2022.",
+          "url": "https://developer.apple.com/documentation/uikit/uipasteboard"
+        },
+        {
+          "source_name": "Android 10 Privacy Changes",
+          "description": "Android Developers. (n.d.). Privacy changes in Android 10. Retrieved September 11, 2019.",
+          "url": "https://developer.android.com/about/versions/10/privacy/changes#clipboard-data"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1414",
+          "external_id": "T1414"
+        }
+      ],
+      "x_opencti_id": "95e69032-79a1-4a74-8599-bb8984a6c6ae",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--f11b0831-e7e6-5214-9431-ccf054e53e94",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--5b057a2c-67f1-551b-9e20-9468f394d558",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:18:10.964Z",
+      "modified": "2025-09-04T08:28:34.872Z",
+      "name": "Video Capture",
+      "description": "An adversary can leverage a computer's peripheral devices (e.g., integrated cameras or webcams) or applications (e.g., video call services) to capture video recordings for the purpose of gathering information. Images may also be captured from devices or applications, potentially in specified intervals, in lieu of video files.\n\nMalware or scripts may be used to interact with the devices through an available API provided by the operating system or an application to capture video or images. Video or image files may be written to disk and exfiltrated later. This technique differs from [Screen Capture](https://attack.mitre.org/techniques/T1113) due to use of specific devices or applications for video recording rather than capturing the victim's screen.\n\nIn macOS, there are a few different malware samples that record the user's webcam such as FruitFly and Proton. (Citation: objective-see 2017 review)",
+      "aliases": [
+        "T1125"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows"
+      ],
+      "x_mitre_detection": "Detection of this technique may be difficult due to the various APIs that may be used. Telemetry data regarding API use may not be useful depending on how a system is normally used, but may provide context to other potentially malicious activity occurring on a system.\n\nBehavior that could indicate technique use include an unknown or unusual process accessing APIs associated with devices or software that interact with the video camera, recording devices, or recording software, and a process periodically writing files to disk that contain video or camera image data.",
+      "x_mitre_id": "T1125",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "collection",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1125",
+          "external_id": "T1125"
+        },
+        {
+          "source_name": "objsee mac malware 2017",
+          "description": "Patrick Wardle. (n.d.). Mac Malware of 2017. Retrieved September 21, 2018.",
+          "url": "https://objective-see.com/blog/blog_0x25.html"
+        }
+      ],
+      "x_opencti_id": "f4a4f7c7-7586-40c9-b78c-b09875f6842b",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "relationship--06781364-a078-5b31-81d9-a82297a05cf2",
+      "spec_version": "2.1",
+      "relationship_type": "uses",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:15:41.878Z",
+      "modified": "2025-08-14T07:22:37.232Z",
+      "x_opencti_id": "659049db-25c0-4025-b7f7-041cceb02730",
+      "x_opencti_type": "uses",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "attack-pattern--2231c569-b57d-551c-9048-11a1b67f0a81"
+    },
+    {
+      "id": "relationship--a0da1201-26b1-5e9c-a0d7-9e850440f76c",
+      "spec_version": "2.1",
+      "relationship_type": "targets",
+      "revoked": false,
+      "confidence": 100,
+      "lang": "en",
+      "created": "2025-08-14T07:15:41.887Z",
+      "modified": "2025-08-14T07:22:35.636Z",
+      "x_opencti_id": "a5ee55ea-f769-406d-b8d7-60a4ebbed14e",
+      "x_opencti_type": "targets",
+      "type": "relationship",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ],
+      "source_ref": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "target_ref": "identity--9d697b63-6ae0-5ddb-ae26-e3d6e03302e1"
+    },
+    {
+      "id": "malware--d1ba0630-e65d-5fac-b95d-2c26f1efb88e",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:41.868Z",
+      "modified": "2025-08-21T08:32:21.300Z",
+      "name": "NETWIRE",
+      "description": "[NETWIRE](https://attack.mitre.org/software/S0198) is a publicly available, multiplatform remote administration tool (RAT) that has been used by criminal and APT groups since at least 2012.(Citation: FireEye APT33 Sept 2017)(Citation: McAfee Netwire Mar 2015)(Citation: FireEye APT33 Webinar Sept 2017)",
+      "is_family": true,
+      "external_references": [
+        {
+          "source_name": "FireEye APT33 Sept 2017",
+          "description": "O'Leary, J., et al. (2017, September 20). Insights into Iranian Cyber Espionage: APT33 Targets Aerospace and Energy Sectors and has Ties to Destructive Malware. Retrieved February 15, 2018.",
+          "url": "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html"
+        },
+        {
+          "source_name": "McAfee Netwire Mar 2015",
+          "description": "McAfee. (2015, March 2). Netwire RAT Behind Recent Targeted Attacks. Retrieved February 15, 2018.",
+          "url": "https://securingtomorrow.mcafee.com/mcafee-labs/netwire-rat-behind-recent-targeted-attacks/"
+        },
+        {
+          "source_name": "FireEye APT33 Webinar Sept 2017",
+          "description": "Davis, S. and Carr, N. (2017, September 21). APT33: New Insights into Iranian Cyber Espionage Group. Retrieved February 15, 2018.",
+          "url": "https://www.brighttalk.com/webcast/10703/275683"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/software/S0198",
+          "external_id": "S0198"
+        }
+      ],
+      "x_opencti_id": "cbb7108b-7662-4e28-a826-67effc8623c0",
+      "x_opencti_type": "Malware",
+      "type": "malware",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "type": "marking-definition",
+      "spec_version": "2.1",
+      "id": "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da",
+      "created": "2017-01-20T00:00:00.000Z",
+      "definition_type": "tlp",
+      "name": "TLP:GREEN",
+      "definition": {
+        "tlp": "green"
+      }
+    },
+    {
+      "id": "attack-pattern--543b29b5-7170-5c2f-b3f0-e422cf127ee2",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:33.425Z",
+      "modified": "2025-08-14T16:00:06.163Z",
+      "name": "T1192",
+      "description": "Spearphishing with a link is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of links to download malware contained in email, instead of attaching malicious files to the email itself, to avoid defenses that may inspect email attachments. \n\nAll forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this case, the malicious emails contain links. Generally, the links will be accompanied by social engineering text and require the user to actively click or copy and paste a URL into a browser, leveraging [User Execution](https://attack.mitre.org/techniques/T1204). The visited website may compromise the web browser using an exploit, or the user will be prompted to download applications, documents, zip files, or even executables depending on the pretext for the email in the first place. Adversaries may also include links that are intended to interact directly with an email reader, including embedded images intended to exploit the end system directly or verify the receipt of an email (i.e. web bugs/web beacons). Links may also direct users to malicious applications  designed to [Steal Application Access Token](https://attack.mitre.org/techniques/T1528)s, like OAuth tokens, in order to gain access to protected applications and information.(Citation: Trend Micro Pawn Storm OAuth 2017)",
+      "aliases": [
+        "Spearphishing Link"
+      ],
+      "x_mitre_id": "T1192",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1192",
+          "external_id": "T1192"
+        }
+      ],
+      "x_opencti_id": "8fd1f7c5-410d-40e1-8f69-45b568607dd0",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "id": "location--bbf51f0d-4ff3-533f-a040-7540a21385d6",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:28.158Z",
+      "modified": "2025-08-14T10:36:44.085Z",
+      "name": "Belarus",
+      "description": "Imported from MISP tag",
+      "latitude": 53.709807,
+      "longitude": 27.953389,
+      "x_opencti_aliases": [
+        "BLR",
+        "BY"
+      ],
+      "x_opencti_location_type": "Country",
+      "country": "Belarus",
+      "x_opencti_id": "4c40f6da-aa52-4826-b2ff-7668b0430100",
+      "x_opencti_type": "Country",
+      "type": "location",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--ac16fadd-c0cd-5cca-a81d-e877cd43c4e9",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:25.966Z",
+      "modified": "2025-10-16T09:03:22.617Z",
+      "name": "Network Service Discovery",
+      "description": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port, vulnerability, and/or wordlist scans using tools that are brought onto a system.(Citation: CISA AR21-126A FIVEHANDS May 2021)   \n\nWithin cloud environments, adversaries may attempt to discover services running on other cloud hosts. Additionally, if the cloud environment is connected to a on-premises environment, adversaries may be able to identify services running on non-cloud systems as well.\n\nWithin macOS environments, adversaries may use the native Bonjour application to discover services running on other macOS hosts within a network. The Bonjour mDNSResponder daemon automatically registers and advertises a host’s registered services on the network. For example, adversaries can use a mDNS query (such as `dns-sd -B _ssh._tcp .`) to find other systems broadcasting the ssh service.(Citation: apple doco bonjour description)(Citation: macOS APT Activity Bradley)",
+      "aliases": [
+        "T1046"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices",
+        "Containers",
+        "IaaS"
+      ],
+      "x_mitre_detection": "System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as Lateral Movement, based on the information obtained.\n\nNormal, benign system and network events from legitimate remote service scanning may be uncommon, depending on the environment and how they are used. Legitimate open port and vulnerability scanning may be conducted within the environment and will need to be deconflicted with any detection capabilities developed. Network intrusion detection systems can also be used to identify scanning activity. Monitor for process use of the networks and inspect intra-network flows to detect port scans.",
+      "x_mitre_id": "T1046",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "discovery",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "macOS APT Activity Bradley",
+          "description": "Jaron Bradley. (2021, November 14). What does APT Activity Look Like on macOS?. Retrieved January 19, 2022.",
+          "url": "https://themittenmac.com/what-does-apt-activity-look-like-on-macos/"
+        },
+        {
+          "source_name": "apple doco bonjour description",
+          "description": "Apple Inc. (2013, April 23). Bonjour Overview. Retrieved October 11, 2021.",
+          "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/NetServices/Introduction.html"
+        },
+        {
+          "source_name": "CISA AR21-126A FIVEHANDS May 2021",
+          "description": "CISA. (2021, May 6). Analysis Report (AR21-126A) FiveHands Ransomware. Retrieved June 7, 2021.",
+          "url": "https://us-cert.cisa.gov/ncas/analysis-reports/ar21-126a"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1046",
+          "external_id": "T1046"
+        }
+      ],
+      "x_opencti_id": "a0a5dccf-d0ef-4fcb-a879-74033ef455b4",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--2231c569-b57d-551c-9048-11a1b67f0a81",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:24.438Z",
+      "modified": "2025-10-16T09:03:01.408Z",
+      "name": "Input Capture",
+      "description": "Adversaries may use methods of capturing user input to obtain credentials or collect information. During normal system usage, users often provide credentials to various different locations, such as login pages/portals or system dialog boxes. Input capture mechanisms may be transparent to the user (e.g. [Credential API Hooking](https://attack.mitre.org/techniques/T1056/004)) or rely on deceiving the user into providing input into what they believe to be a genuine service (e.g. [Web Portal Capture](https://attack.mitre.org/techniques/T1056/003)).",
+      "aliases": [
+        "T1056"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices"
+      ],
+      "x_mitre_detection": "Detection may vary depending on how input is captured but may include monitoring for certain Windows API calls (e.g. `SetWindowsHook`, `GetKeyState`, and `GetAsyncKeyState`)(Citation: Adventures of a Keystroke), monitoring for malicious instances of [Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059), and ensuring no unauthorized drivers or kernel modules that could indicate keylogging or API hooking are present.",
+      "x_mitre_id": "T1056",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "collection",
+          "x_opencti_order": 0
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "credential-access",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Adventures of a Keystroke",
+          "description": "Tinaztepe,  E. (n.d.). The Adventures of a Keystroke:  An in-depth look into keyloggers on Windows. Retrieved April 27, 2016.",
+          "url": "http://opensecuritytraining.info/Keylogging_files/The%20Adventures%20of%20a%20Keystroke.pdf"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1056",
+          "external_id": "T1056"
+        }
+      ],
+      "x_opencti_id": "b6866143-af6d-4740-a151-33766aef2952",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "location--efa1b9b0-dc59-5bad-baa2-4fc495e55fcc",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:24.490Z",
+      "modified": "2025-08-14T08:28:08.617Z",
+      "name": "Russian Federation",
+      "latitude": 61.52401,
+      "longitude": 105.318756,
+      "x_opencti_aliases": [
+        "RUS",
+        "RU"
+      ],
+      "x_opencti_location_type": "Country",
+      "country": "Russian Federation",
+      "x_opencti_id": "20b4a920-0b41-45a4-8a8d-248defd04b06",
+      "x_opencti_type": "Country",
+      "type": "location",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--4daaeb43-d795-5e83-97ec-3c83164a50c3",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:24.353Z",
+      "modified": "2025-10-16T08:49:48.842Z",
+      "name": "Audio Capture",
+      "description": "An adversary can leverage a computer's peripheral devices (e.g., microphones and webcams) or applications (e.g., voice and video call services) to capture audio recordings for the purpose of listening into sensitive conversations to gather information.(Citation: ESET Attor Oct 2019)\n\nMalware or scripts may be used to interact with the devices through an available API provided by the operating system or an application to capture audio. Audio files may be written to disk and exfiltrated later.",
+      "aliases": [
+        "T1123"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows"
+      ],
+      "x_mitre_detection": "Detection of this technique may be difficult due to the various APIs that may be used. Telemetry data regarding API use may not be useful depending on how a system is normally used, but may provide context to other potentially malicious activity occurring on a system.\n\nBehavior that could indicate technique use include an unknown or unusual process accessing APIs associated with devices or software that interact with the microphone, recording devices, or recording software, and a process periodically writing files to disk that contain audio data.",
+      "x_mitre_id": "T1123",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "collection",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "ESET Attor Oct 2019",
+          "description": "Hromcova, Z. (2019, October). AT COMMANDS, TOR-BASED COMMUNICATIONS: MEET ATTOR, A FANTASY CREATURE AND ALSO A SPY PLATFORM. Retrieved May 6, 2020.",
+          "url": "https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Attor.pdf"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1123",
+          "external_id": "T1123"
+        }
+      ],
+      "x_opencti_id": "3c82e07b-9a7f-40be-85fc-c10f00e4ba81",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "identity--9d697b63-6ae0-5ddb-ae26-e3d6e03302e1",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:24.202Z",
+      "modified": "2025-10-23T08:28:28.754Z",
+      "identity_class": "class",
+      "name": "Government and administrations",
+      "description": "Civilian government institutions and administrations of the executive and legislative branches. The diplomatic and judicial branches are not included.",
+      "x_opencti_aliases": [
+        "Election",
+        "Voting",
+        "Government"
+      ],
+      "x_opencti_id": "1aff4c9c-1825-4239-b5d2-f15067c3eb5a",
+      "x_opencti_type": "Sector",
+      "type": "identity",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
+      ]
+    },
+    {
+      "id": "attack-pattern--18e69eba-cb53-57e5-bf82-3d53e5fed39a",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:23.621Z",
+      "modified": "2025-09-04T08:28:13.254Z",
+      "name": "Boot or Logon Autostart Execution",
+      "description": "Adversaries may configure system settings to automatically execute a program during system boot or logon to maintain persistence or gain higher-level privileges on compromised systems. Operating systems may have mechanisms for automatically running a program on system boot or account logon.(Citation: Microsoft Run Key)(Citation: MSDN Authentication Packages)(Citation: Microsoft TimeProvider)(Citation: Cylance Reg Persistence Sept 2013)(Citation: Linux Kernel Programming) These mechanisms may include automatically executing programs that are placed in specially designated directories or are referenced by repositories that store configuration information, such as the Windows Registry. An adversary may achieve the same goal by modifying or extending features of the kernel.\n\nSince some boot or logon autostart programs run with higher privileges, an adversary may leverage these to elevate privileges.",
+      "aliases": [
+        "T1547"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices"
+      ],
+      "x_mitre_detection": "Monitor for additions or modifications of mechanisms that could be used to trigger autostart execution, such as relevant additions to the Registry. Look for changes that are not correlated with known updates, patches, or other planned administrative activity. Tools such as Sysinternals Autoruns may also be used to detect system autostart configuration changes that could be attempts at persistence.(Citation: TechNet Autoruns)  Changes to some autostart configuration settings may happen under normal conditions when legitimate software is installed. \n\nSuspicious program execution as autostart programs may show up as outlier processes that have not been seen before when compared against historical data.To increase confidence of malicious activity, data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as network connections made for Command and Control, learning details about the environment through Discovery, and Lateral Movement.\n\nMonitor DLL loads by processes, specifically looking for DLLs that are not recognized or not normally loaded into a process. Look for abnormal process behavior that may be due to a process loading a malicious DLL.\n\nMonitor for abnormal usage of utilities and command-line parameters involved in kernel modification or driver installation.",
+      "x_mitre_id": "T1547",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "persistence",
+          "x_opencti_order": 0
+        },
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "privilege-escalation",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Linux Kernel Programming",
+          "description": "Pomerantz, O., Salzman, P.. (2003, April 4). The Linux Kernel Module Programming Guide. Retrieved April 6, 2018.",
+          "url": "https://www.tldp.org/LDP/lkmpg/2.4/lkmpg.pdf"
+        },
+        {
+          "source_name": "Microsoft TimeProvider",
+          "description": "Microsoft. (n.d.). Time Provider. Retrieved March 26, 2018.",
+          "url": "https://msdn.microsoft.com/library/windows/desktop/ms725475.aspx"
+        },
+        {
+          "source_name": "Microsoft Run Key",
+          "description": "Microsoft. (n.d.). Run and RunOnce Registry Keys. Retrieved September 12, 2024.",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys"
+        },
+        {
+          "source_name": "MSDN Authentication Packages",
+          "description": "Microsoft. (n.d.). Authentication Packages. Retrieved March 1, 2017.",
+          "url": "https://msdn.microsoft.com/library/windows/desktop/aa374733.aspx"
+        },
+        {
+          "source_name": "Cylance Reg Persistence Sept 2013",
+          "description": "Langendorf, S. (2013, September 24). Windows Registry Persistence, Part 2: The Run Keys and Search-Order. Retrieved November 17, 2024.",
+          "url": "https://web.archive.org/web/20160214140250/http://blog.cylance.com/windows-registry-persistence-part-2-the-run-keys-and-search-order"
+        },
+        {
+          "source_name": "TechNet Autoruns",
+          "description": "Russinovich, M. (2016, January 4). Autoruns for Windows v13.51. Retrieved June 6, 2016.",
+          "url": "https://technet.microsoft.com/en-us/sysinternals/bb963902"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1547",
+          "external_id": "T1547"
+        }
+      ],
+      "x_opencti_id": "1a903e65-9916-4c14-8d44-67396e11561b",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "id": "attack-pattern--bab942ff-7c9c-5062-9e92-3392bfb2fd74",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:22.815Z",
+      "modified": "2025-10-16T08:57:04.432Z",
+      "name": "Command and Scripting Interpreter",
+      "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of [Unix Shell](https://attack.mitre.org/techniques/T1059/004) while Windows installations include the [Windows Command Shell](https://attack.mitre.org/techniques/T1059/003) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).\n\nThere are also cross-platform interpreters such as [Python](https://attack.mitre.org/techniques/T1059/006), as well as those commonly associated with client applications such as [JavaScript](https://attack.mitre.org/techniques/T1059/007) and [Visual Basic](https://attack.mitre.org/techniques/T1059/005).\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in [Initial Access](https://attack.mitre.org/tactics/TA0001) payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various [Remote Services](https://attack.mitre.org/techniques/T1021) in order to achieve remote Execution.(Citation: Powershell Remote Commands)(Citation: Cisco IOS Software Integrity Assurance - Command History)(Citation: Remote Shell Execution in Python)",
+      "aliases": [
+        "T1059"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices",
+        "IaaS",
+        "ESXi",
+        "Office Suite",
+        "Identity Provider"
+      ],
+      "x_mitre_detection": "Command-line and scripting activities can be captured through proper logging of process execution with command-line arguments. This information can be useful in gaining additional insight to adversaries' actions through how they use native processes or custom tools. Also monitor for loading of modules associated with specific languages.\n\nIf scripting is restricted for normal users, then any attempt to enable scripts running on a system would be considered suspicious. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible to determine their actions and intent.\n\nScripts are likely to perform actions with various effects on a system that may generate events, depending on the types of monitoring used. Monitor processes and command-line arguments for script execution and subsequent behavior. Actions may be related to network and system information discovery, collection, or other scriptable post-compromise behaviors and could be used as indicators of detection leading back to the source script.",
+      "x_mitre_id": "T1059",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "execution",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Powershell Remote Commands",
+          "description": "Microsoft. (2020, August 21). Running Remote Commands. Retrieved July 26, 2021.",
+          "url": "https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1"
+        },
+        {
+          "source_name": "Remote Shell Execution in Python",
+          "description": "Abdou Rockikz. (2020, July). How to Execute Shell Commands in a Remote Machine in Python. Retrieved July 26, 2021.",
+          "url": "https://www.thepythoncode.com/article/executing-bash-commands-remotely-in-python"
+        },
+        {
+          "source_name": "Cisco IOS Software Integrity Assurance - Command History",
+          "description": "Cisco. (n.d.). Cisco IOS Software Integrity Assurance - Command History. Retrieved October 21, 2020.",
+          "url": "https://tools.cisco.com/security/center/resources/integrity_assurance.html#23"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1059",
+          "external_id": "T1059"
+        }
+      ],
+      "x_opencti_id": "b5479166-c49b-45b3-b924-0d851bcfa326",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    },
+    {
+      "id": "attack-pattern--fc3e024a-8a0c-599c-90dc-2ac36b766041",
+      "spec_version": "2.1",
+      "revoked": false,
+      "confidence": 100,
+      "created": "2025-08-14T07:15:22.422Z",
+      "modified": "2025-10-16T08:57:51.486Z",
+      "name": "System Network Connections Discovery",
+      "description": "Adversaries may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. \n\nAn adversary who gains access to a system that is part of a cloud-based environment may map out Virtual Private Clouds or Virtual Networks in order to determine what systems and services are connected. The actions performed are likely the same types of discovery techniques depending on the operating system, but the resulting information may include details about the networked cloud environment relevant to the adversary's goals. Cloud providers may have different ways in which their virtual networks operate.(Citation: Amazon AWS VPC Guide)(Citation: Microsoft Azure Virtual Network Overview)(Citation: Google VPC Overview) Similarly, adversaries who gain access to network devices may also perform similar discovery activities to gather information about connected systems and services.\n\nUtilities and commands that acquire this information include [netstat](https://attack.mitre.org/software/S0104), \"net use,\" and \"net session\" with [Net](https://attack.mitre.org/software/S0039). In Mac and Linux, [netstat](https://attack.mitre.org/software/S0104) and `lsof` can be used to list current connections. `who -a` and `w` can be used to show which users are currently logged in, similar to \"net session\". Additionally, built-in features native to network devices and [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) may be used (e.g. `show ip sockets`, `show tcp brief`).(Citation: US-CERT-TA18-106A) On ESXi servers, the command `esxi network ip connection list` can be used to list active network connections.(Citation: Sygnia ESXi Ransomware 2025)",
+      "aliases": [
+        "T1049"
+      ],
+      "x_mitre_platforms": [
+        "macos",
+        "linux",
+        "windows",
+        "Network Devices",
+        "IaaS",
+        "ESXi"
+      ],
+      "x_mitre_detection": "System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as Lateral Movement, based on the information obtained.\n\nMonitor processes and command-line arguments for actions that could be taken to gather system and network information. Remote access tools with built-in features may interact directly with the Windows API to gather information. Further, [Network Device CLI](https://attack.mitre.org/techniques/T1059/008) commands may also be used to gather system and network information with built-in features native to the network device platform.  Monitor CLI activity for unexpected or unauthorized use commands being run by non-standard users from non-standard locations. Information may also be acquired through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).",
+      "x_mitre_id": "T1049",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mitre-attack",
+          "phase_name": "discovery",
+          "x_opencti_order": 0
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "Google VPC Overview",
+          "description": "Google. (2019, September 23). Virtual Private Cloud (VPC) network overview. Retrieved October 6, 2019.",
+          "url": "https://cloud.google.com/vpc/docs/vpc"
+        },
+        {
+          "source_name": "Microsoft Azure Virtual Network Overview",
+          "description": "Annamalai, N., Casey, C., Almeida, M., et. al.. (2019, June 18). What is Azure Virtual Network?. Retrieved October 6, 2019.",
+          "url": "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+        },
+        {
+          "source_name": "Amazon AWS VPC Guide",
+          "description": "Amazon. (n.d.). What Is Amazon VPC?. Retrieved October 6, 2019.",
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+        },
+        {
+          "source_name": "Sygnia ESXi Ransomware 2025",
+          "description": "Zhongyuan Hau (Aaron), Ren Jie Yow, and Yoav Mazor. (2025, January 21). ESXi Ransomware Attacks: Stealthy Persistence through. Retrieved March 27, 2025.",
+          "url": "https://www.sygnia.co/blog/esxi-ransomware-ssh-tunneling-defense-strategies/"
+        },
+        {
+          "source_name": "US-CERT-TA18-106A",
+          "description": "US-CERT. (2018, April 20). Alert (TA18-106A) Russian State-Sponsored Cyber Actors Targeting Network Infrastructure Devices. Retrieved October 19, 2020.",
+          "url": "https://www.us-cert.gov/ncas/alerts/TA18-106A"
+        },
+        {
+          "source_name": "mitre-attack",
+          "url": "https://attack.mitre.org/techniques/T1049",
+          "external_id": "T1049"
+        }
+      ],
+      "x_opencti_id": "f55b6247-bcea-420a-9a95-02f22bfc2c5b",
+      "x_opencti_type": "Attack-Pattern",
+      "type": "attack-pattern",
+      "created_by_ref": "identity--e52b2fa3-2af0-5e53-ad38-17d54b3d61cb",
+      "object_marking_refs": [
+        "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+      ]
+    }
+  ]
+}

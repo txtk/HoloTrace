@@ -7,7 +7,7 @@ from utils.file.json_utils import JsonUtils
 from utils.name_process import semantic_judge
 
 from .entity_cal import calculate_layer_nums, get_kb_counts
-from .get_non_semantic_neighbors import get_non_semantic_neighbors
+from .get_non_semantic_neighbors import get_non_semantic_neighbors, prune_missing_endpoint_triplets
 from .importance import importance
 from .message_match import message_match
 from utils.vector.get_vector import load_vector_pkl
@@ -44,6 +44,12 @@ def pre_process(suffix, root_dir, graph_type, rag_malware, rag_attck, rag_group,
     tuple_path = path.join(root_dir, f"{graph_type}_tuples.txt")
     outgoing, incoming, entities = find_directed_links(tuple_path)
     recheck_semantic(attribute_dict)
+    outgoing, incoming, entities = prune_missing_endpoint_triplets(attribute_dict, outgoing, incoming, entities)
+    cleaned_triplets = []
+    for start_id in sorted(outgoing):
+        for relation_id, end_id in outgoing[start_id]:
+            cleaned_triplets.append(f"{start_id} {relation_id} {end_id}")
+    FileUtils.save_file(cleaned_triplets, tuple_path, ".txt")
     get_non_semantic_neighbors(suffix, attribute_dict, outgoing, incoming, entities)
     # threshold_experiment(attribute_dict, rag_malware, rag_attck, rag_group)
     message_match(attribute_dict, rag_malware, rag_attck, rag_group, force=force)

@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-20 21:33:52
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-20 21:47:49
-FilePath: /entity_alignment/src/models/database/neo4j/tuple.py
-Description:用来存储节点和关系的三元组
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 from typing import Annotated, Union
 
 from pydantic import BaseModel, Field

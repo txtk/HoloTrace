@@ -1,10 +1,10 @@
-import poml
 from elasticsearch import Elasticsearch
 from neo4j import AsyncGraphDatabase
 
 from config.config import get_settings
 from utils.database.db import get_db_instance
 from OTXv2 import OTXv2
+import poml
 
 
 settings = get_settings()
@@ -20,14 +20,14 @@ db_config = {
 }
 
 
-# Neo4j配置
+# Neo4j configuration
 neo4j_config = {
     "uri": settings.neo4j_uri,
     "user": settings.neo4j_user,
     "password": settings.neo4j_password,
 }
 
-# Neo4j临时图配置
+# Neo4j temporary graph configuration
 neo4j_config_sub = {
     "uri": settings.neo4j_sub_uri,
     "user": settings.neo4j_user,
@@ -200,6 +200,8 @@ mine_ignore_properties = [
 ignore_dict = {
     "aadm": aadm_ignore_properties,
     "mine": mine_ignore_properties,
+    "mine_time": mine_ignore_properties,
+    "mine_time_individual": mine_ignore_properties,
 }
 
 

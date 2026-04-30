@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-12-22 17:41:07
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-12-25 10:27:39
-FilePath: /align_to_attribute/src/utils/string_operate/string_match.py
-Description: 两个字符串之间的匹配
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 
 from __future__ import annotations
 

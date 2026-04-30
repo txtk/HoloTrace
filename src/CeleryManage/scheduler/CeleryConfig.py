@@ -9,7 +9,7 @@ CELERY_BROKER_URL = "amqp://{}:{}@{}:{}".format(
 broker_url = [CELERY_BROKER_URL]
 broker_transport_options = {"confirm_publish": True, "consumer_timeout": 7200}
 worker_prefetch_multiplier = 1
-result_backend = CELERY_RESULT_URL  # 去掉结果存储
+result_backend = CELERY_RESULT_URL  # Disable result storage
 
 # time second
 result_expires = 6 * 3600

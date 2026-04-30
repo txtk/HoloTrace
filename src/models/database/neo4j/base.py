@@ -1,13 +1,3 @@
-"""
-Author: mjxv mjxvtxtk1@gmail.com
-Date: 2025-08-20 21:25:01
-LastEditors: mjxv mjxvtxtk1@gmail.com
-LastEditTime: 2025-08-20 21:47:39
-FilePath: /entity_alignment/src/models/database/neo4j/base.py
-Description:节点和关系基类
-Copyright (c) 2025 by ${git_name_email}, All Rights Reserved.
-"""
-
 from typing import Literal
 
 from pydantic import BaseModel

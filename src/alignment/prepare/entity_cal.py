@@ -14,24 +14,24 @@ from utils.file.json_utils import JsonUtils
 pattern = re.compile(r"[. _]")
 textstat.set_lang("en_US")
 
-# 获取知识库的唯一实体数量
+# Get the number of unique entities in the knowledge base
 def get_kb_counts(indices):
     unique_nums = []
     for index in indices:
-        # 获取唯一实体总数
+        # Get the total number of unique entities
         unique_names = set()
-        # 这里的 field 可以根据索引不同做调整，但在你的 mapping 中似乎统一用的 'name'
-        # rag_attck 中也有 'id'，我们可以优先用 'id' 或者 combined
+        # This field can be adjusted by index, but your mappings appear to use 'name' consistently
+        # rag_attck also has 'id', so prefer 'id' or a combined key
 
         query = {"query": {"match_all": {}}, "_source": ["name", "id"]}
 
-        # 使用 scan 批量获取
+        # Use scan for batch retrieval
         for doc in scan(elastic, index=index, query=query):
             source = doc.get("_source", {})
             name = source.get("name")
             entity_id = source.get("id")
 
-            # 对于 attck，优先使用 id 标识唯一性，如果没有则用 name
+            # For attck, prefer id for uniqueness; fall back to name if id is missing
             if index == "rag_attck":
                 identifier = entity_id or name
             else:
@@ -69,10 +69,14 @@ def calculate_layer_nums(suffix, entity_id_dict, neo4j_type):
 
 def entity_layer_num(start, end, target_id, neo4j_static_dict, target_layer, neo4j_type):
     neo4j_static_dict = neo4j_static_dict.get_value(neo4j_type)
+    # start_type = list(start.keys())[0]
+    # if start[start_type]["unique_id"] == target_id:
     if start["unique_id"] == target_id:
         related_entity = end
     else:
         related_entity = start
+    # related_entity_type = list(related_entity.keys())[0]
+    # related_entity = related_entity[related_entity_type]
 
     if related_entity.get("semantic") == 0:
         return None, 0
@@ -87,16 +91,16 @@ def entity_layer_num(start, end, target_id, neo4j_static_dict, target_layer, neo
 
 def count_node_up_and_down(triplets, entity, neo4j_static_dict, layer, neo4j_type):
     """
-    统计一个实体在知识图谱中的上层和下层连接节点数量
+    Count the upper-layer and lower-layer connected nodes for an entity in the knowledge graph
 
     Args:
-        triplets (list): 三元组列表，每个三元组包含start和end节点
-        entity (dict): 目标实体，包含unique_id等属性
-        neo4j_static_dict (JsonDataset): Neo4j静态数据字典，用于获取实体层级信息
-        layer (str): 目标实体所在的层级
+        triplets (list): triplet list where each triplet contains start and end nodes
+        entity (dict): target entity containing attributes such as unique_id
+        neo4j_static_dict (JsonDataset): Neo4j static data dictionary used to obtain entity layer information
+        layer (str): layer where the target entity is located
 
     Returns:
-        tuple: (up_num, down_num) 上层连接数和下层连接数
+        tuple: (up_num, down_num) upper-layer and lower-layer connection counts
     """
     target_id = entity["unique_id"]
     up_num = 0
@@ -133,26 +137,83 @@ def count_down_total(layer, neo4j_static_dict, neo4j_type):
     return down_total
 
 
-# 如果没有上层节点，则整体为0
+def calculate_compression_complexity(text: str) -> float:
+    """
+    Calculate the compression-ratio complexity of the given text.
+
+    The complexity score is the ratio of compressed size to original size.
+    A higher ratio, closer to 1.0, indicates denser information and fewer patterns, meaning higher complexity.
+    A lower ratio, closer to 0, indicates more redundancy and more patterns, meaning lower complexity.
+
+    Args:
+        text: Input string whose complexity should be calculated.
+
+    Returns:
+        A float representing the text complexity score. Returns 0.0 for empty or invalid input.
+    """
+    # Step 1: Handle invalid input
+    # If the text is empty or not a string, treat its complexity as 0.
+    if not text or not isinstance(text, str):
+        return 0.0
+
+    # Step 2: Encode the string as bytes
+    # Compression algorithms operate on bytes, not Python string abstractions.
+    # Use UTF-8, the most common and standard encoding.
+    original_bytes = text.encode("utf-8")
+
+    # Step 3: Compress the byte data
+    compressed_bytes = zlib.compress(original_bytes)
+
+    # Step 4: Calculate original and compressed sizes
+    original_size = len(original_bytes)
+    compressed_size = len(compressed_bytes)
+
+    # Check original size again to avoid division by zero, although step 1 already handles it
+    if original_size == 0:
+        return 0.0
+
+    # Step 5: Calculate and return the ratio
+    complexity_ratio = compressed_size / original_size
+
+    return complexity_ratio
+
+
+def weight_calculate(structural_scores, semantic_scores):
+    structural_scores = np.array(structural_scores)
+    semantic_scores = np.array(semantic_scores)
+
+    # Calculate the mean
+    mean_struct = np.mean(structural_scores)
+    mean_sem = np.mean(semantic_scores)
+
+    total_mean = mean_struct + mean_sem
+    if total_mean == 0:
+        w1, w2 = 0.5, 0.5
+    else:
+        w1 = mean_sem / total_mean
+        w2 = mean_struct / total_mean
+    return w1, w2
+
+# If there are no upper-layer nodes, the overall value is 0
 def get_discrimination(up_num: int, up_total: int):
     if up_num == 0:
         return 0
     return math.log((up_total) / (up_num) + 1) + 1
 
-# 如果没有下层节点，则下层节点贡献为1
+# If there are no lower-layer nodes, the lower-layer contribution is 1
 def get_corroboration_tesc(down_value: float, down_total: float):
     if down_value == 0:
         return 1
     return math.log(down_value / down_total + 1) + 1
 
-# 获取知识图谱权重
+# Get the knowledge-graph weight
 def get_tesc(up_num, up_total, down_value, down_total):
     d = get_discrimination(up_num, up_total)
     i = get_corroboration_tesc(down_value, down_total)
     return d * i
 
 
-# 获取知识库权重
+# Get the knowledge-base weight
 def get_pkc(entity, malware_total, attck_total, group_total):
     d = 0
     i = 0

@@ -3,12 +3,31 @@ from collections import defaultdict
 from loguru import logger
 
 def find_directed_links(file_path):
-    # 使用 defaultdict(list)，因为一个实体可以有多个（重复的）出向/入向链接
-    # 例如 (e1, r1, e2) 和 (e1, r2, e2) 是两条不同的出向链接
+    """
+        Read data from a directed triples file and build two adjacency lists:
+        1. Store outgoing links for each entity (outgoing).
+        2. Store incoming links for each entity (incoming).
+        
+        Data structure:
+        - Key: entity ID (int)
+        - Value: a list containing multiple tuples
+        - Tuple format: (relationship_id, neighbor_id)
+        
+        Args:
+            file_path (str): Path to the .txt file containing triples.
+        
+        Returns:
+            tuple: (outgoing_links, incoming_links, all_entities)
+            - outgoing_links (dict): dictionary that stores outgoing links
+            - incoming_links (dict): dictionary that stores incoming links
+            - all_entities (set): set containing all entity IDs
+    """
+    # Use defaultdict(list) because one entity can have multiple, possibly duplicate, outgoing/incoming links
+    # For example, (e1, r1, e2) and (e1, r2, e2) are two different outgoing links
     outgoing_links = defaultdict(list)
     incoming_links = defaultdict(list)
     
-    # 我们需要一个集合来跟踪所有见过的实体
+    # Use a set to track all seen entities
     all_entities = set()
     
     logger.info(f"--- 正在处理文件 (有向图模式): {file_path} ---")
@@ -25,18 +44,18 @@ def find_directed_links(file_path):
                 if len(parts) == 3:
                     try:
                         e1 = int(parts[0])
-                        r = int(parts[1])  # 现在我们保留关系
+                        r = int(parts[1])  # Keep the relationship now
                         e2 = int(parts[2])
                         
-                        # 将实体ID添加到总集合中
+                        # Add entity IDs to the global set
                         all_entities.add(e1)
                         all_entities.add(e2)
                         
-                        # --- 核心逻辑 (有向图) ---
-                        # 1. 存储出向链接：e1 -> e2 (通过 r)
+                        # --- Core logic (directed graph) ---
+                        # 1. Store outgoing links: e1 -> e2 (through r)
                         outgoing_links[e1].append((r, e2))
                         
-                        # 2. 存储入向链接：e1 -> e2 (等同于 e2 <- e1)
+                        # 2. Store incoming links：e1 -> e2 (equivalent to e2 <- e1)
                         incoming_links[e2].append((r, e1))
                         
                     except ValueError:

@@ -22,7 +22,7 @@ with db.allow_sync():
     Profiles.create_table(fail_silently=True)
     # Create the ProfilesTest table
     ProfilesTest.create_table(fail_silently=True)
-    # Neo4j 数据存储
+    # Neo4j data storage
     Neo4jEntityModel.create_table(fail_silently=True)
     Neo4jRelationModel.create_table(fail_silently=True)
     IntrusionSets.create_table(fail_silently=True)
